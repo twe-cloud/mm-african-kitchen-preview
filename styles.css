@@ -1457,6 +1457,60 @@ h3 {
     linear-gradient(180deg, #fff8ed 0%, #f4e4c9 100%);
 }
 
+.menu-photo-picks {
+  margin-top: clamp(26px, 4vw, 44px);
+  display: grid;
+  gap: 18px;
+}
+
+.menu-picks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.menu-pick-card {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(41, 19, 11, .14);
+  background: rgba(255, 248, 237, .85);
+}
+
+.menu-pick-card img {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.menu-pick-card figcaption {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+}
+
+.menu-pick-card strong {
+  display: block;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: clamp(24px, 2vw, 32px);
+  line-height: .92;
+  text-transform: uppercase;
+}
+
+.menu-pick-card p {
+  margin: 0;
+  color: rgba(28, 10, 6, .74);
+  line-height: 1.42;
+}
+
+.menu-pick-card small {
+  color: rgba(28, 10, 6, .56);
+  font: 700 11px/1.35 var(--mono);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
 .drink-menu-intro,
 .drink-feature,
 .drink-cta {
@@ -2543,13 +2597,18 @@ h3 {
   .drink-two-column,
   .bundle-grid,
   .feature-links,
-  .event-cards {
+  .event-cards,
+  .menu-picks-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .feature-entertainment {
     grid-column: span 2;
     min-height: clamp(320px, 48vw, 480px);
+  }
+
+  .menu-pick-card:last-child {
+    grid-column: span 2;
   }
 
   .special-shell,
@@ -2674,7 +2733,8 @@ h3 {
   .special-date-list,
   .feature-links,
   .event-cards,
-  .visit-list {
+  .visit-list,
+  .menu-picks-grid {
     grid-template-columns: 1fr;
   }
 
@@ -2838,7 +2898,3 @@ h3 {
 .loyalty-panel.dark {
   background: #250b07;
 }
-
-.preview-banner { position: sticky; top: 0; z-index: 60; padding: 10px 16px; background: #ffd36a; color: #1c0a06; text-align: center; font: 900 12px/1.35 var(--mono); letter-spacing: .04em; text-transform: uppercase; box-shadow: 0 8px 24px rgba(28,10,6,.18); }
-body.preview-mode .site-header { top: 40px; }
-@media (max-width: 760px) { body.preview-mode .site-header { top: 48px; } .preview-banner { text-align: left; font-size: 11px; } }
