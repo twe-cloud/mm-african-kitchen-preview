@@ -214,6 +214,12 @@ textarea {
   min-height: 56px;
   font-size: 13px;
   box-shadow: 0 18px 42px rgba(0, 0, 0, .18);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.action-hero-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 52px rgba(0, 0, 0, .26);
 }
 
 .hero-actions .action-dark,
@@ -265,6 +271,14 @@ textarea {
   background:
     linear-gradient(90deg, rgba(13, 8, 9, .92) 0 30%, rgba(59, 14, 7, .52) 56%, rgba(13, 8, 9, .88) 100%),
     linear-gradient(180deg, rgba(13, 8, 9, .58), rgba(59, 14, 7, .24) 44%, rgba(13, 8, 9, .9));
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero-image {
@@ -558,21 +572,33 @@ h3 {
   color: var(--ink);
 }
 
-.ticker div {
+.ticker-track {
   display: flex;
-  flex-wrap: wrap;
-  width: 100%;
+  width: max-content;
   gap: 28px;
   padding: 14px 0;
-  justify-content: center;
+  animation: ticker-scroll 28s linear infinite;
 }
 
 .ticker span {
+  flex-shrink: 0;
   font-family: var(--display);
   font-size: clamp(34px, 5vw, 72px);
   line-height: .82;
   letter-spacing: -.06em;
   text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.ticker span::after {
+  content: "\00b7";
+  margin-left: 28px;
+  color: var(--pepper);
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 .proof-wall {
@@ -606,6 +632,14 @@ h3 {
   height: 100%;
   object-fit: cover;
   filter: saturate(1.08) contrast(1.04);
+  transform: scale(1.01);
+  transition: transform .8s ease, filter .8s ease;
+}
+
+.proof-card:hover img,
+.proof-card:hover video {
+  filter: saturate(1.2) contrast(1.08);
+  transform: scale(1.06);
 }
 
 .proof-card::after {
