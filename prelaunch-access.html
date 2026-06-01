@@ -3,106 +3,147 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>M&M African Kitchen & Bar — June Launch Access</title>
+  <title>M&M African Kitchen & Bar — Launch Access Card</title>
+  <link rel="icon" href="assets/brand/mm-logo.png" />
   <style>
-    :root {
-      --ink:#24140d; --muted:#735846; --paper:#fffaf1; --cream:#f8ead5;
-      --green:#173d2a; --gold:#bd7a24; --pepper:#9f2f1b; --line:#ead4b7;
-      --soft:#fff5e7; --ok:#1f6b46; --warn:#8a2f21;
+    :root{
+      --ink:#201209;--muted:#6c503b;--paper:#fff8eb;--card:#fffdf7;--sand:#f1d7ad;
+      --green:#123823;--green2:#1f5537;--red:#8e2f1f;--gold:#b56d1b;--line:#dfc09a;--soft:#fff0d9;
+      --shadow:0 26px 90px rgba(53,28,12,.14)
     }
-    *{box-sizing:border-box} body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.42 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif}
-    .page{max-width:1060px;margin:0 auto;padding:28px;background:var(--paper)}
-    header{display:grid;grid-template-columns:82px 1fr auto;gap:18px;align-items:center;padding:0 0 20px;border-bottom:4px solid var(--green)}
-    .logo{width:78px;height:78px;object-fit:contain;background:white;border:1px solid var(--line);border-radius:18px;padding:8px}
-    .brand{font-weight:900;color:var(--green);font-size:18px;text-align:right;line-height:1}.brand span{display:block;margin-top:5px;color:var(--muted);font-size:10px;letter-spacing:.13em;text-transform:uppercase}
-    h1{margin:0;font-size:clamp(2rem,5vw,4.6rem);line-height:.92;letter-spacing:-.07em;color:var(--green)}
-    .sub{margin-top:8px;color:var(--muted);font-size:1.05rem;max-width:760px}.pill{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 12px;font-weight:900;color:#4c2b13;font-size:.82rem;text-transform:uppercase;letter-spacing:.04em}
-    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;margin:24px 0}.panel{border:1px solid var(--line);background:#fffaf4;border-radius:28px;padding:22px;box-shadow:0 16px 45px rgba(58,29,10,.08)}
-    .go{background:linear-gradient(135deg,#173d2a,#285f42);color:white}.go h2,.go p{color:white}.go strong{color:#ffe2ad}.go .pill{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25);color:#ffe2ad}
-    h2{margin:0 0 12px;font-size:clamp(1.55rem,3vw,2.6rem);line-height:1;letter-spacing:-.05em;color:var(--green)}
-    h3{margin:10px 0 6px;font-size:1.05rem;line-height:1.05}.big{font-size:1.35rem;font-weight:900;line-height:1.15}.muted{color:var(--muted)}
-    .actions{display:grid;gap:12px}.action{display:grid;grid-template-columns:48px 1fr;gap:12px;align-items:start;padding:14px;border-radius:18px;background:#fff;border:1px solid var(--line)}
-    .icon{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:var(--soft);font-size:24px;border:1px solid var(--line)}
-    .grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:18px 0}.card{border:1px solid var(--line);background:#fff;border-radius:22px;padding:16px;min-width:0}.num{font-weight:900;color:var(--gold);font-size:.8rem;text-transform:uppercase;letter-spacing:.08em}
-    .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:stretch;margin-top:14px}.step{border:1px solid var(--line);border-radius:20px;background:#fff;padding:14px;text-align:center;min-width:0}.arrow{display:grid;place-items:center;color:var(--gold);font-weight:900;font-size:1.5rem}.step .icon{margin:0 auto 8px}
-    .status{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.single-status{grid-template-columns:1fr;margin-top:12px}.stat{border-left:6px solid var(--ok);background:#fff;border-radius:18px;padding:14px;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.stat.wait{border-left-color:var(--warn)}
-    a{color:#8a4c0a;font-weight:900}.footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}.tiny{font-size:.86rem;color:var(--muted)}
-    @media(max-width:860px){.hero,.grid4,.status{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.arrow{transform:rotate(90deg);height:20px}header{grid-template-columns:70px 1fr}.brand{grid-column:1/-1;text-align:left}.logo{width:66px;height:66px}.page{padding:18px}.panel{padding:18px}}
-    @media print{body{background:white}.page{max-width:none}.panel,.card,.step,.stat{break-inside:avoid;box-shadow:none}.hero{grid-template-columns:1fr 1fr}.grid4{grid-template-columns:repeat(4,1fr)}.flow{grid-template-columns:repeat(5,1fr)}.arrow{transform:none}.footer{font-size:10px}}
+    *{box-sizing:border-box} html{background:#e8cda3} body{margin:0;color:var(--ink);font:16px/1.42 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;background:radial-gradient(circle at 8% 0,rgba(181,109,27,.22),transparent 30%),linear-gradient(135deg,#ecd0a4,#fff8eb 44%,#ead2aa)}
+    a{color:inherit;text-decoration:none}.page{max-width:1080px;margin:0 auto;padding:28px 22px 38px}.card{background:var(--paper);border:1px solid #b98b56;border-radius:34px;box-shadow:var(--shadow);overflow:hidden}.inner{padding:28px 32px}.tag{display:inline-flex;align-items:center;gap:8px;width:max-content;max-width:100%;border:1px solid var(--line);border-radius:999px;padding:7px 11px;background:#fff4df;color:#5d3519;font-size:.72rem;font-weight:950;letter-spacing:.09em;text-transform:uppercase}.tag:before{content:"";width:20px;height:2px;background:var(--gold)}
+    header{display:grid;grid-template-columns:82px 1fr;gap:20px;align-items:center;border-bottom:1px solid var(--line);background:linear-gradient(90deg,#fff8eb,#fff1dc)}.logo{width:80px;height:80px;object-fit:contain;background:white;border:1px solid var(--line);border-radius:20px;padding:9px}h1{margin:10px 0 0;color:var(--green);font-size:clamp(2.3rem,6vw,5.2rem);line-height:.86;letter-spacing:-.075em}.dek{margin:12px 0 0;color:var(--muted);font-size:1.04rem;max-width:660px}.brand{text-align:right;font-weight:950;color:var(--green);line-height:1}.brand small{display:block;margin-top:7px;color:var(--muted);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase}
+    .hero{display:grid;grid-template-columns:1fr 1fr;gap:18px}.hero-box{border:1px solid var(--line);border-radius:28px;background:var(--card);padding:24px}.hero-box.dark{background:linear-gradient(135deg,var(--green),var(--green2));color:white;position:relative;overflow:hidden}.hero-box.dark:after{content:"";position:absolute;right:-96px;top:-96px;width:220px;height:220px;border:1px solid rgba(255,229,178,.18);border-radius:50%;box-shadow:0 0 0 26px rgba(255,229,178,.035)}h2{margin:0 0 12px;color:var(--green);font-size:clamp(1.5rem,3vw,2.5rem);line-height:.95;letter-spacing:-.055em}.dark h2,.dark p{color:white}.dark h2{font-size:clamp(1.45rem,2.5vw,2.15rem)}.dark strong{color:#ffe2a7}.dark .tag{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);color:#ffe2a7}.big{font-size:1.12rem;font-weight:850;line-height:1.26;margin:0 0 12px}.access-diagram{width:100%;height:auto;margin:6px 0 10px;display:block}.access-diagram text{font:700 10px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;letter-spacing:.04em}.rule-list{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:8px}.rule-list li{display:grid;grid-template-columns:20px 1fr;gap:8px}.rule-list li:before{content:"";width:9px;height:9px;border-radius:50%;background:#ffe2a7;margin-top:.55em}.status{display:grid;gap:10px}.status-row{display:grid;grid-template-columns:72px 1fr;gap:12px;align-items:start;padding:14px;border:1px solid var(--line);border-radius:17px;background:#fff}.state{border-radius:999px;text-align:center;padding:6px 8px;font-size:.7rem;font-weight:950;letter-spacing:.07em;text-transform:uppercase}.ready{background:#e1f0e6;color:#17452d}.open{background:#f7e6df;color:#7e2519}.tiny{font-size:.88rem;color:var(--muted);line-height:1.34}
+    .keys{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}.key{background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px;min-width:0}.no{width:38px;height:38px;display:grid;place-items:center;border-radius:13px;background:var(--green);color:#ffe0a2;font-weight:950;margin-bottom:12px}.key h3,.link-group h3{margin:0 0 7px;color:var(--green);line-height:1.05}.key p{margin:0;color:var(--muted)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:14px}.section-head p{margin:0;max-width:560px;color:var(--muted)}
+    .link-board{display:grid;gap:14px}.link-group{display:grid;grid-template-columns:170px 1fr;gap:18px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:24px;padding:18px}.link-group p{margin:0;color:var(--muted);font-size:.85rem}.buttons{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:40px;border-radius:999px;border:1px solid #c99458;background:#fff5e4;color:#6c390d;padding:9px 13px;font-weight:900;font-size:.84rem;text-align:center}.btn.primary{background:var(--green);border-color:var(--green);color:#ffe2a7}.btn:hover{filter:brightness(.98);box-shadow:0 8px 18px rgba(181,109,27,.13)}.print-url{display:none}
+    .notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.note{background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px}.note h3{margin:0 0 8px;color:var(--green)}.note p{margin:0;color:var(--muted)}.path{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}.step{border:1px solid var(--line);background:#fff;border-radius:18px;padding:12px;text-align:center}.step b{display:block;color:var(--green);line-height:1.1}.step small{display:block;margin-top:4px;color:var(--muted);line-height:1.15}.footer{border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}.footer a{text-decoration:underline;text-underline-offset:3px;font-weight:850;color:#6c390d}
+    @media(max-width:900px){.page{padding:14px}.inner{padding:20px 18px}header,.hero,.keys,.notes,.path{grid-template-columns:1fr}.brand{text-align:left}.link-group{grid-template-columns:1fr}.logo{width:70px;height:70px}.section-head{display:block}.buttons{grid-template-columns:1fr}.btn{justify-content:flex-start;text-align:left}}
+    @media print{html,body{background:white}.page{padding:0}.card{border:0;border-radius:0;box-shadow:none}.inner{padding:14px 20px}header{grid-template-columns:64px 1fr}.logo{width:62px;height:62px}.hero{grid-template-columns:1fr 1fr}.keys{grid-template-columns:repeat(4,1fr)}.notes{grid-template-columns:repeat(3,1fr)}.path{grid-template-columns:repeat(6,1fr)}body{font-size:11px}h1{font-size:40px}.dek{font-size:12px}h2{font-size:21px}.big{font-size:13px}.key,.note,.hero-box,.link-group,.step{break-inside:avoid}.link-group{grid-template-columns:120px 1fr;padding:10px}.buttons{grid-template-columns:repeat(auto-fit,minmax(100px,1fr))}.btn{font-size:9px;min-height:26px;padding:5px 8px}.print-url{display:block;font-size:8px;color:var(--muted);font-weight:500;overflow-wrap:anywhere}.footer{font-size:9px}.tag{font-size:8px;padding:4px 7px}.status-row{grid-template-columns:52px 1fr;padding:8px}.state{font-size:8px}.tiny,.link-group p,.key p,.note p{font-size:9px}}
   </style>
 </head>
 <body>
   <main class="page">
-    <header>
-      <img class="logo" src="assets/brand/mm-logo.png" alt="M&M African Kitchen & Bar logo" />
-      <div>
-        <div class="pill">June launch access</div>
-        <h1>Ola, we need 4 keys.</h1>
-        <p class="sub">The new website is live. To finish the June setup, we need the right access—not passwords in text—so we can redirect old traffic, turn on email, and connect ordering safely.</p>
-      </div>
-      <div class="brand">Ni Biashara<span>Business systems</span></div>
-    </header>
-
-    <section class="hero">
-      <div class="panel go">
-        <span class="pill">Action needed Monday, June 1</span>
-        <h2>Bring or approve access while we sit together.</h2>
-        <p class="big">Best path: you log in, invite us as collaborator, or approve changes live. <strong>Do not send passwords, card numbers, API keys, or recovery codes in WhatsApp/text/email.</strong></p>
-        <p>Once the four items below are available, we can test everything in order and show proof before anything customer-facing changes.</p>
-      </div>
-      <div class="panel">
-        <h2>Fast status</h2>
-        <div class="status">
-          <div class="stat"><strong>✅ New site live</strong><br><span class="tiny">mmafricankitchen.com works.</span></div>
-          <div class="stat wait"><strong>⚠️ Old site separate</strong><br><span class="tiny">m-mafricankitchen.com still needs redirect access.</span></div>
-            <div class="stat"><strong>✅ Backup mirror ready</strong><br><span class="tiny">Ni Biashara covers failover hosting.</span></div>
+    <article class="card">
+      <header class="inner">
+        <img class="logo" src="assets/brand/mm-logo.png" alt="M&M African Kitchen & Bar logo" />
+        <div>
+          <span class="tag">June launch access</span>
+          <h1>Open these four doors.</h1>
+          <p class="dek">The new M&M site is live. To finish the June setup, Ola can open these four areas during the call or invite Ni Biashara as a collaborator.</p>
         </div>
-        <div class="status single-status">
-          <div class="stat wait"><strong>⚠️ Integrations waiting</strong><br><span class="tiny">Square, Uber, POS, mailbox need access.</span></div>
+      </header>
+
+      <section class="inner hero">
+        <div class="hero-box dark">
+          <span class="tag">Access rule</span>
+          <h2>Log in live. Don’t send secrets.</h2>
+          <p class="big">Ola can open the portal, invite us, or approve the exact change while we sit together.</p>
+          <svg class="access-diagram" viewBox="0 0 520 86" role="img" aria-label="Access path: domain, email, Square, ordering/POS">
+            <line x1="54" y1="38" x2="466" y2="38" stroke="rgba(255,226,167,.45)" stroke-width="3" stroke-linecap="round" />
+            <g fill="none" stroke="#ffe2a7" stroke-width="2">
+              <rect x="8" y="16" width="92" height="44" rx="14" /><rect x="142" y="16" width="92" height="44" rx="14" />
+              <rect x="276" y="16" width="92" height="44" rx="14" /><rect x="410" y="16" width="102" height="44" rx="14" />
+            </g>
+            <g fill="#ffe2a7" text-anchor="middle">
+              <text x="54" y="43">DOMAIN</text><text x="188" y="43">EMAIL</text><text x="322" y="43">SQUARE</text><text x="461" y="43">ORDERS</text>
+            </g>
+          </svg>
+          <ul class="rule-list">
+            <li>No passwords, recovery codes, card numbers, or API keys in chat.</li>
+            <li>Read-only checks happen first; customer-facing changes happen after approval.</li>
+            <li>Every DNS, mailbox, payment, and POS change gets verified before we call it done.</li>
+          </ul>
         </div>
-      </div>
-    </section>
+        <aside class="hero-box">
+          <span class="tag">Today’s position</span>
+          <div class="status">
+            <div class="status-row"><span class="state ready">ready</span><div><strong>New website</strong><br><span class="tiny">mmafricankitchen.com is live.</span></div></div>
+            <div class="status-row"><span class="state ready">ready</span><div><strong>Backup mirror</strong><br><span class="tiny">Static fallback is already handled by Ni Biashara.</span></div></div>
+            <div class="status-row"><span class="state open">open</span><div><strong>Old website redirect</strong><br><span class="tiny">Needs StormerHost, cPanel, or WordPress access.</span></div></div>
+            <div class="status-row"><span class="state open">open</span><div><strong>Email, Square, Uber/POS</strong><br><span class="tiny">Needs account access or collaborator invites.</span></div></div>
+          </div>
+        </aside>
+      </section>
 
-    <section class="panel">
-      <h2>The 4 keys</h2>
-      <div class="grid4">
-        <div class="card"><div class="icon">🌐</div><div class="num">1 / Domain</div><h3>Old website access</h3><p>StormerHost, registrar, cPanel, or WordPress access for <strong>m-mafricankitchen.com</strong>.</p><p class="tiny">Unlocks: old links redirect to the new site.</p></div>
-        <div class="card"><div class="icon">✉️</div><div class="num">2 / Email</div><h3>Mailbox choice</h3><p>Choose Google Workspace or another provider for <strong>@mmafricankitchen.com</strong>.</p><p class="tiny">Unlocks: info@, orders@, events@.</p></div>
-        <div class="card"><div class="icon">💳</div><div class="num">3 / Square</div><h3>Square production</h3><p>Square Dashboard/Developer access plus the production location ID.</p><p class="tiny">Unlocks: checkout, payments, order records.</p></div>
-        <div class="card"><div class="icon">🍽️</div><div class="num">4 / Orders + POS</div><h3>Uber + TouchBistro</h3><p>Uber Eats Manager/store access, TouchBistro admin/manager, Grubhub status, and new POS name.</p><p class="tiny">Unlocks: less manual retyping, cleaner migration.</p></div>
-      </div>
-    </section>
+      <section class="inner">
+        <div class="section-head">
+          <div><span class="tag">What to bring</span><h2>The four access keys.</h2></div>
+          <p>Keep this part simple. If Ola can open these four areas during the setup call, the remaining work becomes verification and controlled cutover.</p>
+        </div>
+        <div class="keys">
+          <div class="key"><div class="no">1</div><h3>Old website</h3><p>StormerHost, cPanel, or WordPress admin for m-mafricankitchen.com so old links can redirect.</p></div>
+          <div class="key"><div class="no">2</div><h3>Email</h3><p>Google Workspace or another mailbox provider for @mmafricankitchen.com.</p></div>
+          <div class="key"><div class="no">3</div><h3>Square</h3><p>Dashboard access, production location ID, and the first payment/order surface to activate.</p></div>
+          <div class="key"><div class="no">4</div><h3>Uber + POS</h3><p>Uber Eats Manager, TouchBistro access, Grubhub status, and the incoming POS name.</p></div>
+        </div>
+      </section>
 
-    <section class="panel">
-      <h2>What happens after access</h2>
-      <div class="flow" aria-label="activation flow">
-        <div class="step"><div class="icon">🖊️</div><strong>Sign / notarize</strong><br><span class="tiny">Agreement first</span></div>
-        <div class="arrow">→</div>
-        <div class="step"><div class="icon">🔐</div><strong>Collect access</strong><br><span class="tiny">No secrets in text</span></div>
-        <div class="arrow">→</div>
-        <div class="step"><div class="icon">🧪</div><strong>Test safely</strong><br><span class="tiny">Read-only first</span></div>
-      </div>
-      <div class="flow" aria-label="delivery flow">
-        <div class="step"><div class="icon">➡️</div><strong>Redirect old site</strong><br><span class="tiny">Customers land right</span></div>
-        <div class="arrow">→</div>
-        <div class="step"><div class="icon">📬</div><strong>Turn on email</strong><br><span class="tiny">Send/receive verified</span></div>
-        <div class="arrow">→</div>
-        <div class="step"><div class="icon">✅</div><strong>Connect orders</strong><br><span class="tiny">One ticket, no duplicates</span></div>
-      </div>
-    </section>
+      <section class="inner">
+        <div class="section-head">
+          <div><span class="tag">Setup links</span><h2>Open the right screen fast.</h2></div>
+          <p>These links keep the setup call moving and put the right admin screens one click away.</p>
+        </div>
+        <div class="link-board">
+          <div class="link-group">
+            <div><h3>Email</h3><p>Create the mailbox, add users/aliases, then approve Google DNS records.</p></div>
+            <div class="buttons">
+              <a class="btn primary" href="https://workspace.google.com/business/signup" target="_blank" rel="noopener">Create Google Workspace<span class="print-url">https://workspace.google.com/business/signup</span></a>
+              <a class="btn" href="https://admin.google.com/" target="_blank" rel="noopener">Google Admin<span class="print-url">https://admin.google.com/</span></a>
+              <a class="btn" href="https://support.google.com/a/answer/140034" target="_blank" rel="noopener">Google MX setup<span class="print-url">https://support.google.com/a/answer/140034</span></a>
+            </div>
+          </div>
+          <div class="link-group">
+            <div><h3>Square</h3><p>Confirm production account, location, and whether checkout links or Orders API go first.</p></div>
+            <div class="buttons">
+              <a class="btn primary" href="https://squareup.com/dashboard/" target="_blank" rel="noopener">Square Dashboard<span class="print-url">https://squareup.com/dashboard/</span></a>
+              <a class="btn" href="https://squareup.com/dashboard/locations" target="_blank" rel="noopener">Square Locations<span class="print-url">https://squareup.com/dashboard/locations</span></a>
+              <a class="btn" href="https://developer.squareup.com/apps" target="_blank" rel="noopener">Square Developer Apps<span class="print-url">https://developer.squareup.com/apps</span></a>
+            </div>
+          </div>
+          <div class="link-group">
+            <div><h3>Ordering + POS</h3><p>Check whether direct access is available; if not, approve an email or printed-ticket fallback.</p></div>
+            <div class="buttons">
+              <a class="btn primary" href="https://merchants.ubereats.com/manager/" target="_blank" rel="noopener">Uber Eats Manager<span class="print-url">https://merchants.ubereats.com/manager/</span></a>
+              <a class="btn" href="https://admin.touchbistro.com/" target="_blank" rel="noopener">TouchBistro Admin<span class="print-url">https://admin.touchbistro.com/</span></a>
+              <a class="btn" href="https://restaurant.grubhub.com/login/" target="_blank" rel="noopener">Grubhub Restaurants<span class="print-url">https://restaurant.grubhub.com/login/</span></a>
+            </div>
+          </div>
+          <div class="link-group">
+            <div><h3>Old domain</h3><p>Preferred: DNS/cPanel redirect. Fallback: WordPress redirect if hosting access is easier.</p></div>
+            <div class="buttons">
+              <a class="btn primary" href="https://cpanel.m-mafricankitchen.com/" target="_blank" rel="noopener">Old cPanel<span class="print-url">https://cpanel.m-mafricankitchen.com/</span></a>
+              <a class="btn" href="https://m-mafricankitchen.com/wp-admin/" target="_blank" rel="noopener">Old WordPress Admin<span class="print-url">https://m-mafricankitchen.com/wp-admin/</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <section class="panel">
-      <h2>Decision shortcuts</h2>
-      <div class="actions">
-        <div class="action"><div class="icon">📧</div><div><strong>Email recommendation:</strong> Google Workspace. One paid admin inbox can power aliases/groups for info@, orders@, and events@.</div></div>
-        <div class="action"><div class="icon">🍴</div><div><strong>Uber/POS fallback:</strong> if direct API access is blocked, approve a kitchen-ticket bridge while partner access is requested. Keep Grubhub → TouchBistro untouched.</div></div>
-      </div>
-    </section>
+      <section class="inner">
+        <div class="notes">
+          <div class="note"><h3>Mailbox recommendation</h3><p>Use Google Workspace unless Ola already has a preferred provider. One paid admin inbox can support aliases/groups for info@, orders@, and events@.</p></div>
+          <div class="note"><h3>Square first decision</h3><p>Pick the first release surface: checkout links, Orders API, Terminal, or all. Do not paste tokens into chat.</p></div>
+          <div class="note"><h3>Uber/POS fallback</h3><p>If Uber API access is gated, approve an email or printed-ticket bridge. Keep the current Grubhub to TouchBistro connection unchanged until the replacement POS is chosen.</p></div>
+        </div>
+      </section>
 
-    <div class="footer">
-      Public site: <a href="https://mmafricankitchen.com/">mmafricankitchen.com</a> · Old site needing redirect: <a href="https://m-mafricankitchen.com/">m-mafricankitchen.com</a><br>
-      Prepared by Ni Biashara for M&M African Kitchen & Bar. Production/DNS/payment/POS changes happen only after approval and verification.
-    </div>
+      <section class="inner">
+        <span class="tag">Safe sequence</span>
+        <div class="path" style="margin-top:12px">
+          <div class="step"><b>1. Sign</b><small>notary / agreement</small></div>
+          <div class="step"><b>2. Open</b><small>owner logs in</small></div>
+          <div class="step"><b>3. Invite</b><small>collaborator access</small></div>
+          <div class="step"><b>4. Test</b><small>read-only first</small></div>
+          <div class="step"><b>5. Approve</b><small>exact change</small></div>
+          <div class="step"><b>6. Verify</b><small>proof + rollback</small></div>
+        </div>
+      </section>
+
+      <footer class="inner footer">
+        Public site: <a href="https://mmafricankitchen.com/">mmafricankitchen.com</a> · Old site: <a href="https://m-mafricankitchen.com/">m-mafricankitchen.com</a> · Backup mirror: <a href="https://twe-cloud.github.io/mm-african-kitchen-preview/">ready</a><br>
+        Prepared by Ni Biashara for M&M African Kitchen & Bar. No production DNS, mailbox, payment, or POS change happens without approval and verification.
+      </footer>
+    </article>
   </main>
 </body>
 </html>
