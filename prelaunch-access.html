@@ -25,7 +25,7 @@
     .icon{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:var(--soft);font-size:24px;border:1px solid var(--line)}
     .grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:18px 0}.card{border:1px solid var(--line);background:#fff;border-radius:22px;padding:16px;min-width:0}.num{font-weight:900;color:var(--gold);font-size:.8rem;text-transform:uppercase;letter-spacing:.08em}
     .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:stretch;margin-top:14px}.step{border:1px solid var(--line);border-radius:20px;background:#fff;padding:14px;text-align:center;min-width:0}.arrow{display:grid;place-items:center;color:var(--gold);font-weight:900;font-size:1.5rem}.step .icon{margin:0 auto 8px}
-    .status{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{border-left:6px solid var(--ok);background:#fff;border-radius:18px;padding:14px;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.stat.wait{border-left-color:var(--warn)}
+    .status{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.single-status{grid-template-columns:1fr;margin-top:12px}.stat{border-left:6px solid var(--ok);background:#fff;border-radius:18px;padding:14px;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.stat.wait{border-left-color:var(--warn)}
     a{color:#8a4c0a;font-weight:900}.footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}.tiny{font-size:.86rem;color:var(--muted)}
     @media(max-width:860px){.hero,.grid4,.status{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.arrow{transform:rotate(90deg);height:20px}header{grid-template-columns:70px 1fr}.brand{grid-column:1/-1;text-align:left}.logo{width:66px;height:66px}.page{padding:18px}.panel{padding:18px}}
     @media print{body{background:white}.page{max-width:none}.panel,.card,.step,.stat{break-inside:avoid;box-shadow:none}.hero{grid-template-columns:1fr 1fr}.grid4{grid-template-columns:repeat(4,1fr)}.flow{grid-template-columns:repeat(5,1fr)}.arrow{transform:none}.footer{font-size:10px}}
@@ -34,7 +34,7 @@
 <body>
   <main class="page">
     <header>
-      <img class="logo" src="assets/mm-logo.png" alt="M&M African Kitchen & Bar logo" />
+      <img class="logo" src="assets/brand/mm-logo.png" alt="M&M African Kitchen & Bar logo" />
       <div>
         <div class="pill">June launch access</div>
         <h1>Ola, we need 4 keys.</h1>
@@ -55,6 +55,9 @@
         <div class="status">
           <div class="stat"><strong>✅ New site live</strong><br><span class="tiny">mmafricankitchen.com works.</span></div>
           <div class="stat wait"><strong>⚠️ Old site separate</strong><br><span class="tiny">m-mafricankitchen.com still needs redirect access.</span></div>
+            <div class="stat"><strong>✅ Backup mirror ready</strong><br><span class="tiny">Ni Biashara covers failover hosting.</span></div>
+        </div>
+        <div class="status single-status">
           <div class="stat wait"><strong>⚠️ Integrations waiting</strong><br><span class="tiny">Square, Uber, POS, mailbox need access.</span></div>
         </div>
       </div>
@@ -93,7 +96,6 @@
       <div class="actions">
         <div class="action"><div class="icon">📧</div><div><strong>Email recommendation:</strong> Google Workspace. One paid admin inbox can power aliases/groups for info@, orders@, and events@.</div></div>
         <div class="action"><div class="icon">🍴</div><div><strong>Uber/POS fallback:</strong> if direct API access is blocked, approve a kitchen-ticket bridge while partner access is requested. Keep Grubhub → TouchBistro untouched.</div></div>
-        <div class="action"><div class="icon">🛟</div><div><strong>Backup host:</strong> approve a cheap static mirror so the site has a tested fallback if Netlify has an outage.</div></div>
       </div>
     </section>
 

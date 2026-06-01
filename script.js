@@ -7,6 +7,10 @@ const formResult = document.querySelector("[data-form-result]");
 const performerForm = document.querySelector("[data-performer-form]");
 const performerResult = document.querySelector("[data-performer-result]");
 const visitMap = document.querySelector("[data-visit-map]");
+const rewardsGate = document.querySelector("[data-rewards-gate]");
+const rewardsForm = document.querySelector("[data-rewards-form]");
+const rewardsContent = document.querySelector("[data-rewards-content]");
+const rewardsResult = document.querySelector("[data-rewards-result]");
 const restaurantPhone = "+19453270366";
 
 function showCallPrompt(resultElement, message) {
@@ -60,6 +64,32 @@ performerForm?.addEventListener("submit", (event) => {
   const date = data.get("date") || "date flexible";
   showCallPrompt(performerResult, `Ready, ${name}: ask about a ${type} set for ${date}.`);
 });
+
+/* ── Rewards email gate ── */
+(function initRewardsGate() {
+  if (!rewardsGate || !rewardsContent) return;
+  const enrolled = localStorage.getItem("mm_rewards_email");
+  if (enrolled) {
+    rewardsGate.classList.add("is-enrolled");
+    rewardsContent.hidden = false;
+    return;
+  }
+  rewardsForm?.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const email = rewardsForm.elements.email.value.trim();
+    if (!email) return;
+    const body = new URLSearchParams(new FormData(rewardsForm)).toString();
+    fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body })
+      .then(function () {
+        localStorage.setItem("mm_rewards_email", email);
+        rewardsGate.classList.add("is-enrolled");
+        rewardsContent.hidden = false;
+      })
+      .catch(function () {
+        if (rewardsResult) rewardsResult.textContent = "Something went wrong. Try again or call M&M.";
+      });
+  });
+})();
 
 if (visitMap && window.L) {
   const restaurantCoordinates = [33.1799294, -96.8669398];
