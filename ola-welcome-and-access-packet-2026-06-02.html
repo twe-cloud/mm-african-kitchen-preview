@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="assets/brand/mm-logo.png" />
   <meta name="robots" content="noindex,nofollow" />
-  <title>M&M African Kitchen & Bar — Pre-Launch Brief</title>
+  <title>M&M African Kitchen & Bar — Welcome + Access Packet</title>
   <style>
     :root {
       --bg: #f6f3ef;
@@ -121,128 +121,123 @@
           <img src="assets/brand/mm-logo.png" alt="M&amp;M African Kitchen &amp; Bar" class="hero-logo" onerror="this.style.display='none'" />
           <span class="hero-brand">M&amp;M African Kitchen &amp; Bar</span>
         </div>
-        <div class="hero-badge">Pre-launch Brief</div>
-        <h1>Open these four doors, and the rest becomes controlled rollout.</h1>
-        <p class="hero-lede">The website is already live. To finish the June setup cleanly, the remaining work is access, verification, and careful cutover — not another rebuild.</p>
+        <div class="hero-badge">Welcome + Access Packet</div>
+        <h1>We’re excited to earn your trust and business.</h1>
+        <p class="hero-lede">The goal is simple: make M&amp;M easier to check, easier to update, and easier to run without making you learn developer tools or hand over more control than necessary.</p>
       </header>
 
       <section class="sec">
-        <span class="sec-label">Access rule</span>
-        <h2 class="sec-title">Log in live. Don’t send secrets.</h2>
-        <div class="callout warn">
+        <span class="sec-label">Operating model</span>
+        <h2 class="sec-title">Simple ownership. Clear visibility. Safe access.</h2>
+        <div class="cols">
+          <div class="card">
+            <div class="card-title">What stays true</div>
+            <ul>
+              <li>You stay owner.</li>
+              <li>Ni Biashara handles the technical lift.</li>
+              <li>You can check progress, files, and requests anytime.</li>
+              <li>Access can be reduced or revoked by M&amp;M at any time.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-title">What we are avoiding</div>
+            <ul>
+              <li>No GitHub or local-folder dependency for day-to-day client visibility.</li>
+              <li>No ChatGPT thread acting as the source of truth.</li>
+              <li>No auth sprawl just to check what changed.</li>
+              <li>No risky changes now that would complicate the Cloudflare move later.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec">
+        <span class="sec-label">Recommended stack</span>
+        <h2 class="sec-title">The stack should feel normal, not technical.</h2>
+        <ul class="stack">
+          <li class="stack-row"><div class="stack-dot">🌐</div><div><strong>Name.com</strong><span>The domain is registered here now. Final client-visible control and handoff still need to be completed deliberately.</span></div></li>
+          <li class="stack-row"><div class="stack-dot">🛡️</div><div><strong>Cloudflare</strong><span>Target visibility, security, redirect, and governance layer once the blocker clears and the move is safe.</span></div></li>
+          <li class="stack-row"><div class="stack-dot">📊</div><div><strong>Google Sheet</strong><span>The owner-readable tracker for what is done, what is pending, what changed, and what needs approval.</span></div></li>
+          <li class="stack-row"><div class="stack-dot">📁</div><div><strong>Google Drive</strong><span>The shared home for menus, photos, flyers, PDFs, and approval files.</span></div></li>
+          <li class="stack-row"><div class="stack-dot">💬</div><div><strong>Business WhatsApp</strong><span>The practical lane for questions, change requests, approvals, and status checks.</span></div></li>
+        </ul>
+      </section>
+
+      <section class="sec">
+        <span class="sec-label">Current state</span>
+        <h2 class="sec-title">What is true right now</h2>
+        <div class="callout info">
           <div class="callout-mark">!</div>
           <div>
-            <ul class="mini-list" style="margin-top:0;">
-              <li>No passwords, recovery codes, card numbers, or API keys in chat.</li>
-              <li>Read-only checks happen first.</li>
-              <li>Customer-facing changes happen only after approval and verification.</li>
-            </ul>
+            <p><strong>mmafricankitchen.com is live.</strong> The domain is registered at Name.com. DNS is currently on Netlify DNS / NS1. Cloudflare is the intended control layer once the blocker clears safely. That means Cloudflare is the target state, not the live state yet.</p>
           </div>
         </div>
-      </section>
-
-      <section class="sec">
-        <span class="sec-label">Today’s position</span>
-        <h2 class="sec-title">What is already ready, and what still needs a door opened</h2>
-        <div class="cols">
+        <div class="cols" style="margin-top:16px;">
           <div class="card">
-            <div class="card-title">Ready now</div>
+            <div class="card-title">Target M&amp;M control</div>
             <ul>
-              <li>New website live at mmafricankitchen.com</li>
-              <li>Backup static mirror already handled</li>
-              <li>Owner packet, tracker, and support lane prepared</li>
+              <li>Registrar control or deliberate transfer path</li>
+              <li>Cloudflare zone/team access once the move is complete</li>
+              <li>Google account or Workspace for Drive and Sheets</li>
             </ul>
           </div>
           <div class="card">
-            <div class="card-title">Still needs access</div>
+            <div class="card-title">Ni Biashara working access</div>
             <ul>
-              <li>Old website redirect path</li>
-              <li>Email/mailbox authority</li>
-              <li>Square production setup</li>
-              <li>Uber Eats / POS bridge authority</li>
+              <li>Scoped collaborator/operator access where possible</li>
+              <li>Edit access to the Google Sheet tracker</li>
+              <li>Edit access to the shared Drive folder</li>
             </ul>
           </div>
         </div>
       </section>
 
       <section class="sec">
-        <span class="sec-label">The four keys</span>
-        <h2 class="sec-title">Bring these four access areas into the room</h2>
-        <div class="cols">
-          <div class="card"><div class="card-title">1. Old website</div><p>StormerHost, cPanel, or WordPress admin for m-mafricankitchen.com so old links can redirect cleanly.</p></div>
-          <div class="card"><div class="card-title">2. Email</div><p>Google Workspace or another chosen mailbox provider for @mmafricankitchen.com.</p></div>
-          <div class="card"><div class="card-title">3. Square</div><p>Dashboard access, production location ID, and the first payment/order surface to activate.</p></div>
-          <div class="card"><div class="card-title">4. Uber + POS</div><p>Uber Eats Manager, TouchBistro access, Grubhub status, and the incoming POS path.</p></div>
+        <span class="sec-label">ChatGPT option</span>
+        <h2 class="sec-title">Helpful as a conversation layer. Not the system.</h2>
+        <div class="cols three">
+          <div class="card"><div class="card-title">Good for</div><p>Questions, weekly summaries, rough change requests, copy ideas, and plain-English check-ins.</p></div>
+          <div class="card"><div class="card-title">Not for</div><p>Hosting control, DNS control, final approvals history, file storage, or the source of truth for what is live.</p></div>
+          <div class="card"><div class="card-title">Best rule</div><p>If a real change happens, it gets applied and tracked in the real project systems.</p></div>
         </div>
       </section>
 
       <section class="sec">
-        <span class="sec-label">Portal links</span>
-        <h2 class="sec-title">Open the right screen fast</h2>
-        <div class="card">
-          <div class="card-title">Email</div>
-          <p>Create the mailbox, add users or aliases, then approve Google DNS records.</p>
-          <div class="button-grid">
-            <a class="btn primary" href="https://workspace.google.com/business/signup" target="_blank" rel="noopener">Create Google Workspace</a>
-            <a class="btn" href="https://admin.google.com/" target="_blank" rel="noopener">Google Admin</a>
-            <a class="btn" href="https://support.google.com/a/answer/140034" target="_blank" rel="noopener">Google MX setup</a>
-          </div>
-        </div>
-        <div class="card" style="margin-top:14px;">
-          <div class="card-title">Square</div>
-          <p>Confirm the production account, location, and whether checkout links or Orders API go first.</p>
-          <div class="button-grid">
-            <a class="btn primary" href="https://squareup.com/dashboard/" target="_blank" rel="noopener">Square Dashboard</a>
-            <a class="btn" href="https://squareup.com/dashboard/locations" target="_blank" rel="noopener">Square Locations</a>
-            <a class="btn" href="https://developer.squareup.com/apps" target="_blank" rel="noopener">Square Developer Apps</a>
-          </div>
-        </div>
-        <div class="card" style="margin-top:14px;">
-          <div class="card-title">Ordering + POS</div>
-          <p>Check direct access first; if blocked, approve an email or printed-ticket fallback.</p>
-          <div class="button-grid">
-            <a class="btn primary" href="https://merchants.ubereats.com/manager/" target="_blank" rel="noopener">Uber Eats Manager</a>
-            <a class="btn" href="https://admin.touchbistro.com/" target="_blank" rel="noopener">TouchBistro Admin</a>
-            <a class="btn" href="https://restaurant.grubhub.com/login/" target="_blank" rel="noopener">Grubhub Restaurants</a>
-          </div>
-        </div>
-        <div class="card" style="margin-top:14px;">
-          <div class="card-title">Old domain</div>
-          <p>Preferred path: DNS or cPanel redirect. Fallback: WordPress redirect if that is easier to access.</p>
-          <div class="button-grid">
-            <a class="btn primary" href="https://cpanel.m-mafricankitchen.com/" target="_blank" rel="noopener">Old cPanel</a>
-            <a class="btn" href="https://m-mafricankitchen.com/wp-admin/" target="_blank" rel="noopener">Old WordPress Admin</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="sec">
-        <span class="sec-label">Safe sequence</span>
-        <h2 class="sec-title">The clean order of operations</h2>
+        <span class="sec-label">Change flow</span>
+        <h2 class="sec-title">What a normal request looks like</h2>
         <div class="phases">
           <div class="phase current">
-            <span class="phase-label now">During the meeting</span>
-            <h3>Open, invite, confirm</h3>
+            <span class="phase-label now">Request path</span>
+            <h3>Ask in plain English</h3>
             <ul>
-              <li>Owner logs in live</li>
-              <li>Collaborator access or exact approval is granted</li>
-              <li>We test read-only first</li>
+              <li>Send the request on WhatsApp or note it in the shared tracker</li>
+              <li>We clarify the exact action if needed</li>
+              <li>We make the actual website or file change</li>
             </ul>
           </div>
           <div class="phase">
-            <span class="phase-label later">After approval</span>
-            <h3>Execute and verify</h3>
+            <span class="phase-label later">Verification path</span>
+            <h3>Check the result safely</h3>
             <ul>
-              <li>Apply the exact change</li>
-              <li>Verify the result and rollback path</li>
-              <li>Record the outcome in the tracker</li>
+              <li>You review the preview or live result</li>
+              <li>The tracker records what changed</li>
+              <li>The July governance path stays clean for the Cloudflare move</li>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec">
+        <div class="callout check">
+          <div class="callout-mark">✓</div>
+          <div>
+            <p><strong>Best current recommendation:</strong> keep the real project in client-owned business tools — domain layer, Cloudflare target layer, tracker, and shared files — and use ChatGPT only if you want an easier conversation surface on top.</p>
           </div>
         </div>
       </section>
 
       <footer class="footer">
-        <p>Public site: mmafricankitchen.com · Old site: m-mafricankitchen.com · Backup mirror remains available in the preview repo. No production DNS, mailbox, payment, or POS change happens without approval and verification.</p>
+        <p>The safest structure is: registrar ownership in Name.com, operational web visibility in Cloudflare once cleared, day-to-day tracking in Google Sheet, files in Google Drive, and ChatGPT only as an optional conversation layer.</p>
         <div class="sig">
           <div class="sig-name">Ni Biashara LLC</div>
           <div class="sig-role">Technology &amp; operations partner for M&amp;M African Kitchen &amp; Bar</div>
