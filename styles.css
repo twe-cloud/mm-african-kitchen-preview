@@ -2732,7 +2732,7 @@ h3 {
 
 @media (max-width: 760px) {
   .site-header {
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto 1fr auto;
     min-height: 66px;
   }
 
@@ -2759,6 +2759,7 @@ h3 {
 
   .menu-toggle {
     display: block;
+    margin-left: auto;
     justify-self: end;
   }
 
@@ -2864,6 +2865,24 @@ h3 {
   .plate-card-feature {
     grid-column: auto;
     min-height: 300px;
+  }
+
+  .plate-card {
+    min-height: 220px;
+  }
+
+  .plate-card-snack {
+    min-height: 210px;
+  }
+
+  .plate-card figcaption {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .plate-card figcaption strong {
+    font-size: clamp(18px, 6vw, 28px);
   }
 
   .catering-media,
