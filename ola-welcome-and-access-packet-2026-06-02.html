@@ -3,192 +3,150 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="assets/brand/ni-biashara-official-logo.png" />
   <meta name="robots" content="noindex,nofollow" />
   <title>M&M African Kitchen & Bar — Welcome + Access Packet</title>
-  <style>
-    :root { --bg:#f6f3ef; --paper:#fff; --ink:#161110; --body:#3d3530; --muted:#7a6e64; --green:#14301f; --green-mid:#1c4a2d; --gold:#b8801a; --gold-soft:#f0dbb8; --line:#e4d9cd; --line-faint:#eee7dd; --warm-bg:#faf7f3; --radius-lg:24px; --radius:16px; --radius-sm:12px; }
-    * { box-sizing:border-box; margin:0; padding:0; }
-    html { background:var(--bg); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
-    body { font:400 15.5px/1.7 -apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Inter,system-ui,sans-serif; color:var(--body); }
-    strong { color:var(--ink); font-weight:600; }
-    a { color:inherit; }
-    .page { max-width:740px; margin:0 auto; padding:56px 20px 72px; }
-    .sheet { background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-lg); box-shadow:0 0 0 1px rgba(0,0,0,.02),0 4px 16px rgba(20,12,6,.04),0 24px 64px rgba(20,12,6,.07); overflow:hidden; }
-    .hero { background:linear-gradient(165deg,#122a1a 0%,var(--green-mid) 55%,#1f5630 100%); padding:56px 52px 52px; position:relative; }
-    .hero::before { content:''; position:absolute; top:-40%; right:-10%; width:480px; height:480px; background:radial-gradient(circle,rgba(184,128,26,.10) 0%,transparent 65%); pointer-events:none; }
-    .hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(255,255,255,.06) 30%,rgba(255,255,255,.06) 70%,transparent); }
-    .hero-top { display:flex; align-items:center; gap:16px; margin-bottom:32px; }
-    .hero-logo { width:48px; height:48px; border-radius:12px; background:rgba(255,255,255,.12); padding:6px; object-fit:contain; }
-    .hero-brand { font-size:.68rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.55); }
-    .hero-badge { display:inline-flex; align-items:center; gap:7px; font-size:.64rem; font-weight:700; letter-spacing:.11em; text-transform:uppercase; color:var(--gold-soft); background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.10); border-radius:999px; padding:5px 14px 5px 11px; margin-bottom:24px; }
-    .hero-badge::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--gold); }
-    .hero h1 { color:#fff; font-weight:700; font-size:clamp(1.6rem,4.2vw,2.35rem); line-height:1.12; letter-spacing:-.03em; margin-bottom:16px; max-width:590px; }
-    .hero-lede { color:rgba(255,255,255,.76); font-size:.98rem; line-height:1.65; max-width:560px; }
-    .sec { padding:40px 52px; }
-    .sec + .sec { border-top:1px solid var(--line-faint); }
-    .sec-label { display:block; font-size:.62rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
-    .sec-title { font-size:1.28rem; font-weight:700; letter-spacing:-.02em; line-height:1.2; color:var(--green); margin-bottom:10px; }
-    .sec-desc { color:var(--muted); font-size:.92rem; line-height:1.65; max-width:580px; }
-    .cols { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:22px; }
-    .card { background:var(--warm-bg); border:1px solid var(--line); border-radius:var(--radius); padding:22px 24px 20px; }
-    .card-title { font-size:.88rem; font-weight:700; color:var(--ink); margin-bottom:8px; line-height:1.25; }
-    .card p, .card li { font-size:.84rem; color:var(--muted); line-height:1.6; }
-    .card ul { padding-left:15px; margin:0; }
-    .card li { margin:4px 0; }
-    .card li::marker { color:var(--gold); }
-    .stack { list-style:none; display:flex; flex-direction:column; gap:10px; margin-top:20px; }
-    .stack-row { display:flex; align-items:flex-start; gap:14px; padding:16px 20px; background:var(--warm-bg); border:1px solid var(--line); border-radius:var(--radius-sm); }
-    .stack-dot { flex-shrink:0; width:32px; height:32px; border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:.88rem; background:var(--paper); border:1px solid var(--line); }
-    .stack-row strong { display:block; font-size:.84rem; margin-bottom:2px; }
-    .stack-row span { font-size:.8rem; color:var(--muted); line-height:1.55; }
-    .stack-row a { text-decoration:none; }
-    .stack-row a strong { text-decoration:underline; text-decoration-color:rgba(184,128,26,.45); text-underline-offset:3px; }
-    .callout { display:flex; gap:14px; align-items:flex-start; padding:20px 22px; border-radius:var(--radius-sm); }
-    .callout.info { background:linear-gradient(135deg,#fefcf7,#fdf5e8); border:1px solid #e8d4b4; }
-    .callout.check { background:linear-gradient(135deg,#f6fbf7,#eef6ef); border:1px solid #c8ddc9; }
-    .callout-mark { flex-shrink:0; width:28px; height:28px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:.78rem; font-weight:700; margin-top:1px; }
-    .callout.info .callout-mark { background:rgba(184,128,26,.10); color:var(--gold); }
-    .callout.check .callout-mark { background:rgba(28,74,45,.10); color:var(--green-mid); }
-    .callout p { font-size:.86rem; line-height:1.6; }
-    .callout.info p { color:#5a4128; }
-    .callout.check p { color:#2a4430; }
-    .footer { padding:36px 52px 44px; border-top:1px solid var(--line-faint); }
-    .footer p { font-size:.88rem; color:var(--muted); line-height:1.6; }
-    .footer .sig { margin-top:20px; }
-    .footer .sig-name { font-size:.92rem; font-weight:700; color:var(--ink); }
-    .footer .sig-role { font-size:.78rem; color:var(--muted); margin-top:2px; }
-    @media (max-width:680px) { .page { padding:24px 14px 48px; } .hero { padding:40px 28px 36px; } .sec { padding:28px 28px; } .footer { padding:28px 28px 36px; } .cols { grid-template-columns:1fr; } .hero h1 { font-size:1.5rem; } .hero-top { margin-bottom:28px; } }
-    @media (max-width:400px) { .hero { padding:32px 20px 28px; } .sec { padding:24px 20px; } .footer { padding:24px 20px 32px; } }
-  </style>
+  <link rel="stylesheet" href="assets/owner-packet.css" />
+  <style>body{}</style>
 </head>
 <body>
-  <main class="page">
-    <article class="sheet">
-      <header class="hero">
-        <div class="hero-top">
-          <img src="assets/brand/ni-biashara-official-logo.png" alt="Ni Biashara LLC" class="hero-logo" onerror="this.style.display='none'" />
-          <span class="hero-brand">Ni Biashara LLC</span>
+<main class="page"><article class="sheet">
+  <header class="hero">
+    <div class="hero-copy">
+      <div class="topline">
+        <div class="brand-lockup">
+          <img src="assets/brand/ni-biashara-official-logo.png" alt="Ni Biashara LLC" />
+          <div class="brand-meta">
+            <div class="brand-name">Ni Biashara LLC</div>
+            <div class="meta-kicker">For M&amp;M African Kitchen &amp; Bar</div>
+          </div>
         </div>
-        <div class="hero-badge">Welcome + Access Packet</div>
-        <h1>We’re excited to earn your trust and business.</h1>
-        <p class="hero-lede">What is live, how we will review it, and what we need next.</p>
-      </header>
+        <div class="meta-kicker">Prepared for owner review</div>
+      </div>
+      <div class="badge">Access packet</div>
+      <h1>Current setup. Access points. Next decisions.</h1>
+      <p class="lede">A tight owner packet for the live site, the shared review tools, and the remaining approvals.</p>
+      <div class="hero-note">The goal here is not more explanation. It is one clean place to see what is live, what still needs access, and what gets reviewed next.</div>
+    </div>
+    <div class="hero-media">
+      <img class="main-media" src="assets/official/featured-thumb.jpg" alt="M&amp;M African Kitchen &amp; Bar" />
+      <div class="hero-seal">
+        <img src="assets/brand/mm-logo.png" alt="M&amp;M African Kitchen &amp; Bar logo" />
+        <span>Owner review set</span>
+      </div>
+    </div>
+  </header>
 
-      <section class="sec">
-        <span class="sec-label">Overview</span>
-        <h2 class="sec-title">What this covers</h2>
-        <div class="cols">
-          <div class="card">
-            <div class="card-title">How we work</div>
-            <ul>
-              <li>M&amp;M stays owner.</li>
-              <li>Ni Biashara handles the technical work.</li>
-              <li>You can check progress anytime.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <div class="card-title">Inside this packet</div>
-            <ul>
-              <li>What is live</li>
-              <li>Review rhythm</li>
-              <li>Next steps</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+        <div class="content">
+          <section class="truth-strip">
+            <div class="truth-item"><div class="truth-label">What is live</div><strong>Public website</strong><span>mmafricankitchen.com is already running.</span></div>
+            <div class="truth-item"><div class="truth-label">Needs access</div><strong>Redirect + profile access</strong><span>Old-page control and remaining profile updates are still pending.</span></div>
+            <div class="truth-item"><div class="truth-label">Next move</div><strong>Owner next</strong><span>Review the tools below, then approve the remaining access items.</span></div>
+          </section>
 
-      <section class="sec">
-        <span class="sec-label">Tools</span>
-        <h2 class="sec-title">Where to check</h2>
-        <ul class="stack">
-          <li class="stack-row"><div class="stack-dot">🌍</div><div><a href="https://mmafricankitchen.com/" target="_blank" rel="noopener"><strong>Live website</strong></a><span>Current site.</span></div></li>
-          <li class="stack-row"><div class="stack-dot">📊</div><div><a href="https://docs.google.com/spreadsheets/d/1tHFkeCxQjXdVn8TFPoFoGzYRbSlOIGYAbj93TFaU8nA/edit" target="_blank" rel="noopener"><strong>Google Sheet</strong></a><span>Requests and approvals.</span></div></li>
-          <li class="stack-row"><div class="stack-dot">📁</div><div><a href="https://drive.google.com/" target="_blank" rel="noopener"><strong>Google Drive</strong></a><span>Menus, photos, and files.</span></div></li>
-          <li class="stack-row"><div class="stack-dot">🌐</div><div><a href="https://www.name.com/account/login" target="_blank" rel="noopener"><strong>Name.com</strong></a><span>Domain access.</span></div></li>
-        </ul>
-      </section>
+          <section class="section">
+            <div class="proof-grid">
+              <div class="media-panel">
+                <img src="assets/proof/live-site-home.png" alt="Live M&amp;M website screenshot" />
+                <div class="media-caption"><strong>Live site proof</strong><span>The current public site is already running. The remaining work is continuity, access, and public profile alignment.</span></div>
+              </div>
+              <div class="fact-panel">
+                <h3>Current status</h3>
+                <ul class="fact-list">
+                  <li>The current public site is already live.</li>
+                  <li>The review path should stay simple.</li>
+                  <li>What remains: access, profile updates, and redirect cleanup.</li>
+                  <li>Sensitive logins should stay in live access only.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
 
-      <section class="sec">
-        <span class="sec-label">Current state</span>
-        <h2 class="sec-title">What is true now</h2>
-        <div class="callout info">
-          <div class="callout-mark">!</div>
-          <div>
-            <p><strong>mmafricankitchen.com is live.</strong> Next: update public links, get access, and clean up the redirect.</p>
-          </div>
-        </div>
-      </section>
+          <section class="section">
+            <div class="section-head">
+              <div><div class="eyebrow">Access map</div><h2>Where to check</h2></div>
+              <div class="section-intro">These are the only tools that matter for the owner review path right now.</div>
+            </div>
+            <div class="ledger">
+              <div class="ledger-row ledger-head">
+                <div class="ledger-cell">Tool</div>
+                <div class="ledger-cell">Why it matters</div>
+                <div class="ledger-cell">Current state</div>
+                <div class="ledger-cell">Owner action</div>
+              </div>
+              <div class="ledger-row">
+                <div class="ledger-cell" data-label="Tool"><strong><a href="https://mmafricankitchen.com/" target="_blank" rel="noopener">Live website</a></strong></div>
+                <div class="ledger-cell" data-label="Why it matters">Fast public check of what customers already see.</div>
+                <div class="ledger-cell" data-label="Current state"><span class="status-chip live">Live</span></div>
+                <div class="ledger-cell" data-label="Owner action">No action needed for review.</div>
+              </div>
+              <div class="ledger-row">
+                <div class="ledger-cell" data-label="Tool"><strong><a href="https://docs.google.com/spreadsheets/d/1tHFkeCxQjXdVn8TFPoFoGzYRbSlOIGYAbj93TFaU8nA/edit" target="_blank" rel="noopener">Google Sheet</a></strong></div>
+                <div class="ledger-cell" data-label="Why it matters">Requests, approvals, and status in one place.</div>
+                <div class="ledger-cell" data-label="Current state"><span class="status-chip active">Active</span></div>
+                <div class="ledger-cell" data-label="Owner action">Use this for review and signoff.</div>
+              </div>
+              <div class="ledger-row">
+                <div class="ledger-cell" data-label="Tool"><strong><a href="https://drive.google.com/" target="_blank" rel="noopener">Google Drive</a></strong></div>
+                <div class="ledger-cell" data-label="Why it matters">Menus, photos, and shared files stay together.</div>
+                <div class="ledger-cell" data-label="Current state"><span class="status-chip active">Active</span></div>
+                <div class="ledger-cell" data-label="Owner action">Use this for final files only.</div>
+              </div>
+              <div class="ledger-row">
+                <div class="ledger-cell" data-label="Tool"><strong><a href="https://www.name.com/account/login" target="_blank" rel="noopener">Domain access</a></strong></div>
+                <div class="ledger-cell" data-label="Why it matters">Used for domain continuity and transition control.</div>
+                <div class="ledger-cell" data-label="Current state"><span class="status-chip pending">Pending</span></div>
+                <div class="ledger-cell" data-label="Owner action">Open live access when ready.</div>
+              </div>
+              <div class="ledger-row">
+                <div class="ledger-cell" data-label="Tool"><strong>Old-page redirect</strong></div>
+                <div class="ledger-cell" data-label="Why it matters">Moves old traffic cleanly to the live site.</div>
+                <div class="ledger-cell" data-label="Current state"><span class="status-chip pending">Pending</span></div>
+                <div class="ledger-cell" data-label="Owner action">Provide admin or collaborator access.</div>
+              </div>
+            </div>
+            <div class="callout">Sensitive credentials stay in live login only. No passwords, recovery codes, or payment details should be sent in chat.</div>
+          </section>
 
-      <section class="sec">
-        <span class="sec-label">Review rhythm</span>
-        <h2 class="sec-title">How we review</h2>
-        <div class="cols">
-          <div class="card">
-            <div class="card-title">Weekly</div>
-            <ul>
-              <li>Changes made</li>
-              <li>Completed requests</li>
-              <li>Blocked items</li>
-            </ul>
-          </div>
-          <div class="card">
-            <div class="card-title">End of month</div>
-            <ul>
-              <li>What shipped</li>
-              <li>What is still blocked</li>
-              <li>Next priorities</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+          <section class="section">
+            <div class="grid-2">
+              <div class="rail-card">
+                <div class="eyebrow">Immediate owner actions</div>
+                <h3>What we need next</h3>
+                <ul>
+                  <li>Update Google Business Profile.</li>
+                  <li>Update Instagram, Facebook, and any active listing still using the old page.</li>
+                  <li>Open the old-page redirect path.</li>
+                  <li>Confirm which business accounts are still active now.</li>
+                </ul>
+              </div>
+              <div class="single-rail">
+                <div class="rail-card">
+                  <div class="eyebrow">Weekly review</div>
+                  <h3>What gets checked</h3>
+                  <ul>
+                    <li>Site changes that went live</li>
+                    <li>Completed requests</li>
+                    <li>Blocked items waiting on access or approval</li>
+                  </ul>
+                </div>
+                <div class="rail-card">
+                  <div class="eyebrow">Month end</div>
+                  <h3>What gets summarized</h3>
+                  <ul>
+                    <li>What shipped</li>
+                    <li>What still needs access</li>
+                    <li>What next month should focus on</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
 
-      <section class="sec">
-        <span class="sec-label">Next steps</span>
-        <h2 class="sec-title">What we need next</h2>
-        <div class="cols">
-          <div class="card">
-            <div class="card-title">1. Update public links</div>
-            <ul>
-              <li>Google Business Profile</li>
-              <li>Instagram and Facebook</li>
-              <li>Any listing still using the old page</li>
-            </ul>
-          </div>
-          <div class="card">
-            <div class="card-title">2. Give redirect access</div>
-            <ul>
-              <li>Access to the old site</li>
-              <li>Redirect old page to new site</li>
-            </ul>
+          <div class="footer">
+            <div><strong>Ni Biashara LLC</strong><p>Owner review packet for the live site, access tools, and remaining approvals.</p></div>
+            <p>Use this page for the active website handoff.</p>
           </div>
         </div>
-        <div class="cols" style="margin-top:14px;">
-          <div class="card">
-            <div class="card-title">3. Confirm active accounts</div>
-            <ul>
-              <li>What is still active</li>
-              <li>What should carry the new link</li>
-            </ul>
-          </div>
-          <div class="card">
-            <div class="card-title">4. Keep updates in one place</div>
-            <ul>
-              <li>Tracker for requests and approvals</li>
-              <li>Drive for files</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <footer class="footer">
-        <p>This packet keeps the work clear and easy to review.</p>
-        <div class="sig">
-          <div class="sig-name">Ni Biashara LLC</div>
-          <div class="sig-role">Technology &amp; operations partner for M&amp;M African Kitchen &amp; Bar</div>
-        </div>
-      </footer>
-    </article>
-  </main>
+        </article></main>
 </body>
 </html>

@@ -3,253 +3,128 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="assets/brand/ni-biashara-official-logo.png" />
   <meta name="robots" content="noindex,nofollow" />
   <title>M&M African Kitchen & Bar — Pre-Launch Brief</title>
-  <style>
-    :root {
-      --bg: #f6f3ef;
-      --paper: #ffffff;
-      --ink: #161110;
-      --body: #3d3530;
-      --muted: #7a6e64;
-      --green: #14301f;
-      --green-mid: #1c4a2d;
-      --gold: #b8801a;
-      --gold-soft: #f0dbb8;
-      --line: #e4d9cd;
-      --line-faint: #eee7dd;
-      --warm-bg: #faf7f3;
-      --radius-lg: 24px;
-      --radius: 16px;
-      --radius-sm: 12px;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { background: var(--bg); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-    body { font: 400 15.5px/1.7 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Inter, system-ui, sans-serif; color: var(--body); }
-    strong { color: var(--ink); font-weight: 600; }
-    a { color: inherit; }
-    .page { max-width: 740px; margin: 0 auto; padding: 56px 20px 72px; }
-    .sheet { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: 0 0 0 1px rgba(0,0,0,.02), 0 4px 16px rgba(20,12,6,.04), 0 24px 64px rgba(20,12,6,.07); overflow: hidden; }
-    .hero { background: linear-gradient(165deg, #122a1a 0%, var(--green-mid) 55%, #1f5630 100%); padding: 56px 52px 52px; position: relative; }
-    .hero::before { content: ''; position: absolute; top: -40%; right: -10%; width: 480px; height: 480px; background: radial-gradient(circle, rgba(184,128,26,.10) 0%, transparent 65%); pointer-events: none; }
-    .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,.06) 30%, rgba(255,255,255,.06) 70%, transparent); }
-    .hero-top { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
-    .hero-logo { width: 48px; height: 48px; border-radius: 12px; background: rgba(255,255,255,.10); padding: 5px; object-fit: contain; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
-    .hero-brand { font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.45); }
-    .hero-badge { display: inline-flex; align-items: center; gap: 7px; font-size: .64rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; color: var(--gold-soft); background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.10); border-radius: 999px; padding: 5px 14px 5px 11px; margin-bottom: 24px; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
-    .hero-badge::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
-    .hero h1 { color: #fff; font-weight: 700; font-size: clamp(1.6rem, 4.2vw, 2.4rem); line-height: 1.12; letter-spacing: -.03em; margin-bottom: 16px; max-width: 560px; }
-    .hero-lede { color: rgba(255,255,255,.72); font-size: .98rem; line-height: 1.65; max-width: 560px; }
-    .sec { padding: 40px 52px; }
-    .sec + .sec { border-top: 1px solid var(--line-faint); }
-    .sec-label { display: block; font-size: .62rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-    .sec-title { font-size: 1.28rem; font-weight: 700; letter-spacing: -.02em; line-height: 1.2; color: var(--green); margin-bottom: 10px; }
-    .sec-desc { color: var(--muted); font-size: .92rem; line-height: 1.65; max-width: 560px; }
-    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 22px; }
-    .cols.three { grid-template-columns: repeat(3, 1fr); }
-    .card { background: var(--warm-bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px 20px; }
-    .card-title { font-size: .88rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; line-height: 1.25; }
-    .card p, .card li { font-size: .84rem; color: var(--muted); line-height: 1.6; }
-    .card ul { padding-left: 15px; margin: 0; }
-    .card li { margin: 4px 0; }
-    .card li::marker { color: var(--gold); }
-    .stack { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
-    .stack-row { display: flex; align-items: flex-start; gap: 14px; padding: 16px 20px; background: var(--warm-bg); border: 1px solid var(--line); border-radius: var(--radius-sm); }
-    .stack-dot { flex-shrink: 0; width: 32px; height: 32px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: .88rem; background: var(--paper); border: 1px solid var(--line); }
-    .stack-row strong { display: block; font-size: .84rem; margin-bottom: 1px; }
-    .stack-row span { font-size: .8rem; color: var(--muted); line-height: 1.55; }
-    .phases { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 22px; }
-    .phase { background: var(--warm-bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px 20px; }
-    .phase.current { border-color: var(--gold-soft); background: linear-gradient(180deg, #fffdf8, #fef7ec); }
-    .phase-label { display: inline-block; font-size: .58rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; padding: 3px 9px; border-radius: 5px; margin-bottom: 12px; }
-    .phase-label.now { background: rgba(28,74,45,.08); color: var(--green-mid); }
-    .phase-label.later { background: rgba(184,128,26,.08); color: #9a6a10; }
-    .phase h3 { font-size: .95rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; line-height: 1.25; }
-    .phase ul { padding-left: 15px; margin: 0; }
-    .phase li { font-size: .8rem; color: var(--muted); line-height: 1.55; margin: 4px 0; }
-    .phase li::marker { color: var(--gold); }
-    .callout { display: flex; gap: 14px; align-items: flex-start; padding: 20px 22px; border-radius: var(--radius-sm); }
-    .callout.info { background: linear-gradient(135deg, #fefcf7, #fdf5e8); border: 1px solid #e8d4b4; }
-    .callout.check { background: linear-gradient(135deg, #f6fbf7, #eef6ef); border: 1px solid #c8ddc9; }
-    .callout.warn { background: linear-gradient(135deg, #fff8f4, #faece5); border: 1px solid #ecd3c8; }
-    .callout-mark { flex-shrink: 0; width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: .78rem; font-weight: 700; margin-top: 1px; }
-    .callout.info .callout-mark { background: rgba(184,128,26,.10); color: var(--gold); }
-    .callout.check .callout-mark { background: rgba(28,74,45,.10); color: var(--green-mid); }
-    .callout.warn .callout-mark { background: rgba(120,48,24,.10); color: #8a3d1f; }
-    .callout p, .callout li { font-size: .86rem; line-height: 1.6; }
-    .callout.info p, .callout.info li { color: #5a4128; }
-    .callout.check p, .callout.check li { color: #2a4430; }
-    .callout.warn p, .callout.warn li { color: #5f3426; }
-    .button-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px; margin-top: 12px; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; border-radius: 999px; border: 1px solid #c99458; background: #fff5e4; color: #6c390d; padding: 9px 13px; font-weight: 800; font-size: .84rem; text-align: center; text-decoration: none; }
-    .btn.primary { background: var(--green); border-color: var(--green); color: #ffe2a7; }
-    .footer { padding: 36px 52px 44px; border-top: 1px solid var(--line-faint); }
-    .footer p { font-size: .88rem; color: var(--muted); line-height: 1.6; }
-    .footer .sig { margin-top: 20px; }
-    .footer .sig-name { font-size: .92rem; font-weight: 700; color: var(--ink); }
-    .footer .sig-role { font-size: .78rem; color: var(--muted); margin-top: 2px; }
-    .doc-links { display: grid; gap: 12px; margin-top: 22px; }
-    .doc-link { background: var(--warm-bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; text-decoration: none; }
-    .doc-link strong { display: block; font-size: .92rem; margin-bottom: 4px; }
-    .doc-link span { display: block; font-size: .82rem; color: var(--muted); line-height: 1.55; }
-    .mini-list { padding-left: 18px; margin-top: 10px; }
-    .mini-list li { color: var(--muted); font-size: .84rem; line-height: 1.58; margin: 4px 0; }
-    .mini-list li::marker { color: var(--gold); }
-    @media (max-width: 680px) {
-      .page { padding: 24px 14px 48px; }
-      .hero { padding: 40px 28px 36px; }
-      .sec { padding: 28px 28px; }
-      .footer { padding: 28px 28px 36px; }
-      .cols, .cols.three, .phases { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 1.5rem; }
-      .hero-top { margin-bottom: 28px; }
-    }
-    @media (max-width: 400px) {
-      .hero { padding: 32px 20px 28px; }
-      .sec { padding: 24px 20px; }
-      .footer { padding: 24px 20px 32px; }
-    }
-</style>
+  <link rel="stylesheet" href="assets/owner-packet.css" />
+  <style>body{}</style>
 </head>
 <body>
+<main class="page"><article class="sheet">
+  <header class="hero">
+    <div class="hero-copy">
+      <div class="topline">
+        <div class="brand-lockup">
+          <img src="assets/brand/ni-biashara-official-logo.png" alt="Ni Biashara LLC" />
+          <div class="brand-meta">
+            <div class="brand-name">Ni Biashara LLC</div>
+            <div class="meta-kicker">For M&amp;M African Kitchen &amp; Bar</div>
+          </div>
+        </div>
+        <div class="meta-kicker">Controlled rollout items</div>
+      </div>
+      <div class="badge">Pre-launch brief</div>
+      <h1>The remaining work is access, verification, and clean cutover.</h1>
+      <p class="lede">The site is already live. The items below are the remaining doors that still need to be opened carefully.</p>
+      <div class="hero-note">The rule stays the same: open live access when needed, keep credentials out of chat, and move customer-facing changes only after review.</div>
+    </div>
+    <div class="hero-media">
+      <img class="main-media" src="assets/owner-2026-05-22/bar-cocktails.jpg" alt="M&amp;M African Kitchen &amp; Bar" />
+      <div class="hero-seal">
+        <img src="assets/brand/mm-logo.png" alt="M&amp;M African Kitchen &amp; Bar logo" />
+        <span>Owner review set</span>
+      </div>
+    </div>
+  </header>
 
-  <main class="page">
-    <article class="sheet">
-      <header class="hero">
-        <div class="hero-top">
-          <img src="assets/brand/ni-biashara-official-logo.png" alt="Ni Biashara LLC" class="hero-logo" style="background:rgba(255,255,255,.12);padding:6px;" onerror="this.style.display='none'" />
-          <span class="hero-brand">Ni Biashara LLC</span>
-        </div>
-        <div class="hero-badge">Pre-launch Brief</div>
-        <h1>Open these four doors, and the rest becomes controlled rollout.</h1>
-        <p class="hero-lede">The website is already live. To finish the June setup cleanly, the remaining work is access, verification, and careful cutover.</p>
-      </header>
+        <div class="content">
+          <section class="truth-strip">
+            <div class="truth-item"><div class="truth-label">Ready now</div><strong>Live website</strong><span>The current site is up and usable.</span></div>
+            <div class="truth-item"><div class="truth-label">Waiting on access</div><strong>Old site, email, ordering</strong><span>The remaining work depends on a few live admin doors.</span></div>
+            <div class="truth-item"><div class="truth-label">Safe rule</div><strong>Log in live</strong><span>Do not send passwords, payment details, or recovery codes in chat.</span></div>
+          </section>
 
-      <section class="sec">
-        <span class="sec-label">Access rule</span>
-        <h2 class="sec-title">Log in live. Don’t send secrets.</h2>
-        <div class="callout warn">
-          <div class="callout-mark">!</div>
-          <div>
-            <ul class="mini-list" style="margin-top:0;">
-              <li>No passwords, recovery codes, card numbers, or API keys in chat.</li>
-              <li>Read-only checks happen first.</li>
-              <li>Customer-facing changes happen only after approval and verification.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+          <section class="section">
+            <div class="grid-2">
+              <div class="paper-card">
+                <div class="eyebrow">Ready now</div>
+                <h3>Already in place</h3>
+                <ul>
+                  <li>New website at mmafricankitchen.com</li>
+                  <li>Owner packet and shared review path</li>
+                  <li>Support lane and shared files</li>
+                </ul>
+              </div>
+              <div class="paper-card">
+                <div class="eyebrow">Still needed</div>
+                <h3>Access still pending</h3>
+                <ul>
+                  <li>Old-page redirect access</li>
+                  <li>Email or mailbox authority</li>
+                  <li>Square and ordering platform authority</li>
+                </ul>
+              </div>
+            </div>
+          </section>
 
-      <section class="sec">
-        <span class="sec-label">Today’s position</span>
-        <h2 class="sec-title">What is already ready, and what still needs access</h2>
-        <div class="cols">
-          <div class="card">
-            <div class="card-title">Ready now</div>
-            <ul>
-              <li>New website live at mmafricankitchen.com</li>
-              <li>Backup static mirror already handled</li>
-              <li>Owner packet, tracker, and support lane prepared</li>
-            </ul>
-          </div>
-          <div class="card">
-            <div class="card-title">Still needs access</div>
-            <ul>
-              <li>Old website redirect access</li>
-              <li>Email/mailbox authority</li>
-              <li>Square production setup</li>
-              <li>Uber Eats / POS bridge authority</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+          <section class="section">
+            <div class="section-head">
+              <div><div class="eyebrow">The four keys</div><h2>Open these next</h2></div>
+              <div class="section-intro">Each one below unlocks a specific part of the final handoff.</div>
+            </div>
+            <div class="grid-2">
+              <div class="paper-card"><h3>1. Old website</h3><p>StormerHost, cPanel, or WordPress admin so old links can redirect cleanly.</p></div>
+              <div class="paper-card"><h3>2. Email</h3><p>Google Workspace or the chosen mailbox provider for @mmafricankitchen.com.</p></div>
+              <div class="paper-card"><h3>3. Square</h3><p>Dashboard access, production location, and the first payment flow to activate.</p></div>
+              <div class="paper-card"><h3>4. Ordering + POS</h3><p>Uber Eats Manager, TouchBistro, Grubhub, or the chosen incoming ordering path.</p></div>
+            </div>
+          </section>
 
-      <section class="sec">
-        <span class="sec-label">The four keys</span>
-        <h2 class="sec-title">Bring these four access areas into the room next</h2>
-        <div class="cols">
-          <div class="card"><div class="card-title">1. Old website</div><p>StormerHost, cPanel, or WordPress admin for m-mafricankitchen.com so old links can redirect cleanly.</p></div>
-          <div class="card"><div class="card-title">2. Email</div><p>Google Workspace or another chosen mailbox provider for @mmafricankitchen.com.</p></div>
-          <div class="card"><div class="card-title">3. Square</div><p>Dashboard access, production location ID, and the first payment/order surface to activate.</p></div>
-          <div class="card"><div class="card-title">4. Uber + POS</div><p>Uber Eats Manager, TouchBistro access, Grubhub status, and the incoming POS path.</p></div>
-        </div>
-      </section>
+          <section class="section">
+            <div class="button-grid">
+              <div class="button-card">
+                <div class="eyebrow">Email</div>
+                <h3>Open the mailbox lane</h3>
+                <p>Create the mailbox or open admin access, then approve the required DNS records.</p>
+                <div class="button-row">
+                  <a class="btn primary" href="https://workspace.google.com/business/signup" target="_blank" rel="noopener">Create Google Workspace</a>
+                  <a class="btn" href="https://admin.google.com/" target="_blank" rel="noopener">Google Admin</a>
+                </div>
+              </div>
+              <div class="button-card">
+                <div class="eyebrow">Square</div>
+                <h3>Open the payment lane</h3>
+                <p>Confirm the production account, the live location, and the first order surface to use.</p>
+                <div class="button-row">
+                  <a class="btn primary" href="https://squareup.com/dashboard/" target="_blank" rel="noopener">Square Dashboard</a>
+                  <a class="btn" href="https://squareup.com/dashboard/locations" target="_blank" rel="noopener">Locations</a>
+                </div>
+              </div>
+              <div class="button-card">
+                <div class="eyebrow">Ordering + POS</div>
+                <h3>Open the order lane</h3>
+                <p>Check the direct manager login first. If blocked, move to an approved fallback path.</p>
+                <div class="button-row">
+                  <a class="btn primary" href="https://merchants.ubereats.com/manager/" target="_blank" rel="noopener">Uber Eats Manager</a>
+                  <a class="btn" href="https://admin.touchbistro.com/" target="_blank" rel="noopener">TouchBistro Admin</a>
+                </div>
+              </div>
+              <div class="button-card">
+                <div class="eyebrow">Old domain</div>
+                <h3>Open the redirect lane</h3>
+                <p>Preferred path is cPanel or DNS. WordPress redirect is the fallback if that is easier to reach.</p>
+                <div class="button-row">
+                  <a class="btn primary" href="https://cpanel.m-mafricankitchen.com/" target="_blank" rel="noopener">Old cPanel</a>
+                  <a class="btn" href="https://m-mafricankitchen.com/wp-admin/" target="_blank" rel="noopener">Old WordPress Admin</a>
+                </div>
+              </div>
+            </div>
+          </section>
 
-      <section class="sec">
-        <span class="sec-label">Portal links</span>
-        <h2 class="sec-title">Open the right screen fast when needed</h2>
-        <div class="card">
-          <div class="card-title">Email</div>
-          <p>Create the mailbox, add users or aliases, then approve Google DNS records.</p>
-          <div class="button-grid">
-            <a class="btn primary" href="https://workspace.google.com/business/signup" target="_blank" rel="noopener">Create Google Workspace</a>
-            <a class="btn" href="https://admin.google.com/" target="_blank" rel="noopener">Google Admin</a>
-            <a class="btn" href="https://support.google.com/a/answer/140034" target="_blank" rel="noopener">Google MX setup</a>
+          <div class="footer">
+            <div><strong>Ni Biashara LLC</strong><p>Short pre-launch brief for the remaining access and cutover items.</p></div>
+            <p>Use this page when it is time to open live admin screens.</p>
           </div>
         </div>
-        <div class="card" style="margin-top:14px;">
-          <div class="card-title">Square</div>
-          <p>Confirm the production account, location, and whether checkout links or Orders API go first.</p>
-          <div class="button-grid">
-            <a class="btn primary" href="https://squareup.com/dashboard/" target="_blank" rel="noopener">Square Dashboard</a>
-            <a class="btn" href="https://squareup.com/dashboard/locations" target="_blank" rel="noopener">Square Locations</a>
-            <a class="btn" href="https://developer.squareup.com/apps" target="_blank" rel="noopener">Square Developer Apps</a>
-          </div>
-        </div>
-        <div class="card" style="margin-top:14px;">
-          <div class="card-title">Ordering + POS</div>
-          <p>Check direct access first; if blocked, approve an email or printed-ticket fallback.</p>
-          <div class="button-grid">
-            <a class="btn primary" href="https://merchants.ubereats.com/manager/" target="_blank" rel="noopener">Uber Eats Manager</a>
-            <a class="btn" href="https://admin.touchbistro.com/" target="_blank" rel="noopener">TouchBistro Admin</a>
-            <a class="btn" href="https://restaurant.grubhub.com/login/" target="_blank" rel="noopener">Grubhub Restaurants</a>
-          </div>
-        </div>
-        <div class="card" style="margin-top:14px;">
-          <div class="card-title">Old domain</div>
-          <p>Preferred path: DNS or cPanel redirect. Fallback: WordPress redirect if that is easier to access.</p>
-          <div class="button-grid">
-            <a class="btn primary" href="https://cpanel.m-mafricankitchen.com/" target="_blank" rel="noopener">Old cPanel</a>
-            <a class="btn" href="https://m-mafricankitchen.com/wp-admin/" target="_blank" rel="noopener">Old WordPress Admin</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="sec">
-        <span class="sec-label">Safe sequence</span>
-        <h2 class="sec-title">The clean order of operations</h2>
-        <div class="phases">
-          <div class="phase current">
-            <span class="phase-label now">During the meeting</span>
-            <h3>Open, invite, confirm</h3>
-            <ul>
-              <li>Owner logs in live</li>
-              <li>Collaborator access or exact approval is granted</li>
-              <li>We test read-only first</li>
-            </ul>
-          </div>
-          <div class="phase">
-            <span class="phase-label later">After approval</span>
-            <h3>Execute and verify</h3>
-            <ul>
-              <li>Apply the exact change</li>
-              <li>Verify the result and rollback path</li>
-              <li>Record the outcome in the tracker</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <footer class="footer">
-        <p>Public site: mmafricankitchen.com · Old site: m-mafricankitchen.com · Backup mirror remains available in the preview repo. No production DNS, mailbox, payment, or POS change happens without approval and verification.</p>
-        <div class="sig">
-          <div class="sig-name">Ni Biashara LLC</div>
-          <div class="sig-role">Technology &amp; operations partner for M&amp;M African Kitchen &amp; Bar</div>
-        </div>
-      </footer>
-    </article>
-  </main>
-
+        </article></main>
 </body>
 </html>
