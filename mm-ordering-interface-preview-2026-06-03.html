@@ -572,35 +572,172 @@
       border-radius: 22px;
       overflow: hidden;
       background:
-        linear-gradient(90deg, rgba(6, 59, 34, .12) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(6, 59, 34, .1) 1px, transparent 1px),
-        #eaf1e7;
-      background-size: 42px 42px;
+        radial-gradient(circle at 18% 24%, rgba(201, 147, 47, .2), transparent 24%),
+        radial-gradient(circle at 78% 72%, rgba(14, 101, 63, .18), transparent 28%),
+        linear-gradient(135deg, #f6f8ef, #e3efe2);
+      border: 1px solid rgba(6, 59, 34, .12);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .68);
     }
 
-    .route-line {
+    .map-card::before {
+      content: "";
       position: absolute;
-      left: 18%;
-      top: 28%;
-      width: 62%;
-      height: 42%;
-      border-top: 8px solid var(--green);
-      border-right: 8px solid var(--gold);
-      border-radius: 0 90px 0 0;
-      transform: rotate(-7deg);
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(6, 59, 34, .08) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(6, 59, 34, .07) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, .75), rgba(0, 0, 0, .18));
     }
 
-    .pin {
+    .map-road {
       position: absolute;
-      width: 18px;
-      height: 18px;
       border-radius: 999px;
-      background: var(--red);
-      box-shadow: 0 0 0 8px rgba(164, 64, 51, .16);
+      background: rgba(255, 255, 255, .72);
+      box-shadow: inset 0 0 0 1px rgba(6, 59, 34, .1);
+      transform-origin: left center;
     }
 
-    .pin.one { left: 16%; top: 25%; background: var(--green); }
-    .pin.two { right: 18%; bottom: 26%; }
+    .map-road.one { left: -8%; top: 28%; width: 72%; height: 16px; transform: rotate(-12deg); }
+    .map-road.two { left: 24%; top: 55%; width: 88%; height: 16px; transform: rotate(9deg); }
+    .map-road.three { left: 58%; top: 8%; width: 16px; height: 78%; transform: rotate(6deg); }
+
+    .route-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      filter: drop-shadow(0 14px 20px rgba(6, 59, 34, .18));
+    }
+
+    .route-shadow,
+    .route-active {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .route-shadow {
+      stroke: rgba(255, 255, 255, .9);
+      stroke-width: 18;
+    }
+
+    .route-active {
+      stroke: var(--green);
+      stroke-width: 9;
+      stroke-dasharray: 10 13;
+      animation: routePulse 1.6s linear infinite;
+    }
+
+    .map-point {
+      position: absolute;
+      z-index: 2;
+      display: grid;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .map-point.pickup { left: 10%; top: 18%; }
+    .map-point.dropoff {
+      right: 8%;
+      top: 61%;
+      justify-items: end;
+    }
+
+    .map-pin {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: var(--paper);
+      color: var(--green);
+      font-size: .68rem;
+      font-weight: 950;
+      box-shadow: 0 16px 34px rgba(13, 29, 20, .16);
+    }
+
+    .map-point.dropoff .map-pin {
+      background: var(--gold);
+      color: #241709;
+    }
+
+    .map-label {
+      width: max-content;
+      max-width: 138px;
+      border: 1px solid rgba(6, 59, 34, .12);
+      border-radius: 16px;
+      padding: 8px 10px;
+      background: rgba(255, 253, 247, .88);
+      color: var(--ink);
+      box-shadow: 0 14px 30px rgba(13, 29, 20, .1);
+    }
+
+    .map-label strong,
+    .map-label span {
+      display: block;
+    }
+
+    .map-label strong {
+      font-size: .72rem;
+      line-height: 1.15;
+    }
+
+    .map-label span {
+      color: var(--muted);
+      font-size: .62rem;
+      font-weight: 760;
+    }
+
+    .map-status {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      width: min(176px, calc(100% - 36px));
+      z-index: 2;
+      display: grid;
+      gap: 8px;
+      align-items: start;
+      border: 1px solid rgba(6, 59, 34, .12);
+      border-radius: 20px;
+      padding: 12px;
+      background: rgba(255, 253, 247, .92);
+      box-shadow: 0 18px 44px rgba(13, 29, 20, .12);
+    }
+
+    .map-status strong,
+    .map-status span {
+      display: block;
+    }
+
+    .map-status strong {
+      color: var(--ink);
+      font-size: .76rem;
+      line-height: 1.15;
+    }
+
+    .map-status span {
+      color: var(--muted);
+      font-size: .64rem;
+      font-weight: 750;
+    }
+
+    .map-status .status-chip {
+      width: fit-content;
+      border-radius: 999px;
+      padding: 8px 10px;
+      background: rgba(6, 59, 34, .1);
+      color: var(--green);
+      font-size: .68rem;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    @keyframes routePulse {
+      to { stroke-dashoffset: -46; }
+    }
 
     .dispatch-pane {
       display: grid;
@@ -625,6 +762,7 @@
       .slide-copy { position: static; }
       .board-lanes, .kds-grid, .signal-grid { grid-template-columns: 1fr; }
       .screen { min-height: auto; }
+      .map-status { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 680px) {
@@ -837,7 +975,26 @@
             <div class="device">
               <div class="device-top"><span>Delivery command</span><span class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i></span></div>
               <div class="screen dispatch-screen">
-                <div class="map-card"><div class="route-line"></div><div class="pin one"></div><div class="pin two"></div></div>
+                <div class="map-card" aria-label="Uber Direct delivery route preview">
+                  <div class="map-road one"></div>
+                  <div class="map-road two"></div>
+                  <div class="map-road three"></div>
+                  <svg class="route-svg" viewBox="0 0 420 430" aria-hidden="true" focusable="false">
+                    <path class="route-shadow" d="M84 105 C142 126 145 202 198 219 C266 240 258 322 335 338" />
+                    <path class="route-active" d="M84 105 C142 126 145 202 198 219 C266 240 258 322 335 338" />
+                  </svg>
+                  <div class="map-point pickup">
+                    <div class="map-pin">M&amp;M</div>
+                    <div class="map-label"><strong>Pickup ready</strong><span>Kitchen handoff</span></div>
+                  </div>
+                  <div class="map-point dropoff">
+                    <div class="map-pin">Drop</div>
+                  </div>
+                  <div class="map-status">
+                    <div><strong>Uber Direct courier lane</strong><span>Fee and policy approval first.</span></div>
+                    <div class="status-chip">Approval gated</div>
+                  </div>
+                </div>
                 <aside class="dispatch-pane">
                   <h4>Uber Direct quote</h4>
                   <div class="route-box"><strong>Pickup</strong><span>M&amp;M African Kitchen &amp; Bar</span></div>
