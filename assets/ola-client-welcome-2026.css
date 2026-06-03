@@ -703,8 +703,15 @@ strong {
   }
 
   .welcome {
+    width: 100%;
     gap: 24px;
     padding-bottom: 42px;
+  }
+
+  .welcome-copy,
+  .welcome-panel {
+    width: 100%;
+    max-width: 100%;
   }
 
   .welcome-mark {
@@ -728,7 +735,9 @@ strong {
   }
 
   .welcome-lede {
+    max-width: 100%;
     font-size: 1.04rem;
+    overflow-wrap: anywhere;
   }
 
   .welcome-actions {
