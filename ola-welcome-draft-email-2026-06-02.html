@@ -3,149 +3,69 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="assets/brand/ni-biashara-official-logo.png" />
   <meta name="robots" content="noindex,nofollow" />
-  <title>M&M African Kitchen — Welcome Packet</title>
+  <title>M&M African Kitchen & Bar — Welcome Draft</title>
   <style>
-    :root { --bg:#f6f3ef; --paper:#fff; --ink:#161110; --body:#3d3530; --muted:#7a6e64; --green:#14301f; --green-mid:#1c4a2d; --gold:#b8801a; --gold-soft:#f0dbb8; --line:#e4d9cd; --line-faint:#eee7dd; --warm-bg:#faf7f3; --radius-lg:24px; --radius:16px; --radius-sm:12px; }
-    * { box-sizing:border-box; margin:0; padding:0; }
-    html { background:var(--bg); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
-    body { font:400 15.5px/1.7 -apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Inter,system-ui,sans-serif; color:var(--body); }
-    strong { color:var(--ink); font-weight:600; }
-    a { color:inherit; }
-    .page { max-width:740px; margin:0 auto; padding:56px 20px 72px; }
-    .sheet { background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-lg); box-shadow:0 0 0 1px rgba(0,0,0,.02),0 4px 16px rgba(20,12,6,.04),0 24px 64px rgba(20,12,6,.07); overflow:hidden; }
-    .hero { background:linear-gradient(165deg,#122a1a 0%,var(--green-mid) 55%,#1f5630 100%); padding:56px 52px 52px; position:relative; }
-    .hero::before { content:''; position:absolute; top:-40%; right:-10%; width:480px; height:480px; background:radial-gradient(circle,rgba(184,128,26,.10) 0%,transparent 65%); pointer-events:none; }
-    .hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(255,255,255,.06) 30%,rgba(255,255,255,.06) 70%,transparent); }
-    .hero-top { display:flex; align-items:center; gap:16px; margin-bottom:32px; }
-    .hero-logo { width:48px; height:48px; border-radius:12px; background:rgba(255,255,255,.12); padding:6px; object-fit:contain; }
-    .hero-brand { font-size:.68rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.55); }
-    .hero-badge { display:inline-flex; align-items:center; gap:7px; font-size:.64rem; font-weight:700; letter-spacing:.11em; text-transform:uppercase; color:var(--gold-soft); background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.10); border-radius:999px; padding:5px 14px 5px 11px; margin-bottom:24px; }
-    .hero-badge::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--gold); }
-    .hero h1 { color:#fff; font-weight:700; font-size:clamp(1.6rem,4.2vw,2.4rem); line-height:1.12; letter-spacing:-.03em; margin-bottom:16px; max-width:560px; }
-    .hero-lede { color:rgba(255,255,255,.72); font-size:.98rem; line-height:1.65; max-width:560px; }
-    .sec { padding:40px 52px; } .sec + .sec { border-top:1px solid var(--line-faint); }
-    .sec-label { display:block; font-size:.62rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
-    .sec-title { font-size:1.28rem; font-weight:700; letter-spacing:-.02em; line-height:1.2; color:var(--green); margin-bottom:10px; }
-    .sec-desc { color:var(--muted); font-size:.92rem; line-height:1.65; max-width:580px; }
-    .cols { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:22px; }
-    .card { background:var(--warm-bg); border:1px solid var(--line); border-radius:var(--radius); padding:22px 24px 20px; }
-    .card-title { font-size:.88rem; font-weight:700; color:var(--ink); margin-bottom:8px; line-height:1.25; }
-    .card p, .card li { font-size:.84rem; color:var(--muted); line-height:1.6; }
-    .card ul { padding-left:15px; margin:0; } .card li { margin:4px 0; } .card li::marker { color:var(--gold); }
-    .stack { list-style:none; display:flex; flex-direction:column; gap:10px; margin-top:20px; }
-    .stack-row { display:flex; align-items:flex-start; gap:14px; padding:16px 20px; background:var(--warm-bg); border:1px solid var(--line); border-radius:var(--radius-sm); }
-    .stack-dot { flex-shrink:0; width:32px; height:32px; border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:.88rem; background:var(--paper); border:1px solid var(--line); }
-    .stack-row strong { display:block; font-size:.84rem; margin-bottom:2px; }
-    .stack-row span { font-size:.8rem; color:var(--muted); line-height:1.55; }
-    .stack-row a { text-decoration:none; }
-    .stack-row a strong { text-decoration:underline; text-decoration-color:rgba(184,128,26,.45); text-underline-offset:3px; }
-    .phases { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:22px; }
-    .phase { background:var(--warm-bg); border:1px solid var(--line); border-radius:var(--radius); padding:22px 24px 20px; }
-    .phase.current { border-color:var(--gold-soft); background:linear-gradient(180deg,#fffdf8,#fef7ec); }
-    .phase-label { display:inline-block; font-size:.58rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; padding:3px 9px; border-radius:5px; margin-bottom:12px; }
-    .phase-label.now { background:rgba(28,74,45,.08); color:var(--green-mid); }
-    .phase-label.later { background:rgba(184,128,26,.08); color:#9a6a10; }
-    .phase h3 { font-size:.95rem; font-weight:700; color:var(--ink); margin-bottom:8px; line-height:1.25; }
-    .phase ul { padding-left:15px; margin:0; } .phase li { font-size:.8rem; color:var(--muted); line-height:1.55; margin:4px 0; } .phase li::marker { color:var(--gold); }
-    .callout { display:flex; gap:14px; align-items:flex-start; padding:20px 22px; border-radius:var(--radius-sm); }
-    .callout.info { background:linear-gradient(135deg,#fefcf7,#fdf5e8); border:1px solid #e8d4b4; }
-    .callout.check { background:linear-gradient(135deg,#f6fbf7,#eef6ef); border:1px solid #c8ddc9; }
-    .callout-mark { flex-shrink:0; width:28px; height:28px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:.78rem; font-weight:700; margin-top:1px; }
-    .callout.info .callout-mark { background:rgba(184,128,26,.10); color:var(--gold); }
-    .callout.check .callout-mark { background:rgba(28,74,45,.10); color:var(--green-mid); }
-    .callout p { font-size:.86rem; line-height:1.6; } .callout.info p { color:#5a4128; } .callout.check p { color:#2a4430; }
-    .footer { padding:36px 52px 44px; border-top:1px solid var(--line-faint); }
-    .footer p { font-size:.88rem; color:var(--muted); line-height:1.6; }
-    .footer .sig { margin-top:20px; } .footer .sig-name { font-size:.92rem; font-weight:700; color:var(--ink); } .footer .sig-role { font-size:.78rem; color:var(--muted); margin-top:2px; }
-    @media (max-width:680px) { .page { padding:24px 14px 48px; } .hero { padding:40px 28px 36px; } .sec { padding:28px 28px; } .footer { padding:28px 28px 36px; } .cols, .phases { grid-template-columns:1fr; } .hero h1 { font-size:1.5rem; } .hero-top { margin-bottom:28px; } }
-    @media (max-width:400px) { .hero { padding:32px 20px 28px; } .sec { padding:24px 20px; } .footer { padding:24px 20px 32px; } }
+    :root{--bg:#f4e2c7;--paper:#fffaf2;--ink:#21140d;--muted:#6b5445;--green:#183926;--gold:#b87424;--line:#e7caa8;--shadow:0 20px 60px rgba(62,31,12,.12)}
+    *{box-sizing:border-box} html,body{margin:0;padding:0;background:linear-gradient(135deg,#efd3ab,#fff8ee 44%,#ead7bf);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif}
+    .page{max-width:920px;margin:0 auto;padding:32px 18px 44px}.sheet{background:var(--paper);border:1px solid #c7925b;border-radius:28px;box-shadow:var(--shadow);overflow:hidden}.inner{padding:30px 30px 26px}.band{background:linear-gradient(135deg,var(--green),#224c31);color:#fff}.band h1,.band p{color:#fff}.tag{display:inline-block;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#ffe2b3;padding:7px 11px;border-radius:999px;font-size:.75rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.tag.light{border-color:var(--line);background:#fff2de;color:#6a3d18}.eyebrow{margin-bottom:14px}.hero{display:grid;gap:14px}.hero h1{margin:0;font-size:clamp(2rem,5vw,4rem);line-height:.95;letter-spacing:-.05em}.hero p{margin:0;max-width:720px;font-size:1.06rem}.grid{display:grid;gap:16px}.two{grid-template-columns:repeat(2,minmax(0,1fr))}.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px}.card h2{margin:0 0 10px;color:var(--green);font-size:1.3rem;line-height:1.05}.card p:last-child{margin-bottom:0}.list{margin:0;padding-left:18px}.list li{margin:6px 0}.note{background:#fff4e5;border-left:4px solid var(--gold);padding:14px 16px;border-radius:14px;color:#5f432f}.sig{color:var(--muted)}
+    @media (max-width:800px){.two{grid-template-columns:1fr}.inner{padding:22px 18px}.page{padding:14px}}
   </style>
 </head>
 <body>
   <main class="page">
     <article class="sheet">
-      <header class="hero">
-        <div class="hero-top">
-          <img src="assets/brand/ni-biashara-official-logo.png" alt="Ni Biashara LLC" class="hero-logo" onerror="this.style.display='none'" />
-          <span class="hero-brand">Ni Biashara LLC</span>
-        </div>
-        <div class="hero-badge">Welcome Packet — June 2026</div>
-        <h1>We’re excited to support M&amp;M and earn your trust.</h1>
-        <p class="hero-lede">Ola, thank you for trusting Ni Biashara with this work. The site is live, the setup is stable, and the review path is being kept clear and simple.</p>
-      </header>
+      <section class="inner band hero">
+        <div class="eyebrow"><span class="tag">Draft welcome note</span></div>
+        <h1>We’re excited to earn your trust and business.</h1>
+        <p>Ola, thank you again for trusting us with M&amp;M. We want to keep this simple and easy to check.</p>
+      </section>
 
-      <section class="sec">
-        <span class="sec-label">How we work together</span>
-        <h2 class="sec-title">Clear ownership. Clean visibility. Low friction.</h2>
-        <div class="cols">
-          <div class="card">
-            <div class="card-title">What you can expect</div>
-            <p>M&amp;M keeps ownership and visibility. Ni Biashara handles the technical work and keeps the process easy to follow from your side.</p>
-          </div>
-          <div class="card">
-            <div class="card-title">What we want to keep simple</div>
-            <p>No unnecessary complexity, no confusing handoff, and no changes that make the review process harder than it needs to be.</p>
-          </div>
+      <section class="inner grid two">
+        <div class="card">
+          <span class="tag light">How we work</span>
+          <h2>Simple setup</h2>
+          <ul class="list">
+            <li>M&amp;M stays owner.</li>
+            <li>Ni Biashara handles the technical work.</li>
+            <li>You can check progress anytime.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="tag light">Where to check</span>
+          <h2>Main tools</h2>
+          <ul class="list">
+            <li>Name.com for the domain</li>
+            <li>Google Sheet for tracking</li>
+            <li>Google Drive for files</li>
+            <li>Business WhatsApp for requests</li>
+          </ul>
         </div>
       </section>
 
-      <section class="sec">
-        <span class="sec-label">Simple tools</span>
-        <h2 class="sec-title">Easy to open. Easy to check.</h2>
-        <p class="sec-desc">These are the main places you may want to open from time to time.</p>
-        <ul class="stack">
-          <li class="stack-row"><div class="stack-dot">🌍</div><div><a href="https://mmafricankitchen.com/" target="_blank" rel="noopener"><strong>mmafricankitchen.com</strong></a><span>The live public website.</span></div></li>
-          <li class="stack-row"><div class="stack-dot">📊</div><div><a href="https://docs.google.com/spreadsheets/d/1tHFkeCxQjXdVn8TFPoFoGzYRbSlOIGYAbj93TFaU8nA/edit" target="_blank" rel="noopener"><strong>Google Sheet</strong></a><span>The shared tracker for progress, requests, and approvals.</span></div></li>
-          <li class="stack-row"><div class="stack-dot">📁</div><div><a href="https://drive.google.com/" target="_blank" rel="noopener"><strong>Google Drive</strong></a><span>The shared file layer for menus, photos, and review files.</span></div></li>
-        </ul>
-      </section>
-
-      <section class="sec">
-        <span class="sec-label">Current picture</span>
-        <h2 class="sec-title">Clear, stable, and easy to review.</h2>
-        <div class="callout info" style="margin-top:16px;">
-          <div class="callout-mark">!</div>
-          <div>
-            <p><strong>The live site is running now.</strong> The domain is registered at Name.com, the website is live, and the setup is being kept stable and easy to review.</p>
-          </div>
+      <section class="inner grid two">
+        <div class="card">
+          <span class="tag light">Review</span>
+          <h2>Weekly and monthly</h2>
+          <p>Weekly: changes, requests, and blockers. End of month: what shipped and what is next.</p>
+        </div>
+        <div class="card">
+          <span class="tag light">Next steps</span>
+          <h2>What we need now</h2>
+          <p>Update public links, give redirect access, and confirm the active accounts.</p>
         </div>
       </section>
 
-      <section class="sec">
-        <span class="sec-label">Roadmap</span>
-        <h2 class="sec-title">Keep today stable. Move tomorrow cleanly.</h2>
-        <div class="phases">
-          <div class="phase current">
-            <span class="phase-label now">Current</span>
-            <h3>Current working setup</h3>
-            <ul>
-              <li>Keep the production site stable</li>
-              <li>Keep updates visible through the shared workflow</li>
-              <li>Avoid changes that create unnecessary cleanup later</li>
-            </ul>
-          </div>
-          <div class="phase">
-            <span class="phase-label later">Next</span>
-            <h3>Simple review flow</h3>
-            <ul>
-              <li>Keep review visibility clean and easy to follow</li>
-              <li>Keep the owner view clean and easy to check</li>
-              <li>Keep the same simple tools around the project</li>
-            </ul>
-          </div>
+      <section class="inner">
+        <div class="note">
+          The goal is simple: clear ownership, safe access, and clear communication.
         </div>
       </section>
 
-
-      <footer class="footer">
-        <p>We are looking forward to building this well and keeping the process clear.</p>
-        <div class="sig">
-          <div class="sig-name">Ni Biashara LLC</div>
-          <div class="sig-role">Technology &amp; operations partner for M&amp;M African Kitchen &amp; Bar</div>
-        </div>
-      </footer>
+      <section class="inner sig">
+        <p>Thanks again. We’re looking forward to building this right.</p>
+        <p>Ni Biashara LLC</p>
+      </section>
     </article>
   </main>
 </body>
