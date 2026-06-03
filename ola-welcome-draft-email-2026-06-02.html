@@ -3,579 +3,159 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="assets/brand/mm-logo.png" />
+  <link rel="icon" href="assets/brand/ni-biashara-official-logo.png" />
   <meta name="robots" content="noindex,nofollow" />
   <title>M&M African Kitchen — Welcome Packet</title>
   <style>
-    :root {
-      --bg: #f6f3ef;
-      --paper: #ffffff;
-      --ink: #161110;
-      --body: #3d3530;
-      --muted: #7a6e64;
-      --green: #14301f;
-      --green-mid: #1c4a2d;
-      --gold: #b8801a;
-      --gold-soft: #f0dbb8;
-      --gold-glow: rgba(184,128,26,.08);
-      --line: #e4d9cd;
-      --line-faint: #eee7dd;
-      --warm-bg: #faf7f3;
-      --radius-lg: 24px;
-      --radius: 16px;
-      --radius-sm: 12px;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html {
-      background: var(--bg);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    body {
-      font: 400 15.5px/1.7 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Inter, system-ui, sans-serif;
-      color: var(--body);
-    }
-
-    strong { color: var(--ink); font-weight: 600; }
-
-    .page {
-      max-width: 740px;
-      margin: 0 auto;
-      padding: 56px 20px 72px;
-    }
-
-    /* ── Sheet container ── */
-    .sheet {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      box-shadow:
-        0 0 0 1px rgba(0,0,0,.02),
-        0 4px 16px rgba(20,12,6,.04),
-        0 24px 64px rgba(20,12,6,.07);
-      overflow: hidden;
-    }
-
-    /* ── Hero ── */
-    .hero {
-      background: linear-gradient(165deg, #122a1a 0%, var(--green-mid) 55%, #1f5630 100%);
-      padding: 56px 52px 52px;
-      position: relative;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -40%;
-      right: -10%;
-      width: 480px;
-      height: 480px;
-      background: radial-gradient(circle, rgba(184,128,26,.10) 0%, transparent 65%);
-      pointer-events: none;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.06) 30%, rgba(255,255,255,.06) 70%, transparent);
-    }
-
-    .hero-top {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 40px;
-    }
-
-    .hero-logo {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: rgba(255,255,255,.10);
-      padding: 5px;
-      object-fit: contain;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-    }
-
-    .hero-brand {
-      font-size: .68rem;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.45);
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: .64rem;
-      font-weight: 700;
-      letter-spacing: .11em;
-      text-transform: uppercase;
-      color: var(--gold-soft);
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: 999px;
-      padding: 5px 14px 5px 11px;
-      margin-bottom: 24px;
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-    }
-
-    .hero-badge::before {
-      content: '';
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--gold);
-    }
-
-    .hero h1 {
-      color: #fff;
-      font-weight: 700;
-      font-size: clamp(1.6rem, 4.2vw, 2.4rem);
-      line-height: 1.12;
-      letter-spacing: -.03em;
-      margin-bottom: 16px;
-      max-width: 520px;
-    }
-
-    .hero-lede {
-      color: rgba(255,255,255,.7);
-      font-size: .98rem;
-      line-height: 1.65;
-      max-width: 480px;
-    }
-
-    /* ── Sections ── */
-    .sec {
-      padding: 40px 52px;
-    }
-
-    .sec + .sec {
-      border-top: 1px solid var(--line-faint);
-    }
-
-    .sec-label {
-      display: block;
-      font-size: .62rem;
-      font-weight: 700;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
-
-    .sec-title {
-      font-size: 1.28rem;
-      font-weight: 700;
-      letter-spacing: -.02em;
-      line-height: 1.2;
-      color: var(--green);
-      margin-bottom: 10px;
-    }
-
-    .sec-desc {
-      color: var(--muted);
-      font-size: .92rem;
-      line-height: 1.65;
-      max-width: 560px;
-    }
-
-    /* ── Two-column layout ── */
-    .cols {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 22px;
-    }
-
-    /* ── Compact cards ── */
-    .card {
-      background: var(--warm-bg);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 22px 24px 20px;
-    }
-
-    .card-title {
-      font-size: .88rem;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 8px;
-      line-height: 1.25;
-    }
-
-    .card p, .card li {
-      font-size: .84rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .card ul {
-      padding-left: 15px;
-      margin: 0;
-    }
-
-    .card li { margin: 4px 0; }
-    .card li::marker { color: var(--gold); }
-
-    /* ── Stack list (setup tools) ── */
-    .stack {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .stack-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 16px 20px;
-      background: var(--warm-bg);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-sm);
-    }
-
-    .stack-dot {
-      flex-shrink: 0;
-      width: 32px;
-      height: 32px;
-      border-radius: 9px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: .88rem;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      margin-top: 1px;
-    }
-
-    .stack-row strong {
-      display: block;
-      font-size: .84rem;
-      margin-bottom: 1px;
-    }
-
-    .stack-row span {
-      font-size: .8rem;
-      color: var(--muted);
-      line-height: 1.55;
-    }
-
-    /* ── Phase timeline ── */
-    .phases {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 22px;
-    }
-
-    .phase {
-      background: var(--warm-bg);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 22px 24px 20px;
-      position: relative;
-    }
-
-    .phase.current {
-      border-color: var(--gold-soft);
-      background: linear-gradient(180deg, #fffdf8, #fef7ec);
-    }
-
-    .phase-label {
-      display: inline-block;
-      font-size: .58rem;
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      padding: 3px 9px;
-      border-radius: 5px;
-      margin-bottom: 12px;
-    }
-
-    .phase-label.now {
-      background: rgba(28,74,45,.08);
-      color: var(--green-mid);
-    }
-
-    .phase-label.later {
-      background: rgba(184,128,26,.08);
-      color: #9a6a10;
-    }
-
-    .phase h3 {
-      font-size: .95rem;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 8px;
-      line-height: 1.25;
-    }
-
-    .phase ul {
-      padding-left: 15px;
-      margin: 0;
-    }
-
-    .phase li {
-      font-size: .8rem;
-      color: var(--muted);
-      line-height: 1.55;
-      margin: 4px 0;
-    }
-
-    .phase li::marker { color: var(--gold); }
-
-    /* ── Callout ── */
-    .callout {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      padding: 20px 22px;
-      border-radius: var(--radius-sm);
-    }
-
-    .callout.info {
-      background: linear-gradient(135deg, #fefcf7, #fdf5e8);
-      border: 1px solid #e8d4b4;
-    }
-
-    .callout.check {
-      background: linear-gradient(135deg, #f6fbf7, #eef6ef);
-      border: 1px solid #c8ddc9;
-    }
-
-    .callout-mark {
-      flex-shrink: 0;
-      width: 28px;
-      height: 28px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: .78rem;
-      font-weight: 700;
-      margin-top: 1px;
-    }
-
-    .callout.info .callout-mark {
-      background: rgba(184,128,26,.10);
-      color: var(--gold);
-    }
-
-    .callout.check .callout-mark {
-      background: rgba(28,74,45,.10);
-      color: var(--green-mid);
-    }
-
-    .callout p {
-      font-size: .86rem;
-      line-height: 1.6;
-    }
-
-    .callout.info p { color: #5a4128; }
-    .callout.check p { color: #2a4430; }
-
-    /* ── Footer ── */
-    .footer {
-      padding: 36px 52px 44px;
-      border-top: 1px solid var(--line-faint);
-    }
-
-    .footer p {
-      font-size: .88rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .footer .sig {
-      margin-top: 20px;
-    }
-
-    .footer .sig-name {
-      font-size: .92rem;
-      font-weight: 700;
-      color: var(--ink);
-    }
-
-    .footer .sig-role {
-      font-size: .78rem;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-
-    /* ── Responsive ── */
-    @media (max-width: 680px) {
-      .page { padding: 24px 14px 48px; }
-      .hero { padding: 40px 28px 36px; }
-      .sec { padding: 28px 28px; }
-      .footer { padding: 28px 28px 36px; }
-      .cols, .phases { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 1.5rem; }
-      .hero-top { margin-bottom: 28px; }
-    }
-
-    @media (max-width: 400px) {
-      .hero { padding: 32px 20px 28px; }
-      .sec { padding: 24px 20px; }
-      .footer { padding: 24px 20px 32px; }
-    }
+    :root { --bg:#f6f3ef; --paper:#fff; --ink:#161110; --body:#3d3530; --muted:#7a6e64; --green:#14301f; --green-mid:#1c4a2d; --gold:#b8801a; --gold-soft:#f0dbb8; --line:#e4d9cd; --line-faint:#eee7dd; --warm-bg:#faf7f3; --radius-lg:24px; --radius:16px; --radius-sm:12px; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { background:var(--bg); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+    body { font:400 15.5px/1.7 -apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Inter,system-ui,sans-serif; color:var(--body); }
+    strong { color:var(--ink); font-weight:600; }
+    a { color:inherit; }
+    .page { max-width:740px; margin:0 auto; padding:56px 20px 72px; }
+    .sheet { background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-lg); box-shadow:0 0 0 1px rgba(0,0,0,.02),0 4px 16px rgba(20,12,6,.04),0 24px 64px rgba(20,12,6,.07); overflow:hidden; }
+    .hero { background:linear-gradient(165deg,#122a1a 0%,var(--green-mid) 55%,#1f5630 100%); padding:56px 52px 52px; position:relative; }
+    .hero::before { content:''; position:absolute; top:-40%; right:-10%; width:480px; height:480px; background:radial-gradient(circle,rgba(184,128,26,.10) 0%,transparent 65%); pointer-events:none; }
+    .hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(255,255,255,.06) 30%,rgba(255,255,255,.06) 70%,transparent); }
+    .hero-top { display:flex; align-items:center; gap:16px; margin-bottom:32px; }
+    .hero-logo { width:48px; height:48px; border-radius:12px; background:rgba(255,255,255,.12); padding:6px; object-fit:contain; }
+    .hero-brand { font-size:.68rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.55); }
+    .hero-badge { display:inline-flex; align-items:center; gap:7px; font-size:.64rem; font-weight:700; letter-spacing:.11em; text-transform:uppercase; color:var(--gold-soft); background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.10); border-radius:999px; padding:5px 14px 5px 11px; margin-bottom:24px; }
+    .hero-badge::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--gold); }
+    .hero h1 { color:#fff; font-weight:700; font-size:clamp(1.6rem,4.2vw,2.4rem); line-height:1.12; letter-spacing:-.03em; margin-bottom:16px; max-width:560px; }
+    .hero-lede { color:rgba(255,255,255,.72); font-size:.98rem; line-height:1.65; max-width:560px; }
+    .sec { padding:40px 52px; } .sec + .sec { border-top:1px solid var(--line-faint); }
+    .sec-label { display:block; font-size:.62rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+    .sec-title { font-size:1.28rem; font-weight:700; letter-spacing:-.02em; line-height:1.2; color:var(--green); margin-bottom:10px; }
+    .sec-desc { color:var(--muted); font-size:.92rem; line-height:1.65; max-width:580px; }
+    .cols { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:22px; }
+    .card { background:var(--warm-bg); border:1px solid var(--line); border-radius:var(--radius); padding:22px 24px 20px; }
+    .card-title { font-size:.88rem; font-weight:700; color:var(--ink); margin-bottom:8px; line-height:1.25; }
+    .card p, .card li { font-size:.84rem; color:var(--muted); line-height:1.6; }
+    .card ul { padding-left:15px; margin:0; } .card li { margin:4px 0; } .card li::marker { color:var(--gold); }
+    .stack { list-style:none; display:flex; flex-direction:column; gap:10px; margin-top:20px; }
+    .stack-row { display:flex; align-items:flex-start; gap:14px; padding:16px 20px; background:var(--warm-bg); border:1px solid var(--line); border-radius:var(--radius-sm); }
+    .stack-dot { flex-shrink:0; width:32px; height:32px; border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:.88rem; background:var(--paper); border:1px solid var(--line); }
+    .stack-row strong { display:block; font-size:.84rem; margin-bottom:2px; }
+    .stack-row span { font-size:.8rem; color:var(--muted); line-height:1.55; }
+    .stack-row a { text-decoration:none; }
+    .stack-row a strong { text-decoration:underline; text-decoration-color:rgba(184,128,26,.45); text-underline-offset:3px; }
+    .phases { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:22px; }
+    .phase { background:var(--warm-bg); border:1px solid var(--line); border-radius:var(--radius); padding:22px 24px 20px; }
+    .phase.current { border-color:var(--gold-soft); background:linear-gradient(180deg,#fffdf8,#fef7ec); }
+    .phase-label { display:inline-block; font-size:.58rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; padding:3px 9px; border-radius:5px; margin-bottom:12px; }
+    .phase-label.now { background:rgba(28,74,45,.08); color:var(--green-mid); }
+    .phase-label.later { background:rgba(184,128,26,.08); color:#9a6a10; }
+    .phase h3 { font-size:.95rem; font-weight:700; color:var(--ink); margin-bottom:8px; line-height:1.25; }
+    .phase ul { padding-left:15px; margin:0; } .phase li { font-size:.8rem; color:var(--muted); line-height:1.55; margin:4px 0; } .phase li::marker { color:var(--gold); }
+    .callout { display:flex; gap:14px; align-items:flex-start; padding:20px 22px; border-radius:var(--radius-sm); }
+    .callout.info { background:linear-gradient(135deg,#fefcf7,#fdf5e8); border:1px solid #e8d4b4; }
+    .callout.check { background:linear-gradient(135deg,#f6fbf7,#eef6ef); border:1px solid #c8ddc9; }
+    .callout-mark { flex-shrink:0; width:28px; height:28px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:.78rem; font-weight:700; margin-top:1px; }
+    .callout.info .callout-mark { background:rgba(184,128,26,.10); color:var(--gold); }
+    .callout.check .callout-mark { background:rgba(28,74,45,.10); color:var(--green-mid); }
+    .callout p { font-size:.86rem; line-height:1.6; } .callout.info p { color:#5a4128; } .callout.check p { color:#2a4430; }
+    .footer { padding:36px 52px 44px; border-top:1px solid var(--line-faint); }
+    .footer p { font-size:.88rem; color:var(--muted); line-height:1.6; }
+    .footer .sig { margin-top:20px; } .footer .sig-name { font-size:.92rem; font-weight:700; color:var(--ink); } .footer .sig-role { font-size:.78rem; color:var(--muted); margin-top:2px; }
+    @media (max-width:680px) { .page { padding:24px 14px 48px; } .hero { padding:40px 28px 36px; } .sec { padding:28px 28px; } .footer { padding:28px 28px 36px; } .cols, .phases { grid-template-columns:1fr; } .hero h1 { font-size:1.5rem; } .hero-top { margin-bottom:28px; } }
+    @media (max-width:400px) { .hero { padding:32px 20px 28px; } .sec { padding:24px 20px; } .footer { padding:24px 20px 32px; } }
   </style>
 </head>
 <body>
   <main class="page">
     <article class="sheet">
-
-      <!-- ═══ HERO ═══ -->
       <header class="hero">
         <div class="hero-top">
-          <img src="assets/brand/mm-logo.png"
-               alt="M&amp;M African Kitchen &amp; Bar"
-               class="hero-logo"
-               onerror="this.style.display='none'" />
-          <span class="hero-brand">M&amp;M African Kitchen &amp; Bar</span>
+          <img src="assets/brand/ni-biashara-official-logo.png" alt="Ni Biashara LLC" class="hero-logo" onerror="this.style.display='none'" />
+          <span class="hero-brand">Ni Biashara LLC</span>
         </div>
-        <div class="hero-badge">Welcome Packet &mdash; June 2026</div>
-        <h1>Your business, your&nbsp;control. We handle the technical&nbsp;work.</h1>
-        <p class="hero-lede">Ola, thank you for trusting us with M&amp;M. Everything here is designed so you can see what is live, what is changing, and what needs your approval &mdash; at any time, on your own&nbsp;terms.</p>
+        <div class="hero-badge">Welcome Packet — June 2026</div>
+        <h1>We’re excited to earn your trust and business.</h1>
+        <p class="hero-lede">Ola, thank you for trusting Ni Biashara with this work. This welcome note keeps the picture simple: the site is live now, the current hosting is Netlify, and the next visibility layer is Cloudflare.</p>
       </header>
 
-      <!-- ═══ PRINCIPLES ═══ -->
       <section class="sec">
         <span class="sec-label">How we work together</span>
-        <h2 class="sec-title">Clear ownership. Full visibility. Low&nbsp;friction.</h2>
+        <h2 class="sec-title">Clear ownership. Clean visibility. Low friction.</h2>
         <div class="cols">
           <div class="card">
-            <div class="card-title">You own the business</div>
-            <p>M&amp;M retains final control of the domain, accounts, and every decision that touches the public face of the restaurant. Our goal is to set you up with safe, direct visibility into&nbsp;everything.</p>
+            <div class="card-title">What you should expect</div>
+            <p>M&amp;M keeps business ownership and review visibility. Ni Biashara handles the technical work and keeps the working picture understandable from the client side.</p>
           </div>
           <div class="card">
-            <div class="card-title">We handle the build</div>
-            <p>Ni Biashara manages the website, ordering, voice, and technical operations. You see what is live, what is changing, and what needs your&nbsp;approval.</p>
+            <div class="card-title">What we are trying to avoid</div>
+            <p>No confusing internal tooling language, no unnecessary auth burden, and no changes now that make the Cloudflare handoff harder later.</p>
           </div>
         </div>
       </section>
 
-      <!-- ═══ SETUP ═══ -->
       <section class="sec">
-        <span class="sec-label">Your setup</span>
-        <h2 class="sec-title">Simple tools, nothing to&nbsp;install</h2>
-        <p class="sec-desc">Every tool you need is something you already know how to use. Nothing gets trapped inside a developer&nbsp;tool.</p>
-
+        <span class="sec-label">Simple tools</span>
+        <h2 class="sec-title">Easy to open. Easy to check.</h2>
+        <p class="sec-desc">These are the visible tools around the project right now.</p>
         <ul class="stack">
-          <li class="stack-row">
-            <div class="stack-dot">&#127760;</div>
-            <div>
-              <strong>mmafricankitchen.com</strong>
-              <span>Live production site. Domain registered at Name.com. DNS is currently on Netlify; Cloudflare is the intended control layer once the handoff blocker is&nbsp;cleared.</span>
-            </div>
-          </li>
-          <li class="stack-row">
-            <div class="stack-dot">&#128202;</div>
-            <div>
-              <strong>Google Sheet &mdash; Progress Tracker</strong>
-              <span>Track active work, requests, and approvals in one shared spreadsheet you can check&nbsp;anytime.</span>
-            </div>
-          </li>
-          <li class="stack-row">
-            <div class="stack-dot">&#128193;</div>
-            <div>
-              <strong>Google Drive &mdash; Shared Files</strong>
-              <span>Menus, photos, flyers, and anything that needs review or approval lives in one&nbsp;folder.</span>
-            </div>
-          </li>
-          <li class="stack-row">
-            <div class="stack-dot">&#128172;</div>
-            <div>
-              <strong>Business WhatsApp &mdash; Owner Lane</strong>
-              <span>Your day-to-day line for questions, status checks, and change requests. We keep it clean and practical, and track every real request on our side for audit and month-end&nbsp;review.</span>
-            </div>
-          </li>
-          <li class="stack-row">
-            <div class="stack-dot">&#128222;</div>
-            <div>
-              <strong>Chike &mdash; AI Voice Line</strong>
-              <span>M&amp;M's voice assistant for incoming customer calls. Active on the current Vapi&nbsp;line.</span>
-            </div>
-          </li>
+          <li class="stack-row"><div class="stack-dot">🌍</div><div><a href="https://mmafricankitchen.com/" target="_blank" rel="noopener"><strong>mmafricankitchen.com</strong></a><span>The live public website.</span></div></li>
+          <li class="stack-row"><div class="stack-dot">🟢</div><div><a href="https://app.netlify.com/" target="_blank" rel="noopener"><strong>Netlify</strong></a><span>The current hosting layer today.</span></div></li>
+          <li class="stack-row"><div class="stack-dot">🛡️</div><div><a href="https://dash.cloudflare.com/" target="_blank" rel="noopener"><strong>Cloudflare</strong></a><span>The target visibility and control layer once the blocker clears safely.</span></div></li>
+          <li class="stack-row"><div class="stack-dot">📊</div><div><a href="https://docs.google.com/spreadsheets/d/1tHFkeCxQjXdVn8TFPoFoGzYRbSlOIGYAbj93TFaU8nA/edit" target="_blank" rel="noopener"><strong>Google Sheet</strong></a><span>The shared tracker for progress, requests, and approvals.</span></div></li>
+          <li class="stack-row"><div class="stack-dot">📁</div><div><a href="https://drive.google.com/" target="_blank" rel="noopener"><strong>Google Drive</strong></a><span>The shared file layer for menus, photos, and review files.</span></div></li>
         </ul>
       </section>
 
-      <!-- ═══ CURRENT STATE ═══ -->
       <section class="sec">
-        <span class="sec-label">Where things stand</span>
-        <h2 class="sec-title">Honest snapshot</h2>
+        <span class="sec-label">Current picture</span>
+        <h2 class="sec-title">Netlify now. Cloudflare next.</h2>
         <div class="callout info" style="margin-top:16px;">
           <div class="callout-mark">!</div>
           <div>
-            <p><strong>DNS is currently on Netlify / NS1.</strong> The live site runs normally at mmafricankitchen.com. The target is to move website control and DNS to Cloudflare for better visibility, security, and redirect management &mdash; but that handoff depends on a blocker we are actively working to&nbsp;clear.</p>
+            <p><strong>The live site is running now.</strong> The domain is registered at Name.com. The site is currently on Netlify. Cloudflare is the intended next visibility and governance layer once the blocker clears safely.</p>
           </div>
         </div>
       </section>
 
-      <!-- ═══ TIMELINE ═══ -->
       <section class="sec">
         <span class="sec-label">Roadmap</span>
-        <h2 class="sec-title">June gets it working. July makes it&nbsp;shine.</h2>
-        <p class="sec-desc">We move in phases so nothing breaks and every step is&nbsp;checkable.</p>
-
+        <h2 class="sec-title">Keep today stable. Move tomorrow cleanly.</h2>
         <div class="phases">
           <div class="phase current">
-            <span class="phase-label now">June &mdash; Now</span>
-            <h3>Function first</h3>
+            <span class="phase-label now">Current</span>
+            <h3>Netlify state</h3>
             <ul>
-              <li>Owner questions and status lane live on WhatsApp</li>
-              <li>Website routing for WhatsApp orders and voice orders</li>
-              <li>Chike stays on the current Vapi line</li>
-              <li>Shared tracker and file folder active</li>
-              <li>Clear the DNS / control-plane blocker</li>
+              <li>Keep the production site stable</li>
+              <li>Keep updates visible through the shared workflow</li>
+              <li>Avoid changes that create migration mess later</li>
             </ul>
           </div>
           <div class="phase">
-            <span class="phase-label later">July &mdash; Target</span>
-            <h3>Polish and expand</h3>
+            <span class="phase-label later">Next</span>
+            <h3>Cloudflare visibility</h3>
             <ul>
-              <li>Cloudflare active as production DNS and security layer (if blocker clears)</li>
-              <li>Full ordering and delivery flow refinement</li>
-              <li>Website improvements based on real traffic and owner feedback</li>
-              <li>Structured governance for the permanent WhatsApp / Cloud API path</li>
-              <li>Month-end review and audit</li>
+              <li>Move visibility and control into Cloudflare safely</li>
+              <li>Keep the owner view clean during the handoff</li>
+              <li>Keep the same simple tools around the project</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <!-- ═══ GUIDING PRINCIPLE ═══ -->
       <section class="sec">
         <div class="callout check">
-          <div class="callout-mark">&#10003;</div>
+          <div class="callout-mark">✓</div>
           <div>
-            <p><strong>The guiding principle:</strong> ownership stays clear, access stays safe, communication stays easy. You can check the website, review progress in the tracker, and keep files in one shared folder &mdash; all without needing us in the&nbsp;loop.</p>
+            <p><strong>Guiding principle:</strong> keep the client-facing view simple — live site, current Netlify state, future Cloudflare visibility, shared tracker, and shared files.</p>
           </div>
         </div>
       </section>
 
-      <!-- ═══ SIGN-OFF ═══ -->
       <footer class="footer">
-        <p>We are looking forward to building this right. If anything here raises a question, send it on the WhatsApp line and we will get back to you&nbsp;clearly.</p>
+        <p>We are looking forward to building this right. This welcome note is intentionally simple and leaves out internal implementation detail.</p>
         <div class="sig">
           <div class="sig-name">Ni Biashara LLC</div>
           <div class="sig-role">Technology &amp; operations partner for M&amp;M African Kitchen &amp; Bar</div>
         </div>
       </footer>
-
     </article>
   </main>
 </body>

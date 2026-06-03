@@ -3,127 +3,86 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="assets/brand/mm-logo.png" />
+  <link rel="icon" href="assets/brand/ni-biashara-official-logo.png" />
   <meta name="robots" content="noindex,nofollow" />
   <title>M&M African Kitchen & Bar — Welcome + Access Packet</title>
   <style>
-    :root {
-      --bg: #f6f3ef;
-      --paper: #ffffff;
-      --ink: #161110;
-      --body: #3d3530;
-      --muted: #7a6e64;
-      --green: #14301f;
-      --green-mid: #1c4a2d;
-      --gold: #b8801a;
-      --gold-soft: #f0dbb8;
-      --line: #e4d9cd;
-      --line-faint: #eee7dd;
-      --warm-bg: #faf7f3;
-      --radius-lg: 24px;
-      --radius: 16px;
-      --radius-sm: 12px;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { background: var(--bg); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-    body { font: 400 15.5px/1.7 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Inter, system-ui, sans-serif; color: var(--body); }
-    strong { color: var(--ink); font-weight: 600; }
-    a { color: inherit; }
-    .page { max-width: 740px; margin: 0 auto; padding: 56px 20px 72px; }
-    .sheet { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: 0 0 0 1px rgba(0,0,0,.02), 0 4px 16px rgba(20,12,6,.04), 0 24px 64px rgba(20,12,6,.07); overflow: hidden; }
-    .hero { background: linear-gradient(165deg, #122a1a 0%, var(--green-mid) 55%, #1f5630 100%); padding: 56px 52px 52px; position: relative; }
-    .hero::before { content: ''; position: absolute; top: -40%; right: -10%; width: 480px; height: 480px; background: radial-gradient(circle, rgba(184,128,26,.10) 0%, transparent 65%); pointer-events: none; }
-    .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,.06) 30%, rgba(255,255,255,.06) 70%, transparent); }
-    .hero-top { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
-    .hero-logo { width: 48px; height: 48px; border-radius: 12px; background: rgba(255,255,255,.10); padding: 5px; object-fit: contain; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
-    .hero-brand { font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.45); }
-    .hero-badge { display: inline-flex; align-items: center; gap: 7px; font-size: .64rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; color: var(--gold-soft); background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.10); border-radius: 999px; padding: 5px 14px 5px 11px; margin-bottom: 24px; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
-    .hero-badge::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
-    .hero h1 { color: #fff; font-weight: 700; font-size: clamp(1.6rem, 4.2vw, 2.4rem); line-height: 1.12; letter-spacing: -.03em; margin-bottom: 16px; max-width: 560px; }
-    .hero-lede { color: rgba(255,255,255,.72); font-size: .98rem; line-height: 1.65; max-width: 560px; }
-    .sec { padding: 40px 52px; }
-    .sec + .sec { border-top: 1px solid var(--line-faint); }
-    .sec-label { display: block; font-size: .62rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-    .sec-title { font-size: 1.28rem; font-weight: 700; letter-spacing: -.02em; line-height: 1.2; color: var(--green); margin-bottom: 10px; }
-    .sec-desc { color: var(--muted); font-size: .92rem; line-height: 1.65; max-width: 560px; }
-    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 22px; }
-    .cols.three { grid-template-columns: repeat(3, 1fr); }
-    .card { background: var(--warm-bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px 20px; }
-    .card-title { font-size: .88rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; line-height: 1.25; }
-    .card p, .card li { font-size: .84rem; color: var(--muted); line-height: 1.6; }
-    .card ul { padding-left: 15px; margin: 0; }
-    .card li { margin: 4px 0; }
-    .card li::marker { color: var(--gold); }
-    .stack { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
-    .stack-row { display: flex; align-items: flex-start; gap: 14px; padding: 16px 20px; background: var(--warm-bg); border: 1px solid var(--line); border-radius: var(--radius-sm); }
-    .stack-dot { flex-shrink: 0; width: 32px; height: 32px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: .88rem; background: var(--paper); border: 1px solid var(--line); }
-    .stack-row strong { display: block; font-size: .84rem; margin-bottom: 1px; }
-    .stack-row span { font-size: .8rem; color: var(--muted); line-height: 1.55; }
-    .phases { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 22px; }
-    .phase { background: var(--warm-bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px 20px; }
-    .phase.current { border-color: var(--gold-soft); background: linear-gradient(180deg, #fffdf8, #fef7ec); }
-    .phase-label { display: inline-block; font-size: .58rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; padding: 3px 9px; border-radius: 5px; margin-bottom: 12px; }
-    .phase-label.now { background: rgba(28,74,45,.08); color: var(--green-mid); }
-    .phase-label.later { background: rgba(184,128,26,.08); color: #9a6a10; }
-    .phase h3 { font-size: .95rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; line-height: 1.25; }
-    .phase ul { padding-left: 15px; margin: 0; }
-    .phase li { font-size: .8rem; color: var(--muted); line-height: 1.55; margin: 4px 0; }
-    .phase li::marker { color: var(--gold); }
-    .callout { display: flex; gap: 14px; align-items: flex-start; padding: 20px 22px; border-radius: var(--radius-sm); }
-    .callout.info { background: linear-gradient(135deg, #fefcf7, #fdf5e8); border: 1px solid #e8d4b4; }
-    .callout.check { background: linear-gradient(135deg, #f6fbf7, #eef6ef); border: 1px solid #c8ddc9; }
-    .callout.warn { background: linear-gradient(135deg, #fff8f4, #faece5); border: 1px solid #ecd3c8; }
-    .callout-mark { flex-shrink: 0; width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: .78rem; font-weight: 700; margin-top: 1px; }
-    .callout.info .callout-mark { background: rgba(184,128,26,.10); color: var(--gold); }
-    .callout.check .callout-mark { background: rgba(28,74,45,.10); color: var(--green-mid); }
-    .callout.warn .callout-mark { background: rgba(120,48,24,.10); color: #8a3d1f; }
-    .callout p, .callout li { font-size: .86rem; line-height: 1.6; }
-    .callout.info p, .callout.info li { color: #5a4128; }
-    .callout.check p, .callout.check li { color: #2a4430; }
-    .callout.warn p, .callout.warn li { color: #5f3426; }
-    .button-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px; margin-top: 12px; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; border-radius: 999px; border: 1px solid #c99458; background: #fff5e4; color: #6c390d; padding: 9px 13px; font-weight: 800; font-size: .84rem; text-align: center; text-decoration: none; }
-    .btn.primary { background: var(--green); border-color: var(--green); color: #ffe2a7; }
-    .footer { padding: 36px 52px 44px; border-top: 1px solid var(--line-faint); }
-    .footer p { font-size: .88rem; color: var(--muted); line-height: 1.6; }
-    .footer .sig { margin-top: 20px; }
-    .footer .sig-name { font-size: .92rem; font-weight: 700; color: var(--ink); }
-    .footer .sig-role { font-size: .78rem; color: var(--muted); margin-top: 2px; }
-    .doc-links { display: grid; gap: 12px; margin-top: 22px; }
-    .doc-link { background: var(--warm-bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; text-decoration: none; }
-    .doc-link strong { display: block; font-size: .92rem; margin-bottom: 4px; }
-    .doc-link span { display: block; font-size: .82rem; color: var(--muted); line-height: 1.55; }
-    .mini-list { padding-left: 18px; margin-top: 10px; }
-    .mini-list li { color: var(--muted); font-size: .84rem; line-height: 1.58; margin: 4px 0; }
-    .mini-list li::marker { color: var(--gold); }
-    @media (max-width: 680px) {
-      .page { padding: 24px 14px 48px; }
-      .hero { padding: 40px 28px 36px; }
-      .sec { padding: 28px 28px; }
-      .footer { padding: 28px 28px 36px; }
-      .cols, .cols.three, .phases { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 1.5rem; }
-      .hero-top { margin-bottom: 28px; }
-    }
-    @media (max-width: 400px) {
-      .hero { padding: 32px 20px 28px; }
-      .sec { padding: 24px 20px; }
-      .footer { padding: 24px 20px 32px; }
-    }
-</style>
+    :root { --bg:#f6f3ef; --paper:#fff; --ink:#161110; --body:#3d3530; --muted:#7a6e64; --green:#14301f; --green-mid:#1c4a2d; --gold:#b8801a; --gold-soft:#f0dbb8; --line:#e4d9cd; --line-faint:#eee7dd; --warm-bg:#faf7f3; --radius-lg:24px; --radius:16px; --radius-sm:12px; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { background:var(--bg); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+    body { font:400 15.5px/1.7 -apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Inter,system-ui,sans-serif; color:var(--body); }
+    strong { color:var(--ink); font-weight:600; }
+    a { color:inherit; }
+    .page { max-width:740px; margin:0 auto; padding:56px 20px 72px; }
+    .sheet { background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-lg); box-shadow:0 0 0 1px rgba(0,0,0,.02),0 4px 16px rgba(20,12,6,.04),0 24px 64px rgba(20,12,6,.07); overflow:hidden; }
+    .hero { background:linear-gradient(165deg,#122a1a 0%,var(--green-mid) 55%,#1f5630 100%); padding:56px 52px 52px; position:relative; }
+    .hero::before { content:''; position:absolute; top:-40%; right:-10%; width:480px; height:480px; background:radial-gradient(circle,rgba(184,128,26,.10) 0%,transparent 65%); pointer-events:none; }
+    .hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(255,255,255,.06) 30%,rgba(255,255,255,.06) 70%,transparent); }
+    .hero-top { display:flex; align-items:center; gap:16px; margin-bottom:32px; }
+    .hero-logo { width:48px; height:48px; border-radius:12px; background:rgba(255,255,255,.12); padding:6px; object-fit:contain; }
+    .hero-brand { font-size:.68rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.55); }
+    .hero-badge { display:inline-flex; align-items:center; gap:7px; font-size:.64rem; font-weight:700; letter-spacing:.11em; text-transform:uppercase; color:var(--gold-soft); background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.10); border-radius:999px; padding:5px 14px 5px 11px; margin-bottom:24px; }
+    .hero-badge::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--gold); }
+    .hero h1 { color:#fff; font-weight:700; font-size:clamp(1.6rem,4.2vw,2.35rem); line-height:1.12; letter-spacing:-.03em; margin-bottom:16px; max-width:590px; }
+    .hero-lede { color:rgba(255,255,255,.76); font-size:.98rem; line-height:1.65; max-width:560px; }
+    .sec { padding:40px 52px; }
+    .sec + .sec { border-top:1px solid var(--line-faint); }
+    .sec-label { display:block; font-size:.62rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+    .sec-title { font-size:1.28rem; font-weight:700; letter-spacing:-.02em; line-height:1.2; color:var(--green); margin-bottom:10px; }
+    .sec-desc { color:var(--muted); font-size:.92rem; line-height:1.65; max-width:580px; }
+    .cols { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:22px; }
+    .card { background:var(--warm-bg); border:1px solid var(--line); border-radius:var(--radius); padding:22px 24px 20px; }
+    .card-title { font-size:.88rem; font-weight:700; color:var(--ink); margin-bottom:8px; line-height:1.25; }
+    .card p, .card li { font-size:.84rem; color:var(--muted); line-height:1.6; }
+    .card ul { padding-left:15px; margin:0; }
+    .card li { margin:4px 0; }
+    .card li::marker { color:var(--gold); }
+    .stack { list-style:none; display:flex; flex-direction:column; gap:10px; margin-top:20px; }
+    .stack-row { display:flex; align-items:flex-start; gap:14px; padding:16px 20px; background:var(--warm-bg); border:1px solid var(--line); border-radius:var(--radius-sm); }
+    .stack-dot { flex-shrink:0; width:32px; height:32px; border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:.88rem; background:var(--paper); border:1px solid var(--line); }
+    .stack-row strong { display:block; font-size:.84rem; margin-bottom:2px; }
+    .stack-row span { font-size:.8rem; color:var(--muted); line-height:1.55; }
+    .stack-row a { text-decoration:none; }
+    .stack-row a strong { text-decoration:underline; text-decoration-color:rgba(184,128,26,.45); text-underline-offset:3px; }
+    .phases { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:22px; }
+    .phase { background:var(--warm-bg); border:1px solid var(--line); border-radius:var(--radius); padding:22px 24px 20px; }
+    .phase.current { border-color:var(--gold-soft); background:linear-gradient(180deg,#fffdf8,#fef7ec); }
+    .phase-label { display:inline-block; font-size:.58rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; padding:3px 9px; border-radius:5px; margin-bottom:12px; }
+    .phase-label.now { background:rgba(28,74,45,.08); color:var(--green-mid); }
+    .phase-label.later { background:rgba(184,128,26,.08); color:#9a6a10; }
+    .phase h3 { font-size:.95rem; font-weight:700; color:var(--ink); margin-bottom:8px; line-height:1.25; }
+    .phase ul { padding-left:15px; margin:0; }
+    .phase li { font-size:.8rem; color:var(--muted); line-height:1.55; margin:4px 0; }
+    .phase li::marker { color:var(--gold); }
+    .callout { display:flex; gap:14px; align-items:flex-start; padding:20px 22px; border-radius:var(--radius-sm); }
+    .callout.info { background:linear-gradient(135deg,#fefcf7,#fdf5e8); border:1px solid #e8d4b4; }
+    .callout.check { background:linear-gradient(135deg,#f6fbf7,#eef6ef); border:1px solid #c8ddc9; }
+    .callout-mark { flex-shrink:0; width:28px; height:28px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:.78rem; font-weight:700; margin-top:1px; }
+    .callout.info .callout-mark { background:rgba(184,128,26,.10); color:var(--gold); }
+    .callout.check .callout-mark { background:rgba(28,74,45,.10); color:var(--green-mid); }
+    .callout p { font-size:.86rem; line-height:1.6; }
+    .callout.info p { color:#5a4128; }
+    .callout.check p { color:#2a4430; }
+    .footer { padding:36px 52px 44px; border-top:1px solid var(--line-faint); }
+    .footer p { font-size:.88rem; color:var(--muted); line-height:1.6; }
+    .footer .sig { margin-top:20px; }
+    .footer .sig-name { font-size:.92rem; font-weight:700; color:var(--ink); }
+    .footer .sig-role { font-size:.78rem; color:var(--muted); margin-top:2px; }
+    @media (max-width:680px) { .page { padding:24px 14px 48px; } .hero { padding:40px 28px 36px; } .sec { padding:28px 28px; } .footer { padding:28px 28px 36px; } .cols, .phases { grid-template-columns:1fr; } .hero h1 { font-size:1.5rem; } .hero-top { margin-bottom:28px; } }
+    @media (max-width:400px) { .hero { padding:32px 20px 28px; } .sec { padding:24px 20px; } .footer { padding:24px 20px 32px; } }
+  </style>
 </head>
 <body>
-
   <main class="page">
     <article class="sheet">
       <header class="hero">
         <div class="hero-top">
-          <img src="assets/brand/mm-logo.png" alt="M&amp;M African Kitchen &amp; Bar" class="hero-logo" onerror="this.style.display='none'" />
-          <span class="hero-brand">M&amp;M African Kitchen &amp; Bar</span>
+          <img src="assets/brand/ni-biashara-official-logo.png" alt="Ni Biashara LLC" class="hero-logo" onerror="this.style.display='none'" />
+          <span class="hero-brand">Ni Biashara LLC</span>
         </div>
         <div class="hero-badge">Welcome + Access Packet</div>
         <h1>We’re excited to earn your trust and business.</h1>
-        <p class="hero-lede">The goal is simple: make M&amp;M easier to check, easier to update, and easier to run without making you learn developer tools or hand over more control than necessary.</p>
+        <p class="hero-lede">This is a simple working packet from Ni Biashara to M&amp;M African Kitchen &amp; Bar so you can see what is live today, what is changing next, and where you will have clean visibility.</p>
       </header>
 
       <section class="sec">
@@ -134,32 +93,33 @@
             <div class="card-title">What stays true</div>
             <ul>
               <li>You stay owner.</li>
-              <li>Ni Biashara handles the technical lift.</li>
+              <li>Ni Biashara handles the technical work.</li>
               <li>You can check progress, files, and requests anytime.</li>
               <li>Access can be reduced or revoked by M&amp;M at any time.</li>
             </ul>
           </div>
           <div class="card">
-            <div class="card-title">What we are avoiding</div>
+            <div class="card-title">What this packet is for</div>
             <ul>
-              <li>No GitHub or local-folder dependency for day-to-day client visibility.</li>
-              <li>No ChatGPT thread acting as the source of truth.</li>
-              <li>No auth sprawl just to check what changed.</li>
-              <li>No risky changes now that would complicate the Cloudflare move later.</li>
+              <li>Show the current website setup clearly.</li>
+              <li>Show the move from Netlify to Cloudflare clearly.</li>
+              <li>Show the simple tools used for visibility.</li>
+              <li>Keep the client-facing view free of internal implementation detail.</li>
             </ul>
           </div>
         </div>
       </section>
 
       <section class="sec">
-        <span class="sec-label">Recommended stack</span>
-        <h2 class="sec-title">The stack should feel normal, not technical.</h2>
+        <span class="sec-label">Simple tools</span>
+        <h2 class="sec-title">Everything important should be easy to open.</h2>
         <ul class="stack">
-          <li class="stack-row"><div class="stack-dot">🌐</div><div><strong>Name.com</strong><span>The domain is registered here now. Final client-visible control and handoff still need to be completed deliberately.</span></div></li>
-          <li class="stack-row"><div class="stack-dot">🛡️</div><div><strong>Cloudflare</strong><span>Target visibility, security, redirect, and governance layer once the blocker clears and the move is safe.</span></div></li>
-          <li class="stack-row"><div class="stack-dot">📊</div><div><strong>Google Sheet</strong><span>The owner-readable tracker for what is done, what is pending, what changed, and what needs approval.</span></div></li>
-          <li class="stack-row"><div class="stack-dot">📁</div><div><strong>Google Drive</strong><span>The shared home for menus, photos, flyers, PDFs, and approval files.</span></div></li>
-          <li class="stack-row"><div class="stack-dot">💬</div><div><strong>Business WhatsApp</strong><span>The practical lane for questions, change requests, approvals, and status checks.</span></div></li>
+          <li class="stack-row"><div class="stack-dot">🌍</div><div><a href="https://mmafricankitchen.com/" target="_blank" rel="noopener"><strong>Live website</strong></a><span>The current public site at mmafricankitchen.com.</span></div></li>
+          <li class="stack-row"><div class="stack-dot">🟢</div><div><a href="https://app.netlify.com/" target="_blank" rel="noopener"><strong>Netlify</strong></a><span>The current hosting layer while the site remains on the present setup.</span></div></li>
+          <li class="stack-row"><div class="stack-dot">🛡️</div><div><a href="https://dash.cloudflare.com/" target="_blank" rel="noopener"><strong>Cloudflare</strong></a><span>The target visibility and control layer once the move is cleared and completed safely.</span></div></li>
+          <li class="stack-row"><div class="stack-dot">📊</div><div><a href="https://docs.google.com/spreadsheets/d/1tHFkeCxQjXdVn8TFPoFoGzYRbSlOIGYAbj93TFaU8nA/edit" target="_blank" rel="noopener"><strong>Google Sheet</strong></a><span>The owner-readable tracker for work, requests, status, and approvals.</span></div></li>
+          <li class="stack-row"><div class="stack-dot">📁</div><div><a href="https://drive.google.com/" target="_blank" rel="noopener"><strong>Google Drive</strong></a><span>The shared file layer for menus, photos, PDFs, and approval files.</span></div></li>
+          <li class="stack-row"><div class="stack-dot">🌐</div><div><a href="https://www.name.com/account/login" target="_blank" rel="noopener"><strong>Name.com</strong></a><span>The current registrar for the production domain.</span></div></li>
         </ul>
       </section>
 
@@ -169,36 +129,26 @@
         <div class="callout info">
           <div class="callout-mark">!</div>
           <div>
-            <p><strong>mmafricankitchen.com is live.</strong> The domain is registered at Name.com. DNS is currently on Netlify DNS / NS1. Cloudflare is the intended control layer once the blocker clears safely. That means Cloudflare is the target state, not the live state yet.</p>
+            <p><strong>mmafricankitchen.com is live.</strong> The domain is registered at Name.com. The site is currently on Netlify. Cloudflare is the next visibility and governance layer once the blocker clears safely. That means Netlify is the current state and Cloudflare is the target state.</p>
           </div>
         </div>
         <div class="cols" style="margin-top:16px;">
           <div class="card">
-            <div class="card-title">Target M&amp;M control</div>
+            <div class="card-title">What Cloudflare visibility should give you</div>
             <ul>
-              <li>Registrar control or deliberate transfer path</li>
-              <li>Cloudflare zone/team access once the move is complete</li>
-              <li>Google account or Workspace for Drive and Sheets</li>
+              <li>A cleaner place to see domain and traffic posture</li>
+              <li>Better control around DNS and redirects</li>
+              <li>A safer long-term visibility layer for the website</li>
             </ul>
           </div>
           <div class="card">
-            <div class="card-title">Ni Biashara working access</div>
+            <div class="card-title">What stays simple</div>
             <ul>
-              <li>Scoped collaborator/operator access where possible</li>
-              <li>Edit access to the Google Sheet tracker</li>
-              <li>Edit access to the shared Drive folder</li>
+              <li>Website visible from the live domain</li>
+              <li>Progress visible in the shared tracker</li>
+              <li>Files visible in the shared folder</li>
             </ul>
           </div>
-        </div>
-      </section>
-
-      <section class="sec">
-        <span class="sec-label">ChatGPT option</span>
-        <h2 class="sec-title">Helpful as a conversation layer. Not the system.</h2>
-        <div class="cols three">
-          <div class="card"><div class="card-title">Good for</div><p>Questions, weekly summaries, rough change requests, copy ideas, and plain-English check-ins.</p></div>
-          <div class="card"><div class="card-title">Not for</div><p>Hosting control, DNS control, final approvals history, file storage, or the source of truth for what is live.</p></div>
-          <div class="card"><div class="card-title">Best rule</div><p>If a real change happens, it gets applied and tracked in the real project systems.</p></div>
         </div>
       </section>
 
@@ -207,21 +157,21 @@
         <h2 class="sec-title">What a normal request looks like</h2>
         <div class="phases">
           <div class="phase current">
-            <span class="phase-label now">Request path</span>
-            <h3>Ask in plain English</h3>
+            <span class="phase-label now">Current setup</span>
+            <h3>Netlify now</h3>
             <ul>
-              <li>Send the request on WhatsApp or note it in the shared tracker</li>
-              <li>We clarify the exact action if needed</li>
-              <li>We make the actual website or file change</li>
+              <li>The production site stays stable on the current hosting path</li>
+              <li>Requests and updates keep moving through the shared workflow</li>
+              <li>Nothing gets changed in a way that makes the Cloudflare move messier later</li>
             </ul>
           </div>
           <div class="phase">
-            <span class="phase-label later">Verification path</span>
-            <h3>Check the result safely</h3>
+            <span class="phase-label later">Target setup</span>
+            <h3>Cloudflare next</h3>
             <ul>
-              <li>You review the preview or live result</li>
-              <li>The tracker records what changed</li>
-              <li>The July governance path stays clean for the Cloudflare move</li>
+              <li>Move visibility and control into Cloudflare safely</li>
+              <li>Keep the live site readable and owner-visible during the handoff</li>
+              <li>Use the same simple tools for day-to-day checking</li>
             </ul>
           </div>
         </div>
@@ -231,13 +181,13 @@
         <div class="callout check">
           <div class="callout-mark">✓</div>
           <div>
-            <p><strong>Best current recommendation:</strong> keep the real project in client-owned business tools — domain layer, Cloudflare target layer, tracker, and shared files — and use ChatGPT only if you want an easier conversation surface on top.</p>
+            <p><strong>Best current recommendation:</strong> keep the visible client stack simple — live website, current Netlify state, future Cloudflare visibility, shared tracker, and shared files.</p>
           </div>
         </div>
       </section>
 
       <footer class="footer">
-        <p>The safest structure is: registrar ownership in Name.com, operational web visibility in Cloudflare once cleared, day-to-day tracking in Google Sheet, files in Google Drive, and ChatGPT only as an optional conversation layer.</p>
+        <p>This packet is meant to keep the working setup clear and easy to review from the client side, without exposing internal implementation detail.</p>
         <div class="sig">
           <div class="sig-name">Ni Biashara LLC</div>
           <div class="sig-role">Technology &amp; operations partner for M&amp;M African Kitchen &amp; Bar</div>
@@ -245,6 +195,5 @@
       </footer>
     </article>
   </main>
-
 </body>
 </html>

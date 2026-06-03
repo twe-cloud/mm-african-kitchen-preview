@@ -3,150 +3,57 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="assets/brand/mm-logo.png" />
+  <link rel="icon" href="assets/brand/ni-biashara-official-logo.png" />
   <meta name="robots" content="noindex,nofollow" />
   <title>M&M African Kitchen & Bar — Owner Preview Hub</title>
   <style>
-    :root {
-      --bg: #f6f3ef;
-      --paper: #ffffff;
-      --ink: #161110;
-      --body: #3d3530;
-      --muted: #7a6e64;
-      --green: #14301f;
-      --green-mid: #1c4a2d;
-      --gold: #b8801a;
-      --gold-soft: #f0dbb8;
-      --line: #e4d9cd;
-      --line-faint: #eee7dd;
-      --warm-bg: #faf7f3;
-      --radius-lg: 24px;
-      --radius: 16px;
-      --radius-sm: 12px;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { background: var(--bg); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-    body { font: 400 15.5px/1.7 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Inter, system-ui, sans-serif; color: var(--body); }
-    strong { color: var(--ink); font-weight: 600; }
-    a { color: inherit; }
-    .page { max-width: 740px; margin: 0 auto; padding: 56px 20px 72px; }
-    .sheet { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: 0 0 0 1px rgba(0,0,0,.02), 0 4px 16px rgba(20,12,6,.04), 0 24px 64px rgba(20,12,6,.07); overflow: hidden; }
-    .hero { background: linear-gradient(165deg, #122a1a 0%, var(--green-mid) 55%, #1f5630 100%); padding: 56px 52px 52px; position: relative; }
-    .hero::before { content: ''; position: absolute; top: -40%; right: -10%; width: 480px; height: 480px; background: radial-gradient(circle, rgba(184,128,26,.10) 0%, transparent 65%); pointer-events: none; }
-    .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,.06) 30%, rgba(255,255,255,.06) 70%, transparent); }
-    .hero-top { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
-    .hero-logo { width: 48px; height: 48px; border-radius: 12px; background: rgba(255,255,255,.10); padding: 5px; object-fit: contain; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
-    .hero-brand { font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.45); }
-    .hero-badge { display: inline-flex; align-items: center; gap: 7px; font-size: .64rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; color: var(--gold-soft); background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.10); border-radius: 999px; padding: 5px 14px 5px 11px; margin-bottom: 24px; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
-    .hero-badge::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
-    .hero h1 { color: #fff; font-weight: 700; font-size: clamp(1.6rem, 4.2vw, 2.4rem); line-height: 1.12; letter-spacing: -.03em; margin-bottom: 16px; max-width: 560px; }
-    .hero-lede { color: rgba(255,255,255,.72); font-size: .98rem; line-height: 1.65; max-width: 560px; }
-    .sec { padding: 40px 52px; }
-    .sec + .sec { border-top: 1px solid var(--line-faint); }
-    .sec-label { display: block; font-size: .62rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-    .sec-title { font-size: 1.28rem; font-weight: 700; letter-spacing: -.02em; line-height: 1.2; color: var(--green); margin-bottom: 10px; }
-    .sec-desc { color: var(--muted); font-size: .92rem; line-height: 1.65; max-width: 560px; }
-    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 22px; }
-    .cols.three { grid-template-columns: repeat(3, 1fr); }
-    .card { background: var(--warm-bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px 20px; }
-    .card-title { font-size: .88rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; line-height: 1.25; }
-    .card p, .card li { font-size: .84rem; color: var(--muted); line-height: 1.6; }
-    .card ul { padding-left: 15px; margin: 0; }
-    .card li { margin: 4px 0; }
-    .card li::marker { color: var(--gold); }
-    .stack { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
-    .stack-row { display: flex; align-items: flex-start; gap: 14px; padding: 16px 20px; background: var(--warm-bg); border: 1px solid var(--line); border-radius: var(--radius-sm); }
-    .stack-dot { flex-shrink: 0; width: 32px; height: 32px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: .88rem; background: var(--paper); border: 1px solid var(--line); }
-    .stack-row strong { display: block; font-size: .84rem; margin-bottom: 1px; }
-    .stack-row span { font-size: .8rem; color: var(--muted); line-height: 1.55; }
-    .phases { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 22px; }
-    .phase { background: var(--warm-bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px 20px; }
-    .phase.current { border-color: var(--gold-soft); background: linear-gradient(180deg, #fffdf8, #fef7ec); }
-    .phase-label { display: inline-block; font-size: .58rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; padding: 3px 9px; border-radius: 5px; margin-bottom: 12px; }
-    .phase-label.now { background: rgba(28,74,45,.08); color: var(--green-mid); }
-    .phase-label.later { background: rgba(184,128,26,.08); color: #9a6a10; }
-    .phase h3 { font-size: .95rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; line-height: 1.25; }
-    .phase ul { padding-left: 15px; margin: 0; }
-    .phase li { font-size: .8rem; color: var(--muted); line-height: 1.55; margin: 4px 0; }
-    .phase li::marker { color: var(--gold); }
-    .callout { display: flex; gap: 14px; align-items: flex-start; padding: 20px 22px; border-radius: var(--radius-sm); }
-    .callout.info { background: linear-gradient(135deg, #fefcf7, #fdf5e8); border: 1px solid #e8d4b4; }
-    .callout.check { background: linear-gradient(135deg, #f6fbf7, #eef6ef); border: 1px solid #c8ddc9; }
-    .callout.warn { background: linear-gradient(135deg, #fff8f4, #faece5); border: 1px solid #ecd3c8; }
-    .callout-mark { flex-shrink: 0; width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: .78rem; font-weight: 700; margin-top: 1px; }
-    .callout.info .callout-mark { background: rgba(184,128,26,.10); color: var(--gold); }
-    .callout.check .callout-mark { background: rgba(28,74,45,.10); color: var(--green-mid); }
-    .callout.warn .callout-mark { background: rgba(120,48,24,.10); color: #8a3d1f; }
-    .callout p, .callout li { font-size: .86rem; line-height: 1.6; }
-    .callout.info p, .callout.info li { color: #5a4128; }
-    .callout.check p, .callout.check li { color: #2a4430; }
-    .callout.warn p, .callout.warn li { color: #5f3426; }
-    .button-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px; margin-top: 12px; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; border-radius: 999px; border: 1px solid #c99458; background: #fff5e4; color: #6c390d; padding: 9px 13px; font-weight: 800; font-size: .84rem; text-align: center; text-decoration: none; }
-    .btn.primary { background: var(--green); border-color: var(--green); color: #ffe2a7; }
-    .footer { padding: 36px 52px 44px; border-top: 1px solid var(--line-faint); }
-    .footer p { font-size: .88rem; color: var(--muted); line-height: 1.6; }
-    .footer .sig { margin-top: 20px; }
-    .footer .sig-name { font-size: .92rem; font-weight: 700; color: var(--ink); }
-    .footer .sig-role { font-size: .78rem; color: var(--muted); margin-top: 2px; }
-    .doc-links { display: grid; gap: 12px; margin-top: 22px; }
-    .doc-link { background: var(--warm-bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; text-decoration: none; }
-    .doc-link strong { display: block; font-size: .92rem; margin-bottom: 4px; }
-    .doc-link span { display: block; font-size: .82rem; color: var(--muted); line-height: 1.55; }
-    .mini-list { padding-left: 18px; margin-top: 10px; }
-    .mini-list li { color: var(--muted); font-size: .84rem; line-height: 1.58; margin: 4px 0; }
-    .mini-list li::marker { color: var(--gold); }
-    @media (max-width: 680px) {
-      .page { padding: 24px 14px 48px; }
-      .hero { padding: 40px 28px 36px; }
-      .sec { padding: 28px 28px; }
-      .footer { padding: 28px 28px 36px; }
-      .cols, .cols.three, .phases { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 1.5rem; }
-      .hero-top { margin-bottom: 28px; }
-    }
-    @media (max-width: 400px) {
-      .hero { padding: 32px 20px 28px; }
-      .sec { padding: 24px 20px; }
-      .footer { padding: 24px 20px 32px; }
-    }
-</style>
+    :root { --bg:#f6f3ef; --paper:#fff; --ink:#161110; --body:#3d3530; --muted:#7a6e64; --green:#14301f; --green-mid:#1c4a2d; --gold:#b8801a; --gold-soft:#f0dbb8; --line:#e4d9cd; --line-faint:#eee7dd; --warm-bg:#faf7f3; --radius-lg:24px; --radius:16px; --radius-sm:12px; }
+    * { box-sizing:border-box; margin:0; padding:0; } html { background:var(--bg); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+    body { font:400 15.5px/1.7 -apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Inter,system-ui,sans-serif; color:var(--body); } a { color:inherit; } strong { color:var(--ink); font-weight:600; }
+    .page { max-width:740px; margin:0 auto; padding:56px 20px 72px; } .sheet { background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-lg); box-shadow:0 0 0 1px rgba(0,0,0,.02),0 4px 16px rgba(20,12,6,.04),0 24px 64px rgba(20,12,6,.07); overflow:hidden; }
+    .hero { background:linear-gradient(165deg,#122a1a 0%,var(--green-mid) 55%,#1f5630 100%); padding:56px 52px 52px; position:relative; } .hero::before { content:''; position:absolute; top:-40%; right:-10%; width:480px; height:480px; background:radial-gradient(circle,rgba(184,128,26,.10) 0%,transparent 65%); pointer-events:none; } .hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(255,255,255,.06) 30%,rgba(255,255,255,.06) 70%,transparent); }
+    .hero-top { display:flex; align-items:center; gap:16px; margin-bottom:32px; } .hero-logo { width:48px; height:48px; border-radius:12px; background:rgba(255,255,255,.12); padding:6px; object-fit:contain; } .hero-brand { font-size:.68rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.55); }
+    .hero-badge { display:inline-flex; align-items:center; gap:7px; font-size:.64rem; font-weight:700; letter-spacing:.11em; text-transform:uppercase; color:var(--gold-soft); background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.10); border-radius:999px; padding:5px 14px 5px 11px; margin-bottom:24px; } .hero-badge::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--gold); }
+    .hero h1 { color:#fff; font-weight:700; font-size:clamp(1.6rem,4.2vw,2.4rem); line-height:1.12; letter-spacing:-.03em; margin-bottom:16px; max-width:560px; } .hero-lede { color:rgba(255,255,255,.72); font-size:.98rem; line-height:1.65; max-width:560px; }
+    .sec { padding:40px 52px; } .sec + .sec { border-top:1px solid var(--line-faint); } .sec-label { display:block; font-size:.62rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; } .sec-title { font-size:1.28rem; font-weight:700; letter-spacing:-.02em; line-height:1.2; color:var(--green); margin-bottom:10px; }
+    .doc-links { display:grid; gap:12px; margin-top:22px; } .doc-link { background:var(--warm-bg); border:1px solid var(--line); border-radius:var(--radius); padding:18px 20px; text-decoration:none; } .doc-link strong { display:block; font-size:.92rem; margin-bottom:4px; } .doc-link span { display:block; font-size:.82rem; color:var(--muted); line-height:1.55; }
+    .callout { display:flex; gap:14px; align-items:flex-start; padding:20px 22px; border-radius:var(--radius-sm); background:linear-gradient(135deg,#fefcf7,#fdf5e8); border:1px solid #e8d4b4; } .callout-mark { flex-shrink:0; width:28px; height:28px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:.78rem; font-weight:700; margin-top:1px; background:rgba(184,128,26,.10); color:var(--gold); } .callout p { font-size:.86rem; line-height:1.6; color:#5a4128; }
+    .footer { padding:36px 52px 44px; border-top:1px solid var(--line-faint); } .footer p { font-size:.88rem; color:var(--muted); line-height:1.6; } .footer .sig { margin-top:20px; } .footer .sig-name { font-size:.92rem; font-weight:700; color:var(--ink); } .footer .sig-role { font-size:.78rem; color:var(--muted); margin-top:2px; }
+    @media (max-width:680px) { .page { padding:24px 14px 48px; } .hero { padding:40px 28px 36px; } .sec { padding:28px 28px; } .footer { padding:28px 28px 36px; } .hero h1 { font-size:1.5rem; } .hero-top { margin-bottom:28px; } }
+    @media (max-width:400px) { .hero { padding:32px 20px 28px; } .sec { padding:24px 20px; } .footer { padding:24px 20px 32px; } }
+  </style>
 </head>
 <body>
-
   <main class="page">
     <article class="sheet">
       <header class="hero">
         <div class="hero-top">
-          <img src="assets/brand/mm-logo.png" alt="M&amp;M African Kitchen &amp; Bar" class="hero-logo" onerror="this.style.display='none'" />
-          <span class="hero-brand">M&amp;M African Kitchen &amp; Bar</span>
+          <img src="assets/brand/ni-biashara-official-logo.png" alt="Ni Biashara LLC" class="hero-logo" onerror="this.style.display='none'" />
+          <span class="hero-brand">Ni Biashara LLC</span>
         </div>
         <div class="hero-badge">Owner Preview Hub</div>
-        <h1>Welcome, access, and pre-launch review in one place.</h1>
-        <p class="hero-lede">This preview hub keeps the owner-facing packet clean: one welcome note, one recommended access model, and one pre-launch brief for the remaining setup doors.</p>
+        <h1>Welcome, access, and visibility review in one place.</h1>
+        <p class="hero-lede">This hub keeps the owner-facing review clean: one welcome note, one access packet, and one pre-launch brief — without internal implementation detail.</p>
       </header>
-
       <section class="sec">
         <span class="sec-label">Review set</span>
         <h2 class="sec-title">Open the right packet for the right moment</h2>
         <div class="doc-links">
-          <a class="doc-link" href="ola-welcome-draft-email-2026-06-02.html"><strong>1. Welcome note</strong><span>The premium welcome page with the June/July picture and the operating principle behind the work.</span></a>
-          <a class="doc-link" href="ola-welcome-and-access-packet-2026-06-02.html"><strong>2. Welcome + access packet</strong><span>The clean recommendation for safe client visibility, ChatGPT’s proper role, and the preferred stack.</span></a>
-          <a class="doc-link" href="prelaunch-access.html"><strong>3. Pre-launch brief</strong><span>The four access doors still needed to finish the June setup cleanly.</span></a>
+          <a class="doc-link" href="ola-welcome-draft-email-2026-06-02.html"><strong>1. Welcome note</strong><span>A short client-facing note from Ni Biashara that explains the simple picture: Netlify now, Cloudflare next.</span></a>
+          <a class="doc-link" href="ola-welcome-and-access-packet-2026-06-02.html"><strong>2. Welcome + access packet</strong><span>The simple-tool view for website access, current Netlify state, future Cloudflare visibility, tracker, and files.</span></a>
+          <a class="doc-link" href="prelaunch-access.html"><strong>3. Pre-launch brief</strong><span>The remaining setup doors that still need access or approval.</span></a>
         </div>
       </section>
-
       <section class="sec">
-        <div class="callout info">
+        <div class="callout">
           <div class="callout-mark">!</div>
           <div>
-            <p>Grounded state: mmafricankitchen.com is live, the domain is registered at Name.com, DNS is still on Netlify DNS / NS1, and Cloudflare remains the intended control layer once the blocker clears safely.</p>
+            <p>Grounded state: mmafricankitchen.com is live, the domain is registered at Name.com, the site is currently on Netlify, and Cloudflare is the intended next visibility layer once the blocker clears safely.</p>
           </div>
         </div>
       </section>
-
       <footer class="footer">
-        <p>This hub is a client-preview surface only. It is meant for review, not as the live operations system.</p>
+        <p>This hub is a client-preview surface only. It is meant to keep the review set clean and easy to share.</p>
         <div class="sig">
           <div class="sig-name">Ni Biashara LLC</div>
           <div class="sig-role">Technology &amp; operations partner for M&amp;M African Kitchen &amp; Bar</div>
@@ -154,6 +61,5 @@
       </footer>
     </article>
   </main>
-
 </body>
 </html>
