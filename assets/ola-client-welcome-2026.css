@@ -85,13 +85,6 @@ strong {
   min-width: 0;
 }
 
-.brand-lockup img {
-  width: 38px;
-  height: 38px;
-  object-fit: contain;
-  border-radius: 10px;
-}
-
 .brand-name {
   color: var(--ink);
   font-size: .9rem;
