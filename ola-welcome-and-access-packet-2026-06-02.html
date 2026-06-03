@@ -44,16 +44,6 @@
     .stack-row span { font-size:.8rem; color:var(--muted); line-height:1.55; }
     .stack-row a { text-decoration:none; }
     .stack-row a strong { text-decoration:underline; text-decoration-color:rgba(184,128,26,.45); text-underline-offset:3px; }
-    .phases { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:22px; }
-    .phase { background:var(--warm-bg); border:1px solid var(--line); border-radius:var(--radius); padding:22px 24px 20px; }
-    .phase.current { border-color:var(--gold-soft); background:linear-gradient(180deg,#fffdf8,#fef7ec); }
-    .phase-label { display:inline-block; font-size:.58rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; padding:3px 9px; border-radius:5px; margin-bottom:12px; }
-    .phase-label.now { background:rgba(28,74,45,.08); color:var(--green-mid); }
-    .phase-label.later { background:rgba(184,128,26,.08); color:#9a6a10; }
-    .phase h3 { font-size:.95rem; font-weight:700; color:var(--ink); margin-bottom:8px; line-height:1.25; }
-    .phase ul { padding-left:15px; margin:0; }
-    .phase li { font-size:.8rem; color:var(--muted); line-height:1.55; margin:4px 0; }
-    .phase li::marker { color:var(--gold); }
     .callout { display:flex; gap:14px; align-items:flex-start; padding:20px 22px; border-radius:var(--radius-sm); }
     .callout.info { background:linear-gradient(135deg,#fefcf7,#fdf5e8); border:1px solid #e8d4b4; }
     .callout.check { background:linear-gradient(135deg,#f6fbf7,#eef6ef); border:1px solid #c8ddc9; }
@@ -68,7 +58,7 @@
     .footer .sig { margin-top:20px; }
     .footer .sig-name { font-size:.92rem; font-weight:700; color:var(--ink); }
     .footer .sig-role { font-size:.78rem; color:var(--muted); margin-top:2px; }
-    @media (max-width:680px) { .page { padding:24px 14px 48px; } .hero { padding:40px 28px 36px; } .sec { padding:28px 28px; } .footer { padding:28px 28px 36px; } .cols, .phases { grid-template-columns:1fr; } .hero h1 { font-size:1.5rem; } .hero-top { margin-bottom:28px; } }
+    @media (max-width:680px) { .page { padding:24px 14px 48px; } .hero { padding:40px 28px 36px; } .sec { padding:28px 28px; } .footer { padding:28px 28px 36px; } .cols { grid-template-columns:1fr; } .hero h1 { font-size:1.5rem; } .hero-top { margin-bottom:28px; } }
     @media (max-width:400px) { .hero { padding:32px 20px 28px; } .sec { padding:24px 20px; } .footer { padding:24px 20px 32px; } }
   </style>
 </head>
@@ -82,12 +72,12 @@
         </div>
         <div class="hero-badge">Welcome + Access Packet</div>
         <h1>We’re excited to support M&amp;M and earn your trust.</h1>
-        <p class="hero-lede">This packet gives you a clean view of what is live today, how to review progress, and where to find the important things.</p>
+        <p class="hero-lede">This packet gives you a clean view of what is live today, how we will review the work together, and what we need next to keep the transition smooth.</p>
       </header>
 
       <section class="sec">
-        <span class="sec-label">Operating model</span>
-        <h2 class="sec-title">Simple ownership. Clear visibility. Safe access.</h2>
+        <span class="sec-label">What this is</span>
+        <h2 class="sec-title">Clear ownership. Clear visibility. Clear next steps.</h2>
         <div class="cols">
           <div class="card">
             <div class="card-title">What stays true</div>
@@ -101,10 +91,10 @@
           <div class="card">
             <div class="card-title">What this packet covers</div>
             <ul>
-              <li>Show the current website setup clearly</li>
-              <li>Show the review flow clearly</li>
-              <li>Show the simple tools used for visibility</li>
-              <li>Keep the client-facing view clean and easy to review</li>
+              <li>What is already live</li>
+              <li>How we will review progress weekly and monthly</li>
+              <li>What we need next from M&amp;M</li>
+              <li>Where to check the important things</li>
             </ul>
           </div>
         </div>
@@ -127,59 +117,73 @@
         <div class="callout info">
           <div class="callout-mark">!</div>
           <div>
-            <p><strong>mmafricankitchen.com is live.</strong> The domain is registered at Name.com. The setup is stable, and the goal here is to make review and visibility simple from your side.</p>
+            <p><strong>mmafricankitchen.com is live.</strong> The domain is registered at Name.com. The setup is stable, and the goal now is to keep review simple while we complete the remaining business-side transitions.</p>
           </div>
         </div>
-        <div class="cols" style="margin-top:16px;">
+      </section>
+
+      <section class="sec">
+        <span class="sec-label">Review rhythm</span>
+        <h2 class="sec-title">How we will review the work</h2>
+        <div class="cols">
           <div class="card">
-            <div class="card-title">What good visibility should give you</div>
+            <div class="card-title">Weekly review</div>
             <ul>
-              <li>A cleaner place to review the website setup</li>
-              <li>A simpler way to check what is live</li>
-              <li>A clearer long-term review path for the website</li>
+              <li>What changed on the website</li>
+              <li>What requests were completed</li>
+              <li>What is waiting on access, approval, or content</li>
+              <li>Any live issues that need attention</li>
             </ul>
           </div>
           <div class="card">
-            <div class="card-title">What stays simple</div>
+            <div class="card-title">End-of-month review</div>
             <ul>
-              <li>Website visible from the live domain</li>
-              <li>Progress visible in the shared tracker</li>
-              <li>Files visible in the shared folder</li>
+              <li>What was shipped</li>
+              <li>What improved visibility or customer readiness</li>
+              <li>What is still blocked</li>
+              <li>What the next month should focus on</li>
             </ul>
           </div>
         </div>
       </section>
 
       <section class="sec">
-        <span class="sec-label">Change flow</span>
-        <h2 class="sec-title">What a normal request looks like</h2>
-        <div class="phases">
-          <div class="phase current">
-            <span class="phase-label now">Current setup</span>
-            <h3>Current working setup</h3>
+        <span class="sec-label">What we need next</span>
+        <h2 class="sec-title">Current asks from M&amp;M</h2>
+        <div class="cols">
+          <div class="card">
+            <div class="card-title">1. Activate the live site across your public surfaces</div>
             <ul>
-              <li>The production site stays stable on the current path</li>
-              <li>Requests and updates keep moving through the shared workflow</li>
-              <li>Nothing gets changed in a way that creates unnecessary cleanup later</li>
+              <li>Update the website link on Google Business Profile</li>
+              <li>Update Instagram, Facebook, and any other active social profiles</li>
+              <li>Update any business account or listing still pointing to the old page</li>
             </ul>
           </div>
-          <div class="phase">
-            <span class="phase-label later">Target setup</span>
-            <h3>Simple review flow</h3>
+          <div class="card">
+            <div class="card-title">2. Give access for the old-page redirect</div>
             <ul>
-              <li>Keep owner visibility clean and easy to follow</li>
-              <li>Keep the live site readable and easy to review</li>
-              <li>Use the same simple tools for day-to-day checking</li>
+              <li>Provide live admin access or collaborator access to the old site</li>
+              <li>Allow the old page to redirect cleanly to the new website</li>
+              <li>This helps make the customer transition seamless</li>
             </ul>
           </div>
         </div>
-      </section>
-
-      <section class="sec">
-        <div class="callout check">
-          <div class="callout-mark">✓</div>
-          <div>
-            <p><strong>Best current recommendation:</strong> keep the client view simple — live website, one shared tracker, and one shared file space.</p>
+        <div class="cols" style="margin-top:14px;">
+          <div class="card">
+            <div class="card-title">3. Confirm the active business accounts</div>
+            <ul>
+              <li>Which public accounts should carry the new website link</li>
+              <li>Which accounts are still active and owner-controlled</li>
+              <li>Which ones can be ignored, archived, or updated later</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-title">4. Keep the review loop moving</div>
+            <ul>
+              <li>Use the tracker for changes and approvals</li>
+              <li>Use the shared files area for menus, images, and updates</li>
+              <li>Flag anything urgent so it can be reviewed in the same week</li>
+            </ul>
           </div>
         </div>
       </section>
