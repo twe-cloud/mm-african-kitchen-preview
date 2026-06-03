@@ -26,6 +26,7 @@
 html {
   scroll-behavior: smooth;
   background: var(--page);
+  overflow-x: hidden;
 }
 
 body {
@@ -36,6 +37,7 @@ body {
   line-height: 1.55;
   letter-spacing: 0;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 a {
@@ -154,6 +156,7 @@ strong {
 
 .welcome-copy {
   position: relative;
+  min-width: 0;
 }
 
 .welcome-mark {
@@ -240,6 +243,7 @@ strong {
 }
 
 .welcome-panel {
+  min-width: 0;
   border-radius: 32px;
   background:
     linear-gradient(135deg, rgba(255, 255, 255, .11) 25%, transparent 25%) 0 0 / 18px 18px,
@@ -322,9 +326,11 @@ strong {
   color: #fffdf3;
   font-size: .94rem;
   font-weight: 760;
+  overflow-wrap: anywhere;
 }
 
 .page-card {
+  min-width: 0;
   margin: 0 auto 28px;
   border: 1px solid var(--line);
   border-radius: 30px;
@@ -686,14 +692,20 @@ strong {
   .topbar-inner,
   .section,
   .footer-note {
-    width: min(100vw - 24px, var(--max));
+    width: calc(100vw - 24px);
+    max-width: var(--max);
   }
 
   .topbar-inner {
     min-height: 64px;
+    justify-content: flex-start;
   }
 
   .brand-sub {
+    display: none;
+  }
+
+  .action-link {
     display: none;
   }
 
@@ -711,6 +723,19 @@ strong {
   .welcome-mark img {
     width: 46px;
     height: 46px;
+  }
+
+  .dissolve-title {
+    font-size: clamp(2.7rem, 13vw, 4.2rem);
+    line-height: .92;
+  }
+
+  .dissolve-title span {
+    display: block;
+  }
+
+  .welcome-lede {
+    font-size: 1.04rem;
   }
 
   .welcome-actions {

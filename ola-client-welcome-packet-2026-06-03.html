@@ -22,6 +22,7 @@
           <a href="#access">Access</a>
           <a href="#timeline">Timeline</a>
           <a href="#kpis">KPIs</a>
+          <a href="#ordering">Ordering</a>
           <a href="#brunch">Brunch</a>
           <a href="#next">Next Steps</a>
         </nav>
@@ -34,10 +35,9 @@
         <div class="welcome-mark">
           <img src="assets/owner-packet/ni-biashara-official-logo.png" alt="Ni Biashara LLC logo" />
         </div>
-        <h1 class="dissolve-title" aria-label="Welcome aboard, Ola.">
+        <h1 class="dissolve-title" aria-label="Welcome aboard.">
           <span>Welcome</span>
-          <span>aboard,</span>
-          <span>Ola.</span>
+          <span>aboard.</span>
         </h1>
         <p class="welcome-lede">
           We are glad to welcome M&amp;M African Kitchen &amp; Bar as the first official Ni Biashara pilot client.
@@ -120,7 +120,7 @@
             <tr>
               <td data-label="System"><span class="system-chip">Tracker</span></td>
               <td data-label="What it is for">Status, completed work, open asks, blockers, and weekly review notes.</td>
-              <td data-label="Control model">This is the plain-English operating record Ola can check anytime.</td>
+              <td data-label="Control model">This is the plain-English operating record you can check anytime.</td>
               <td data-label="Owner action"><a href="https://docs.google.com/spreadsheets/d/1tHFkeCxQjXdVn8TFPoFoGzYRbSlOIGYAbj93TFaU8nA/edit" target="_blank" rel="noopener">Open tracker</a></td>
             </tr>
             <tr>
@@ -344,10 +344,117 @@
       </div>
     </section>
 
+    <section id="ordering" class="section page-card">
+      <div class="page-head">
+        <div>
+          <span class="page-number">05 / Ordering + POS routes</span>
+          <h2>The end-to-end order path can break free from the POS.</h2>
+          <p>
+            We staged the private ordering layer so the business can choose how much to depend on TouchBistro, a new POS vendor, or a lighter owner-controlled hardware lane.
+          </p>
+        </div>
+        <span class="page-badge">Solution routes</span>
+      </div>
+      <div class="page-body">
+        <div class="approval-band">
+          <h3>The break-free route</h3>
+          <p>
+            The cleanest independent path is: M&amp;M website takes the order, a hosted payment provider confirms payment, the kitchen receives the ticket on a tablet/screen/printer, and Uber Direct handles delivery only when delivery is requested. The POS becomes optional for online order ownership instead of the gatekeeper.
+          </p>
+          <div class="formula" aria-label="Break free route">
+            <span>Website order</span>
+            <span>Hosted payment</span>
+            <span>Kitchen ticket</span>
+            <span>Uber Direct delivery</span>
+            <span>No POS dependency</span>
+          </div>
+        </div>
+
+        <div class="grid-3" style="margin-top:18px;">
+          <div class="handoff-card">
+            <span class="label">Already staged</span>
+            <h3>Private order lab</h3>
+            <p>Menu catalog, cart, mock paid order, staff board, kitchen display, print-ticket view, Stripe test checkout, and Uber Direct quote guard.</p>
+          </div>
+          <div class="handoff-card">
+            <span class="label">Not live yet</span>
+            <h3>No customer-facing switch</h3>
+            <p>Live ordering, live payments, POS writes, and courier dispatch stay off until the owner path is selected and approved.</p>
+          </div>
+          <div class="handoff-card">
+            <span class="label">Decision needed</span>
+            <h3>Pick the first route</h3>
+            <p>TouchBistro bridge, new vendor migration, owner hardware lane, or direct Uber delivery with no POS dependency.</p>
+          </div>
+        </div>
+
+        <table class="access-table" style="margin-top:18px;">
+          <thead>
+            <tr>
+              <th>Route</th>
+              <th>What it unlocks</th>
+              <th>What we need</th>
+              <th>Best use</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Route"><span class="system-chip">TouchBistro bridge</span></td>
+              <td data-label="What it unlocks">Orders can flow into the existing POS/KDS workflow if TouchBistro or an approved partner path supports it.</td>
+              <td data-label="What we need">TouchBistro admin or integration access, location/menu IDs, current Grubhub routing details, test-order permission, and confirmation of the supported ingest path.</td>
+              <td data-label="Best use">Best if the current in-store workflow must stay the source of truth for kitchen, reporting, and staff habits.</td>
+            </tr>
+            <tr>
+              <td data-label="Route"><span class="system-chip">New POS vendor</span></td>
+              <td data-label="What it unlocks">A cleaner long-term operating system if the current POS is being replaced anyway.</td>
+              <td data-label="What we need">Vendor name, payment processor choice, menu export/import path, hardware plan, reporting needs, migration date, and a rollback plan.</td>
+              <td data-label="Best use">Best if the business wants a full platform reset and is willing to move carefully instead of patching the old stack.</td>
+            </tr>
+            <tr>
+              <td data-label="Route"><span class="system-chip">Owner hardware lane</span></td>
+              <td data-label="What it unlocks">Website-owned pickup orders can appear on a staff tablet, kitchen display, and printed ticket without waiting for POS integration.</td>
+              <td data-label="What we need">One staff tablet, one kitchen screen or tablet, optional thermal printer, stable Wi-Fi, staff acceptance rules, and a daily reconciliation habit.</td>
+              <td data-label="Best use">Best first release when speed and control matter more than deep POS automation.</td>
+            </tr>
+            <tr>
+              <td data-label="Route"><span class="system-chip">Direct Uber delivery, no POS</span></td>
+              <td data-label="What it unlocks">M&amp;M owns the website order and payment; Uber is used only as the delivery rail after the order exists.</td>
+              <td data-label="What we need">Payment account approval, Uber Direct customer/store credentials, pickup address rules, delivery fee display, support/refund policy, and courier dispatch approval.</td>
+              <td data-label="Best use">Best fit for the exact goal of breaking free from POS dependency for online delivery while keeping delivery professional.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="grid-2" style="margin-top:18px;">
+          <div class="info-card dark">
+            <span class="label">Recommended first release</span>
+            <h3>Website-owned pickup first, Uber Direct delivery second.</h3>
+            <p>
+              Start with the owner hardware lane for pickup so staff can prove the order board, kitchen ticket, and payment-confirmed workflow. Then add Uber Direct delivery after the quote, fee, support, and dispatch rules are approved.
+            </p>
+          </div>
+          <div class="info-card">
+            <span class="label">Why this competes end to end</span>
+            <h3>The POS stops owning the customer relationship.</h3>
+            <p>
+              The website becomes the customer entry point, the payment provider becomes the payment source of truth, our board handles operations, and Uber Direct is only the courier layer. TouchBistro or a future POS can still receive records later, but it does not block the online business.
+            </p>
+          </div>
+        </div>
+
+        <div class="approval-band">
+          <h3>Decision question</h3>
+          <p>
+            Should we keep trying to unlock TouchBistro, wait for a new POS vendor, launch the consumer hardware lane first, or prioritize the direct Uber delivery/no-POS path as the break-free route?
+          </p>
+        </div>
+      </div>
+    </section>
+
     <section id="brunch" class="section page-card">
       <div class="page-head">
         <div>
-          <span class="page-number">05 / Brunch + talent approvals</span>
+          <span class="page-number">06 / Brunch + talent approvals</span>
           <h2>One programming decision unlocks the outreach list.</h2>
           <p>
             We should not start outreach with mixed signals. Please choose the first public brunch lane, then approve the starting outreach targets and budget band.
@@ -376,7 +483,7 @@
               Restore the stronger Sunday brunch concept as originally requested: smoked turkey, cocktails, music, influencer preview, and a clear waitlist CTA.
             </p>
             <ul class="list">
-              <li>Best if Ola wants to make a bigger public move quickly.</li>
+              <li>Best if you want to make a bigger public move quickly.</li>
               <li>Needs owner-approved launch date, menu, seating capacity, pricing, and talent budget.</li>
               <li>Requires faster outreach to DJs, performers, creators, and possibly a blogger brunch partner.</li>
             </ul>
@@ -384,7 +491,7 @@
         </div>
 
         <div class="approval-band">
-          <h3>Decision question for Ola</h3>
+          <h3>Decision question</h3>
           <p>
             Should Ni Biashara activate the lighter Monday/taster short-list first, or should we turn the Sunday smoked-turkey brunch teaser back on and begin launch outreach immediately?
           </p>
@@ -427,7 +534,7 @@
             <tr>
               <td data-label="Target"><strong>Quentin Moore</strong></td>
               <td data-label="Handle / contact"><a href="https://www.qmooremusic.com/" target="_blank" rel="noopener">qmooremusic.com</a></td>
-              <td data-label="Why">Neo-soul/R&amp;B live vocalist option if Ola wants a more mature monthly feature instead of only DJ sets.</td>
+              <td data-label="Why">Neo-soul/R&amp;B live vocalist option if you want a more mature monthly feature instead of only DJ sets.</td>
               <td data-label="Budget fit">$500-$2,000 depending on format</td>
             </tr>
             <tr>
@@ -464,7 +571,7 @@
             <p>Enough to test one DJ/talent conversation plus a small creator push, without committing to a monthly event program.</p>
           </div>
           <div class="handoff-card">
-            <span class="label">Need from Ola</span>
+            <span class="label">Need from you</span>
             <h3>Budget band</h3>
             <p>Approve $0-$300 comp-only, $500-$1,000 trial, or $1,500+ launch-event lane before outreach starts.</p>
           </div>
@@ -480,8 +587,8 @@
     <section id="next" class="section page-card">
       <div class="page-head">
         <div>
-          <span class="page-number">06 / Owner next steps</span>
-          <h2>The short list from Ola.</h2>
+          <span class="page-number">07 / Owner next steps</span>
+          <h2>The short list from you.</h2>
           <p>
             These are the actions that unlock the cleanest next phase. Everything else can stay behind the scenes until it needs owner approval.
           </p>
@@ -491,13 +598,14 @@
       <div class="page-body">
         <div class="grid-2">
           <div class="info-card">
-            <span class="label">Need from Ola</span>
+            <span class="label">Need from you</span>
             <h3>Access and approvals</h3>
             <ul class="list">
               <li>Confirm the Google account to use for Workspace and Drive.</li>
               <li>Create or approve the public mailboxes listed in this packet.</li>
               <li>Open the old website or legacy-domain redirect access path.</li>
               <li>Confirm the public profiles to update first.</li>
+              <li>Choose the first ordering route: TouchBistro bridge, new POS vendor, owner hardware lane, or direct Uber delivery with no POS dependency.</li>
               <li>Confirm the owner contacts for website, ordering, and account approvals.</li>
             </ul>
           </div>
