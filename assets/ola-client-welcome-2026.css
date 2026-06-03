@@ -685,8 +685,10 @@ strong {
   .topbar-inner,
   .section,
   .footer-note {
-    width: calc(100vw - 24px);
-    max-width: var(--max);
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .topbar-inner {
@@ -726,7 +728,8 @@ strong {
   }
 
   .dissolve-title {
-    font-size: clamp(2.7rem, 13vw, 4.2rem);
+    max-width: 100%;
+    font-size: clamp(2.55rem, 12vw, 3.8rem);
     line-height: .92;
   }
 
@@ -735,6 +738,7 @@ strong {
   }
 
   .welcome-lede {
+    width: 100%;
     max-width: 100%;
     font-size: 1.04rem;
     overflow-wrap: anywhere;
