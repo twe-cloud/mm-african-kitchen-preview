@@ -81,15 +81,15 @@ strong {
 .brand-lockup {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   min-width: 0;
 }
 
 .brand-lockup img {
-  width: 34px;
-  height: 34px;
-  display: block;
+  width: 38px;
+  height: 38px;
   object-fit: contain;
+  border-radius: 10px;
 }
 
 .brand-name {
@@ -683,15 +683,6 @@ strong {
   .topbar-inner {
     min-height: 58px;
     justify-content: flex-start;
-  }
-
-  .brand-lockup {
-    gap: 9px;
-  }
-
-  .brand-lockup img {
-    width: 30px;
-    height: 30px;
   }
 
   .brand-sub {
