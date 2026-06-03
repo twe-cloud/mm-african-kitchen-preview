@@ -44,19 +44,18 @@ img { max-width: 100%; display: block; }
 }
 .hero {
   position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
-  min-height: 470px;
+  display: block;
+  min-height: 0;
   background: linear-gradient(135deg, rgba(16,30,22,.98), rgba(25,51,37,.97) 54%, rgba(34,67,46,.95));
   color: #f5efe8;
 }
-.hero-copy { padding: 34px 38px 34px 42px; position: relative; z-index: 2; }
+.hero-copy { padding: 30px 34px 28px; position: relative; z-index: 2; }
 .topline {
   display: flex; align-items: center; justify-content: space-between; gap: 18px;
-  padding-bottom: 18px; margin-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,.10);
+  padding-bottom: 16px; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,.10);
 }
 .brand-lockup { display: flex; align-items: center; gap: 12px; }
-.brand-lockup img { width: 44px; height: 44px; object-fit: contain; border-radius: 12px; background: rgba(255,255,255,.08); padding: 6px; }
+.brand-lockup img, .topline-logo-right { width: 48px; height: 48px; object-fit: contain; }
 .brand-meta { display: grid; gap: 2px; }
 .brand-name, .meta-kicker { font: 600 11px/1.3 'IBM Plex Mono', monospace; text-transform: uppercase; letter-spacing: .14em; }
 .brand-name { color: rgba(255,255,255,.88); }
@@ -68,13 +67,13 @@ img { max-width: 100%; display: block; }
 }
 .badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(184,138,67,.14); }
 .hero h1 {
-  margin: 18px 0 14px; color: #fffaf3; font-family: 'Fraunces', serif; font-size: clamp(2.2rem, 5vw, 4.4rem);
-  line-height: .96; letter-spacing: -.04em; max-width: 10ch;
+  margin: 14px 0 10px; color: #fffaf3; font-family: 'Fraunces', serif; font-size: clamp(2.05rem, 4vw, 3.55rem);
+  line-height: .97; letter-spacing: -.04em; max-width: 12ch;
 }
-.hero p.lede { margin: 0; max-width: 44ch; color: rgba(255,248,238,.82); font-size: 1.02rem; line-height: 1.72; }
+.hero p.lede { margin: 0; max-width: 40ch; color: rgba(255,248,238,.82); font-size: .98rem; line-height: 1.6; }
 .hero-note {
-  margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.10);
-  color: rgba(255,248,238,.68); font-size: .92rem; max-width: 44ch;
+  margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.10);
+  color: rgba(255,248,238,.68); font-size: .88rem; max-width: 36ch;
 }
 .hero-media { position: relative; min-height: 100%; }
 .hero-media img.main-media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -120,7 +119,7 @@ img { max-width: 100%; display: block; }
 .media-caption span { color: rgba(255,247,236,.78); font-size: .88rem; max-width: 48ch; }
 .fact-panel { position: relative; padding: 22px 22px 20px; background: linear-gradient(180deg, #fffdfa, #f7f0e7); }
 .fact-panel::before {
-  content: ''; position: absolute; top: 0; right: 0; width: 180px; height: 150px; background: url('brand/passport-stamps.png') no-repeat center/contain; opacity: .10; pointer-events: none;
+  display: none;
 }
 .fact-panel h3, .paper-card h3, .timeline-card h3, .button-card h3 { margin: 0 0 10px; color: var(--ink); font-size: 1.02rem; }
 .fact-panel p, .paper-card p, .timeline-card p, .button-card p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.62; }
@@ -206,3 +205,16 @@ img { max-width: 100%; display: block; }
 .rail-card + .rail-card { margin-top: 0; }
 .rail-card ul { margin: 10px 0 0; padding-left: 18px; }
 .rail-card li { color: var(--body); margin: 6px 0; font-size: .9rem; }
+
+.hero-media, .media-panel, .link-card img { display:none !important; }
+.hero-seal { display:none !important; }
+.doc-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.link-card { min-height: 0; background: linear-gradient(180deg, #fffdf9, #f7efe5); color: var(--ink); }
+.link-card::after { display:none; }
+.link-card .inner { position: static; padding: 18px; }
+.link-card .num { color: var(--gold); margin-bottom: 8px; }
+.link-card span { color: var(--muted); }
+.proof-grid { grid-template-columns: 1fr; }
+.section-intro { max-width: 34ch; }
+.footer { padding-bottom: 4px; }
+@media (max-width: 920px) { .doc-grid { grid-template-columns: 1fr; } }
