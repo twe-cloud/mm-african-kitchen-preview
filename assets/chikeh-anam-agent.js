@@ -79,6 +79,19 @@ async function startAnam() {
   }
 }
 
+async function stopAnam() {
+  if (!client) return;
+  try {
+    await client.stopStreaming?.();
+  } catch {
+    // Best-effort cleanup so preview sessions release Anam concurrency quickly.
+  } finally {
+    client = null;
+  }
+}
+
 if (els.fallbackLink) els.fallbackLink.href = SHARE_URL;
 showFallback('Share preview ready');
 els.startBtn?.addEventListener('click', startAnam);
+window.addEventListener('pagehide', stopAnam);
+window.addEventListener('beforeunload', stopAnam);
