@@ -9,7 +9,7 @@ const els = {
   status: document.getElementById('anamStatus'),
   stage: document.getElementById('anamStage'),
   videoWrap: document.getElementById('anamVideoWrap'),
-  iframeWrap: document.getElementById('anamIframeWrap'),
+  posterWrap: document.getElementById('anamPosterWrap'),
   fallbackLink: document.getElementById('anamFallbackLink'),
 };
 
@@ -30,7 +30,7 @@ function setStatus(text) {
 }
 
 function showFallback(message = 'Share preview ready') {
-  if (els.iframeWrap) els.iframeWrap.hidden = false;
+  if (els.posterWrap) els.posterWrap.hidden = false;
   if (els.videoWrap) els.videoWrap.hidden = true;
   setStatus(message);
 }
@@ -55,7 +55,7 @@ async function startAnam() {
       throw new Error(body.detail || body.error || `anam_session_${response.status}`);
     }
 
-    if (els.iframeWrap) els.iframeWrap.hidden = true;
+    if (els.posterWrap) els.posterWrap.hidden = true;
     if (els.videoWrap) els.videoWrap.hidden = false;
     const video = document.getElementById('anamVideo');
     if (!video) throw new Error('anam_video_missing');
