@@ -1,0 +1,255 @@
+{
+  "categories": [
+    { "id": "starters", "label": "Starters" },
+    { "id": "mini-plates", "label": "Mini Plates" },
+    { "id": "appetizers", "label": "Appetizers" },
+    { "id": "soups-swallow", "label": "Soups + Swallow" },
+    { "id": "rice-pasta", "label": "Rice + Pasta" },
+    { "id": "signature", "label": "Signature Plates" },
+    { "id": "seafood", "label": "Seafood" }
+  ],
+  "items": [
+    {
+      "id": "spicy-suya-wings",
+      "name": "Spicy Suya Wings",
+      "category": "starters",
+      "price": 12.99,
+      "image": "assets/social/wings-shrimp-basket.jpg",
+      "description": "Chicken wings with suya-style spice and heat for the table before the mains land.",
+      "ingredients": ["chicken wings", "suya spice", "chili heat", "dipping sauce"],
+      "addIngredients": ["extra suya spice", "extra dipping sauce"],
+      "removeIngredients": ["suya spice", "dipping sauce"]
+    },
+    {
+      "id": "salmon-bites",
+      "name": "Salmon Bites with M&M House Pepper Cream",
+      "category": "starters",
+      "price": 14.99,
+      "image": "assets/recovered/official_home_salmon.jpg",
+      "description": "Crisp salmon bites built for the bar, happy hour, or a shareable first round.",
+      "ingredients": ["salmon bites", "house pepper cream", "seasoning"],
+      "addIngredients": ["extra house pepper cream"],
+      "removeIngredients": ["house pepper cream", "seasoning"]
+    },
+    {
+      "id": "pepper-gizzard",
+      "name": "Pepper Gizzard",
+      "category": "starters",
+      "price": 15.99,
+      "image": "assets/official/peppered-meat.jpeg",
+      "description": "Bold, peppered gizzard for the crowd that wants heat before the full plate.",
+      "ingredients": ["gizzard", "pepper sauce", "onion"],
+      "addIngredients": ["extra pepper sauce", "extra onion"],
+      "removeIngredients": ["pepper sauce", "onion"]
+    },
+    {
+      "id": "egusi-mini-plate",
+      "name": "Egusi Mini-Plate",
+      "category": "mini-plates",
+      "price": 16.99,
+      "image": "assets/official/egusi.jpg",
+      "description": "Served with chicken and fufu. Nutty melon seed soup with pepper and spinach.",
+      "ingredients": ["egusi soup", "chicken", "fufu", "spinach", "pepper"],
+      "addIngredients": ["extra spinach", "extra pepper"],
+      "removeIngredients": ["chicken", "fufu", "spinach", "pepper"]
+    },
+    {
+      "id": "efo-riro-mini-plate",
+      "name": "Efo Riro Mini-Plate",
+      "category": "mini-plates",
+      "price": 16.99,
+      "image": "assets/owner-2026-05-22/webp/swallow-fish-red-bowl.webp",
+      "description": "Served with chicken and fufu. Collard greens and spinach cooked down with peppers and palm oil.",
+      "ingredients": ["efo riro", "chicken", "fufu", "collard greens", "spinach", "palm oil"],
+      "addIngredients": ["extra greens", "extra pepper"],
+      "removeIngredients": ["chicken", "fufu", "collard greens", "spinach"]
+    },
+    {
+      "id": "owanbe-jollof-mini-plate",
+      "name": "Owanbe Jollof Rice Mini-Plate",
+      "category": "mini-plates",
+      "price": 13.99,
+      "image": "assets/owner-2026-05-22/webp/jollof-chicken-plantain.webp",
+      "description": "Served with chicken and plantains for the guest who wants the easiest jollof entry point.",
+      "ingredients": ["jollof rice", "chicken", "plantains"],
+      "addIngredients": ["extra plantains", "extra sauce"],
+      "removeIngredients": ["chicken", "plantains"]
+    },
+    {
+      "id": "signature-fried-rice-mini-plate",
+      "name": "M&M Signature Fried Rice Mini-Plate",
+      "category": "mini-plates",
+      "price": 13.99,
+      "image": "assets/social/fried-rice-basket.jpg",
+      "description": "Served with chicken for the diner who wants fried rice before diving deeper into the menu.",
+      "ingredients": ["fried rice", "chicken", "vegetables"],
+      "addIngredients": ["extra vegetables", "extra sauce"],
+      "removeIngredients": ["chicken", "vegetables"]
+    },
+    {
+      "id": "chicken-shawarma",
+      "name": "M&M Nigerian Style Chicken Shawarma",
+      "category": "appetizers",
+      "price": 18.99,
+      "image": "assets/owner-2026-05-22/house-snack-bites.jpg",
+      "description": "Warm, handheld, and fast-moving for customers who want a lighter order or a late bite.",
+      "ingredients": ["flatbread", "chicken", "cabbage", "onion", "shawarma sauce"],
+      "addIngredients": ["extra shawarma sauce", "extra onion"],
+      "removeIngredients": ["cabbage", "onion", "shawarma sauce"]
+    },
+    {
+      "id": "beef-shawarma",
+      "name": "M&M Nigerian Style Beef Shawarma",
+      "category": "appetizers",
+      "price": 19.99,
+      "image": "assets/owner-2026-05-22/house-snack-bites.jpg",
+      "description": "Beef-forward shawarma with the same Nigerian-style wrap energy.",
+      "ingredients": ["flatbread", "beef", "cabbage", "onion", "shawarma sauce"],
+      "addIngredients": ["extra shawarma sauce", "extra onion"],
+      "removeIngredients": ["cabbage", "onion", "shawarma sauce"]
+    },
+    {
+      "id": "catfish-pepper-soup",
+      "name": "Cat Fish Pepper Soup",
+      "category": "appetizers",
+      "price": 19.99,
+      "image": "assets/owner-2026-05-22/soup-swallow-red-bowl.jpg",
+      "description": "Pepper soup with catfish and the kind of heat that earns its own lane on the menu.",
+      "ingredients": ["catfish", "pepper broth", "herbs"],
+      "addIngredients": ["extra broth", "extra herbs"],
+      "removeIngredients": ["herbs"]
+    },
+    {
+      "id": "naija-beef-suya",
+      "name": "Naija Beef Suya",
+      "category": "appetizers",
+      "price": 25.99,
+      "image": "assets/official/peppered-meat.jpeg",
+      "description": "Tender beef strips marinated in suya spices and chili peppers, served with fresh onions.",
+      "ingredients": ["beef", "suya spice", "chili peppers", "onion"],
+      "addIngredients": ["extra onion", "extra suya spice"],
+      "removeIngredients": ["onion", "suya spice"]
+    },
+    {
+      "id": "egusi-with-chicken",
+      "name": "Egusi with Chicken",
+      "category": "soups-swallow",
+      "price": 25.99,
+      "image": "assets/official/egusi.jpg",
+      "description": "Served with any choice of swallow. Egusi combines blended melon seed, pepper, and spinach.",
+      "ingredients": ["egusi soup", "chicken", "swallow", "spinach", "pepper"],
+      "addIngredients": ["extra spinach", "extra soup"],
+      "removeIngredients": ["chicken", "swallow", "spinach"]
+    },
+    {
+      "id": "amala-abula",
+      "name": "Amala Abula with Beef & Assorted Meat",
+      "category": "soups-swallow",
+      "price": 27.99,
+      "image": "assets/owner-2026-05-22/webp/swallow-fish-red-bowl.webp",
+      "description": "Fluffy yam flour amala with Gbegiri, Ewedu, spicy Buka stew, and assorted meats.",
+      "ingredients": ["amala", "gbegiri", "ewedu", "buka stew", "beef", "assorted meat"],
+      "addIngredients": ["extra stew", "extra ewedu"],
+      "removeIngredients": ["beef", "assorted meat", "ewedu"]
+    },
+    {
+      "id": "owanbe-jollof-rice",
+      "name": "Owanbe Jollof Rice",
+      "category": "rice-pasta",
+      "price": 23.99,
+      "image": "assets/owner-2026-05-22/webp/jollof-chicken-plantain.webp",
+      "description": "Classic party-style jollof with chicken and plantains for the diner who wants the familiar Nigerian anchor first.",
+      "ingredients": ["jollof rice", "chicken", "plantains"],
+      "addIngredients": ["extra plantains", "extra sauce"],
+      "removeIngredients": ["chicken", "plantains"]
+    },
+    {
+      "id": "spaghetti-jollof",
+      "name": "Spaghetti Jollof",
+      "category": "rice-pasta",
+      "price": 22.99,
+      "image": "assets/official/spaghetti-chicken.jpeg",
+      "description": "Jollof-style spaghetti plate with the same pepper-driven flavor in a pasta lane.",
+      "ingredients": ["spaghetti", "jollof sauce", "seasoning"],
+      "addIngredients": ["extra sauce", "extra pepper"],
+      "removeIngredients": ["jollof sauce", "seasoning"]
+    },
+    {
+      "id": "signature-fried-rice",
+      "name": "M&M Signature Fried Rice",
+      "category": "rice-pasta",
+      "price": 23.99,
+      "image": "assets/social/fried-rice-basket.jpg",
+      "description": "House fried rice when the table wants a second rice option next to jollof.",
+      "ingredients": ["fried rice", "mixed vegetables", "seasoning"],
+      "addIngredients": ["extra vegetables", "extra sauce"],
+      "removeIngredients": ["mixed vegetables", "seasoning"]
+    },
+    {
+      "id": "afri-luxe-lamb-chops",
+      "name": "Afri-Luxe Lamb Chops",
+      "category": "signature",
+      "price": 35.99,
+      "image": "assets/official/featured-thumb.jpg",
+      "description": "Lamb chops served with creamy mashed potatoes, jollof rice, or white rice, finished with the house majestic sauce.",
+      "ingredients": ["lamb chops", "house majestic sauce", "rice or mashed potatoes"],
+      "addIngredients": ["extra sauce"],
+      "removeIngredients": ["house majestic sauce"]
+    },
+    {
+      "id": "afro-fusion-oxtails",
+      "name": "Afro-Fusion Oxtails",
+      "category": "signature",
+      "price": 42.99,
+      "image": "assets/owner-2026-05-22/webp/oxtail-jollof-bowl.webp",
+      "description": "Rich oxtails served with white rice and plantain for the guest who wants a heavier, slower dinner plate.",
+      "ingredients": ["oxtails", "white rice", "plantain", "gravy"],
+      "addIngredients": ["extra gravy", "extra plantain"],
+      "removeIngredients": ["white rice", "plantain", "gravy"]
+    },
+    {
+      "id": "salmon-delight",
+      "name": "Salmon Delight",
+      "category": "seafood",
+      "price": 35.99,
+      "image": "assets/official/salmon-bites.jpg",
+      "description": "Seasoned salmon with creamy mashed potatoes, tender baby broccoli, and sweet carrots.",
+      "ingredients": ["salmon", "mashed potatoes", "baby broccoli", "carrots"],
+      "addIngredients": ["extra carrots", "extra broccoli"],
+      "removeIngredients": ["mashed potatoes", "baby broccoli", "carrots"]
+    },
+    {
+      "id": "red-snapper",
+      "name": "Red Snapper",
+      "category": "seafood",
+      "price": 35.99,
+      "image": "assets/social/red-snapper-scampi.jpg",
+      "description": "Red snapper served with jollof rice or fried rice when the table wants a full fish-and-rice lane.",
+      "ingredients": ["red snapper", "rice", "seasoning"],
+      "addIngredients": ["extra sauce", "extra pepper"],
+      "removeIngredients": ["rice", "seasoning"]
+    },
+    {
+      "id": "shrimp-scampi",
+      "name": "Shrimp Scampi",
+      "category": "seafood",
+      "price": 22.99,
+      "image": "assets/social/red-snapper-scampi.jpg",
+      "description": "Jumbo shrimp sauteed in garlic butter and herbs, finished with M&M house pepper sauce.",
+      "ingredients": ["jumbo shrimp", "garlic butter", "herbs", "house pepper sauce"],
+      "addIngredients": ["extra house pepper sauce", "extra herbs"],
+      "removeIngredients": ["garlic butter", "herbs", "house pepper sauce"]
+    },
+    {
+      "id": "seafood-platter",
+      "name": "Seafood Platter",
+      "category": "seafood",
+      "price": 19.99,
+      "image": "assets/recovered/official_home_seafood.webp",
+      "description": "Fried catfish and shrimp with fries, or swap to fried rice or jollof for a fuller plate.",
+      "ingredients": ["fried catfish", "shrimp", "fries"],
+      "addIngredients": ["extra fries", "extra sauce"],
+      "removeIngredients": ["shrimp", "fries"]
+    }
+  ]
+}
