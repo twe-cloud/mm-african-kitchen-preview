@@ -231,6 +231,40 @@
     .avatar-frame.avatar-speaking {
       box-shadow: inset 0 0 0 1px rgba(239, 195, 106, 0.14), 0 18px 50px rgba(191, 93, 69, 0.18);
     }
+    .restaurant-fit-overlay {
+      position: absolute;
+      z-index: 3;
+      left: 50%;
+      top: 37%;
+      width: min(30%, 214px);
+      height: auto;
+      transform: translateX(-50%);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 180ms ease;
+      filter: drop-shadow(0 12px 18px rgba(0,0,0,0.16));
+      mix-blend-mode: normal;
+    }
+    .avatar-frame.avatar-live .restaurant-fit-overlay,
+    .avatar-frame.avatar-idle .restaurant-fit-overlay,
+    .avatar-frame.avatar-speaking .restaurant-fit-overlay {
+      opacity: 0.9;
+    }
+    .restaurant-fit-overlay .cloth-main {
+      fill: #173d2d;
+    }
+    .restaurant-fit-overlay .cloth-shadow {
+      fill: rgba(5, 19, 14, 0.42);
+    }
+    .restaurant-fit-overlay .cloth-gold {
+      fill: #e5b75e;
+    }
+    .restaurant-fit-overlay .cloth-red {
+      fill: #bf5d45;
+    }
+    .restaurant-fit-overlay .cloth-cream {
+      fill: #f2dfbd;
+    }
     .avatar-actions,
     .avatar-control-row,
     .avatar-prompt-row,
@@ -542,6 +576,20 @@
               <p class="avatar-lab-note">Start the session, then ask normal diner questions: first-time recommendations, house spice level, soups and swallow, happy hour times, directions, or a pickup draft.</p>
             </div>
           </div>
+          <svg class="restaurant-fit-overlay" viewBox="0 0 300 410" aria-hidden="true" focusable="false">
+            <path class="cloth-shadow" d="M92 62h116l36 318H56L92 62Z" opacity=".28" />
+            <path class="cloth-main" d="M101 92h98l34 286H67l34-286Z" />
+            <path class="cloth-main" d="M102 88 74 20l22-10 52 106-46-28Zm96 0 28-68-22-10-52 106 46-28Z" opacity=".92" />
+            <path class="cloth-gold" d="M91 96h118l6 20H85l6-20Z" />
+            <path class="cloth-red" d="M103 98h18l10 18h-18l-10-18Zm43 0h18l10 18h-18l-10-18Zm43 0h18l10 18h-18l-10-18Z" />
+            <path class="cloth-shadow" d="M150 122l52 256H98l52-256Z" opacity=".16" />
+            <path class="cloth-gold" d="M72 250h156v20H72v-20Z" />
+            <path class="cloth-red" d="M84 252l12 15 12-15 12 15 12-15 12 15 12-15 12 15 12-15 12 15 12-15 12 15v3H84v-18Z" />
+            <path class="cloth-cream" d="M112 298h76v50h-76v-50Z" opacity=".16" />
+            <path class="cloth-gold" d="M112 298h76v8h-76v-8Z" opacity=".68" />
+            <circle class="cloth-gold" cx="150" cy="202" r="10" />
+            <circle class="cloth-red" cx="150" cy="202" r="4.5" />
+          </svg>
         </div>
 
         <div class="avatar-overlay">

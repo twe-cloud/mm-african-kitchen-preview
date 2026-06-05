@@ -159,10 +159,12 @@ function currentVoiceProfile() {
 }
 
 function currentAvatarCharacter() {
-  return state.config?.avatar_character || 'nia';
+  const requested = String(PAGE_PARAMS.get('avatar') || PAGE_PARAMS.get('character') || '').trim().toLowerCase();
+  return requested || state.config?.avatar_character || 'nia';
 }
 
 function currentAvatarStyle() {
+  if (PAGE_PARAMS.has('style')) return String(PAGE_PARAMS.get('style') || '').trim();
   if (!state.config) return 'business-casual';
   return Object.prototype.hasOwnProperty.call(state.config, 'avatar_style')
     ? (state.config.avatar_style || '')
