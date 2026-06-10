@@ -65,6 +65,159 @@ performerForm?.addEventListener("submit", (event) => {
   showCallPrompt(performerResult, `Ready, ${name}: ask about a ${type} set for ${date}.`);
 });
 
+/* ── Footer brand sting: play once when it scrolls into view ── */
+(function initBrandSting() {
+  const sting = document.querySelector("[data-brand-sting]");
+  if (!sting) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  function check() {
+    const r = sting.getBoundingClientRect();
+    if (r.top < window.innerHeight - 120 && r.bottom > 0) {
+      sting.play().then(() => {
+        window.removeEventListener("scroll", check);
+      }).catch(() => { /* autoplay blocked — retry on next scroll */ });
+    }
+  }
+  window.addEventListener("scroll", check, { passive: true });
+  check();
+  sting.addEventListener("click", () => {
+    sting.currentTime = 0;
+    sting.play().catch(() => {});
+  });
+})();
+
+/* ── Table reservations ── */
+(function initReservations() {
+  const form = document.querySelector("[data-reserve-form]");
+  if (!form) return;
+
+  const timeSelect = form.querySelector("[data-reserve-time]");
+  const summary = document.querySelector("[data-reserve-summary]");
+  const note = document.querySelector("[data-reserve-result]");
+  const noteDefault = note.textContent;
+  const dateInput = form.elements.date;
+
+  // Opening hours by weekday (0 = Sunday). null = closed.
+  const hours = [
+    { open: 13, close: 18 }, // Sun
+    null,                    // Mon closed
+    { open: 12, close: 21 }, // Tue
+    { open: 12, close: 21 }, // Wed
+    { open: 12, close: 22 }, // Thu
+    { open: 12, close: 24 }, // Fri
+    { open: 12, close: 22 }, // Sat
+  ];
+
+  const today = new Date();
+  dateInput.min = today.toISOString().slice(0, 10);
+
+  function formatSlot(hour, half) {
+    const h12 = ((hour + 11) % 12) + 1;
+    return `${h12}:${half ? "30" : "00"} ${hour >= 12 && hour < 24 ? "PM" : "AM"}`;
+  }
+
+  function buildSlots(day) {
+    timeSelect.innerHTML = "";
+    const win = hours[day];
+    if (!win) return;
+    const placeholder = new Option("Pick a time", "", true, true);
+    placeholder.disabled = true;
+    timeSelect.add(placeholder);
+    // Last seating one hour before close.
+    for (let h = win.open; h <= win.close - 1; h++) {
+      timeSelect.add(new Option(formatSlot(h, false), formatSlot(h, false)));
+      if (h < win.close - 1) timeSelect.add(new Option(formatSlot(h, true), formatSlot(h, true)));
+    }
+  }
+
+  function selectedDay() {
+    if (!dateInput.value) return null;
+    return new Date(`${dateInput.value}T12:00:00`).getDay();
+  }
+
+  function setError(message) {
+    note.textContent = message;
+    note.classList.add("is-error");
+  }
+
+  function clearError() {
+    if (!note.classList.contains("is-error")) return;
+    note.textContent = noteDefault;
+    note.classList.remove("is-error");
+  }
+
+  function prettyDate() {
+    if (!dateInput.value) return "";
+    return new Date(`${dateInput.value}T12:00:00`).toLocaleDateString("en-US", {
+      weekday: "short", month: "short", day: "numeric",
+    });
+  }
+
+  function updateSummary() {
+    const party = form.elements.party.value;
+    const time = form.elements.time.value;
+    const occasion = form.elements.occasion.value;
+    if (party && dateInput.value && time) {
+      summary.textContent = `Table for ${party} · ${prettyDate()} · ${time} · ${occasion}`;
+      summary.classList.add("is-live");
+    } else {
+      summary.textContent = "Table for — · pick a date and time";
+      summary.classList.remove("is-live");
+    }
+  }
+
+  dateInput.addEventListener("change", () => {
+    const day = selectedDay();
+    if (day === 1) {
+      timeSelect.innerHTML = "";
+      timeSelect.add(new Option("Closed Mondays", "", true, true));
+      timeSelect.options[0].disabled = true;
+      setError("M&M is closed on Mondays — pick another night and we'll hold the table.");
+    } else {
+      clearError();
+      buildSlots(day);
+    }
+    updateSummary();
+  });
+
+  form.addEventListener("input", updateSummary);
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (selectedDay() === 1) {
+      setError("M&M is closed on Mondays — pick another night and we'll hold the table.");
+      return;
+    }
+    const data = new FormData(form);
+    const party = data.get("party");
+    const when = `${prettyDate()} at ${data.get("time")}`;
+    const subject = encodeURIComponent(`[Reservations] Table for ${party} — ${when}`);
+    const body = encodeURIComponent(
+      [
+        "New table reservation request from mmafricankitchen.com:",
+        "",
+        `Name: ${data.get("name")}`,
+        `Phone: ${data.get("phone")}`,
+        `Party size: ${party}`,
+        `Date: ${prettyDate()}`,
+        `Time: ${data.get("time")}`,
+        `Occasion: ${data.get("occasion")}`,
+        "",
+        "Please reply or call to confirm this reservation.",
+      ].join("\n")
+    );
+    window.location.href = `mailto:support@m-mafricankitchen.com?subject=${subject}&body=${body}`;
+    note.classList.remove("is-error");
+    note.textContent = "";
+    const sent = document.createElement("span");
+    sent.textContent = `Request ready to send for ${when}. If your email app didn't open, `;
+    const call = document.createElement("a");
+    call.href = `tel:${restaurantPhone}`;
+    call.textContent = "call M&M to book it.";
+    note.append(sent, call);
+  });
+})();
+
 /* ── Rewards email gate ── */
 (function initRewardsGate() {
   if (!rewardsGate || !rewardsContent) return;
@@ -91,33 +244,18 @@ performerForm?.addEventListener("submit", (event) => {
   });
 })();
 
-if (visitMap && window.L) {
-  const restaurantCoordinates = [33.1799294, -96.8669398];
-  const map = L.map(visitMap, {
-    center: restaurantCoordinates,
-    zoom: 16,
-    zoomControl: false,
-    dragging: false,
-    scrollWheelZoom: false,
-    doubleClickZoom: false,
-    boxZoom: false,
-    keyboard: false,
-    tap: false,
-  });
-
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-    maxZoom: 20,
-    attribution: "&copy; OpenStreetMap contributors &copy; CARTO",
-  }).addTo(map);
-
-  L.marker(restaurantCoordinates, {
-    icon: L.divIcon({
-      className: "mm-map-marker",
-      html: '<img src="assets/brand/mm-logo.png" width="88" height="80" alt="" />',
-      iconSize: [88, 80],
-      iconAnchor: [44, 80],
-    }),
-  }).addTo(map);
-
-  window.setTimeout(() => map.invalidateSize(), 150);
-}
+/* ── Animated route map: keep it looping once it scrolls into view ── */
+(function initRouteMap() {
+  const route = document.querySelector("[data-route-map]");
+  if (!route) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    route.removeAttribute("autoplay");
+    return;
+  }
+  function nudge() {
+    const r = route.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) route.play().catch(() => {});
+  }
+  window.addEventListener("scroll", nudge, { passive: true });
+  nudge();
+})();

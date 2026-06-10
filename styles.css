@@ -110,11 +110,9 @@ textarea {
 }
 
 .brand img {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: var(--paper);
-  box-shadow: 0 0 0 1px rgba(255, 242, 220, .18);
+  height: 54px;
+  width: auto;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .45));
 }
 
 .site-nav {
@@ -1879,7 +1877,7 @@ h3 {
   position: relative;
   min-height: 560px;
   overflow: hidden;
-  background: #e7ddcf;
+  background: var(--char-soft);
 }
 
 .visit-map {
@@ -1890,7 +1888,9 @@ h3 {
 }
 
 .visit-map .leaflet-tile {
-  filter: saturate(.94) contrast(1.03);
+  /* Warm the CARTO dark base toward the brand char-brown so the map reads
+     like the restaurant's night palette instead of cold gray. */
+  filter: sepia(.42) saturate(1.25) hue-rotate(-12deg) brightness(.82) contrast(1.05);
 }
 
 .visit-map .leaflet-control-attribution {
@@ -1899,27 +1899,67 @@ h3 {
   font-size: 10px;
 }
 
+/* Neon-sign marker — echoes the storefront's glowing M&M sign so the pin
+   reads as "look for the lit sign." Static glow only (no CSS motion). */
 .mm-map-marker {
-  display: grid;
-  place-items: center;
-  width: 88px;
-  height: 80px;
-  border: 3px solid var(--cream);
-  border-radius: 24px;
-  background: rgba(13, 8, 9, .9);
-  padding: 6px 7px;
-  overflow: hidden;
-  box-shadow: 0 20px 46px rgba(28, 10, 6, .34);
+  position: relative;
+  width: 84px !important;
+  height: 96px !important;
+  background: none;
+  border: 0;
 }
 
-.mm-map-marker img {
+.mm-map-marker-chip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 78px;
+  padding: 8px 9px;
+  border: 2px solid var(--leaf-bright);
+  border-radius: 22px;
+  background: rgba(8, 6, 4, .94);
+  box-shadow:
+    0 0 0 1px rgba(69, 168, 45, .55),
+    0 0 10px rgba(69, 168, 45, .75),
+    0 0 22px rgba(8, 123, 22, .65),
+    0 14px 30px rgba(0, 0, 0, .5);
+}
+
+.mm-map-marker-chip img {
   display: block;
   width: 100% !important;
   height: 100% !important;
   max-width: 100% !important;
   max-height: 100% !important;
   object-fit: contain;
-  filter: drop-shadow(0 4px 8px rgba(13, 8, 9, .18));
+  filter: drop-shadow(0 0 6px rgba(69, 168, 45, .7));
+}
+
+/* Pointer stem dropping to the exact pin coordinate. */
+.mm-map-marker-stem {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 3px;
+  height: 20px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, var(--leaf-bright), rgba(69, 168, 45, 0));
+  box-shadow: 0 0 8px rgba(69, 168, 45, .7);
+}
+
+.mm-map-marker-stem::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  width: 9px;
+  height: 9px;
+  transform: translateX(-50%) rotate(45deg);
+  background: var(--leaf-bright);
+  box-shadow: 0 0 10px rgba(69, 168, 45, .9);
 }
 
 .map-click-target {
@@ -3285,4 +3325,383 @@ h3 {
   .rewards-gate-row {
     flex-direction: column;
   }
+}
+
+/* ── Reservations ───────────────────────────────────────────── */
+
+.reserve-band {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin: clamp(40px, 7vw, 96px) 0 0;
+  padding: clamp(48px, 8vw, 120px) clamp(16px, 5vw, 64px);
+  background: var(--char-soft);
+}
+
+.reserve-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 72% 38%;
+  filter: saturate(1.08) contrast(1.04);
+}
+
+.reserve-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(96deg, rgba(11, 8, 6, .94) 0%, rgba(11, 8, 6, .82) 34%, rgba(17, 11, 7, .42) 68%, rgba(20, 12, 7, .68) 100%),
+    linear-gradient(0deg, rgba(11, 8, 6, .55), rgba(11, 8, 6, 0) 40%);
+}
+
+.reserve-shell {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(340px, 480px);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.reserve-headline {
+  margin: 14px 0 0;
+  font-family: var(--display);
+  font-size: clamp(34px, 5.2vw, 64px);
+  line-height: .98;
+  text-transform: uppercase;
+  letter-spacing: -.5px;
+  display: grid;
+}
+
+.reserve-headline .cream-word { color: var(--cream); }
+.reserve-headline .gold-word { color: var(--palm); }
+
+.reserve-lede {
+  max-width: 480px;
+  margin: 18px 0 0;
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.reserve-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  gap: 10px 34px;
+  margin: 26px 0 0;
+  padding: 16px 18px;
+  list-style: none;
+  width: max-content;
+  max-width: 100%;
+  border: 1px solid rgba(255, 242, 220, .22);
+  background: rgba(15, 9, 6, .66);
+  backdrop-filter: blur(14px);
+  font-family: var(--mono);
+}
+
+.reserve-facts li {
+  display: grid;
+  gap: 2px;
+}
+
+.reserve-facts span {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--leaf-bright);
+}
+
+.reserve-facts strong {
+  font-size: 13px;
+  color: var(--cream);
+}
+
+/* The ticket */
+
+.reserve-ticket {
+  position: relative;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 0 0 22px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, .55), 0 4px 18px rgba(0, 0, 0, .35);
+  --notch: radial-gradient(circle at 50% 50%, transparent 7px, var(--paper) 7.5px);
+}
+
+.reserve-ticket::before,
+.reserve-ticket::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background-image: radial-gradient(circle at 7px 7px, transparent 5px, var(--paper) 5.5px);
+  background-size: 22px 14px;
+  background-repeat: repeat-x;
+}
+
+.reserve-ticket::before { top: -13px; }
+.reserve-ticket::after { bottom: -13px; transform: scaleY(-1); }
+
+.reserve-ticket-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 22px 14px;
+  border-bottom: 2px dashed rgba(27, 13, 7, .25);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--pepper);
+}
+
+.reserve-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 16px;
+  padding: 20px 22px 4px;
+}
+
+.reserve-field {
+  display: grid;
+  gap: 6px;
+}
+
+.reserve-field-wide {
+  grid-column: 1 / -1;
+}
+
+.reserve-field span {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #8a6b55;
+}
+
+.reserve-field input,
+.reserve-field select {
+  width: 100%;
+  padding: 12px 12px;
+  border: 1.5px solid rgba(27, 13, 7, .28);
+  border-radius: 0;
+  background: #fffaf0;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 15px;
+  appearance: none;
+}
+
+.reserve-field select {
+  background-image: linear-gradient(45deg, transparent 50%, var(--pepper) 50%), linear-gradient(135deg, var(--pepper) 50%, transparent 50%);
+  background-position: calc(100% - 18px) 55%, calc(100% - 12px) 55%;
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.reserve-field input:focus-visible,
+.reserve-field select:focus-visible {
+  outline: 3px solid var(--palm);
+  outline-offset: 0;
+  border-color: var(--ink);
+}
+
+.reserve-field input::placeholder {
+  color: rgba(27, 13, 7, .38);
+  font-weight: 500;
+}
+
+.reserve-summary {
+  margin: 16px 22px 0;
+  padding: 12px 14px;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--mono);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+.reserve-summary.is-live {
+  color: var(--palm);
+}
+
+.reserve-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 16px 22px 0;
+}
+
+.reserve-actions .action-line {
+  border-color: rgba(27, 13, 7, .4);
+  color: var(--ink);
+}
+
+.reserve-note {
+  margin: 12px 22px 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #8a6b55;
+}
+
+.reserve-note a {
+  color: var(--pepper);
+  font-weight: 800;
+}
+
+.reserve-note.is-error {
+  color: #a3270f;
+  font-weight: 700;
+}
+
+@media (max-width: 980px) {
+  .reserve-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .reserve-bg {
+    object-position: 64% 30%;
+  }
+
+  .reserve-ticket {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 600px) {
+  .reserve-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reserve-facts {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+}
+
+/* ── Footer brand sign-off (white) ──────────────────────────── */
+
+.footer-signoff {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  text-align: center;
+  padding: clamp(40px, 6vw, 72px) clamp(20px, 5vw, 60px) clamp(34px, 4vw, 52px);
+  border-top: 1px solid rgba(27, 13, 7, .1);
+  background: #ffffff;
+  color: var(--ink);
+  font: inherit;
+  text-transform: none;
+}
+
+/* Animated logo floats on white — its baked white backdrop blends
+   seamlessly, so no plate, border, or crop box. */
+.footer-signoff-logo {
+  display: block;
+  width: clamp(280px, 42vw, 460px);
+  height: auto;
+  margin: 0 auto;
+  mix-blend-mode: multiply;
+}
+
+.footer-tagline {
+  margin: 4px 0 0;
+  max-width: 36ch;
+  font-family: var(--body);
+  font-size: clamp(15px, 1.6vw, 18px);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--char);
+}
+
+.footer-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin-top: 18px;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.footer-contact a {
+  color: var(--pepper);
+  border-bottom: 2px solid transparent;
+  transition: border-color .15s ease;
+}
+
+.footer-contact a:hover {
+  border-bottom-color: var(--pepper);
+}
+
+.footer-dot {
+  color: var(--leaf-bright);
+}
+
+.footer-address-line {
+  margin: 12px 0 0;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .06em;
+  color: rgba(27, 13, 7, .62);
+  text-transform: uppercase;
+}
+
+.footer-social {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(27, 13, 7, .1);
+  width: min(420px, 100%);
+}
+
+.footer-social a {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--leaf);
+}
+
+/* ── Animated route map (Find us) ───────────────────────────── */
+
+.route-map-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.route-map-tag {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  z-index: 3;
+  padding: 7px 12px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: rgba(8, 6, 4, .82);
+  border: 1px solid rgba(69, 168, 45, .55);
+  box-shadow: 0 0 14px rgba(69, 168, 45, .35);
+  pointer-events: none;
 }

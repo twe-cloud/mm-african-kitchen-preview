@@ -1,0 +1,9 @@
+# Working IG archive — raw dump, not site content (489MB). Never publish.
+assets/ig-2026-06-09/
+# Quarantined AI/stock images removed from the site
+assets/_quarantine-ai-stock/
+# Unused heavy clip
+assets/clips/night-out.mp4
+assets/clips/night-out-poster.jpg
+# Tooling caches
+.wrangler/
