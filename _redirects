@@ -4,3 +4,13 @@ https://m-mafricankitchen.com/* https://mmafricankitchen.com/:splat 301!
 https://www.m-mafricankitchen.com/* https://mmafricankitchen.com/:splat 301!
 http://m-mafricankitchen.com/* https://mmafricankitchen.com/:splat 301!
 http://www.m-mafricankitchen.com/* https://mmafricankitchen.com/:splat 301!
+
+# Clean vanity short links for social/print. Each 302s through the tracked
+# /go redirect (GA4 client_click attribution) on to the real destination, so
+# captions can use e.g. mmafricankitchen.com/friday instead of an ugly shop URL.
+/friday    https://shop.nibiashara.biz/go/mm-friday     302
+/menu      https://shop.nibiashara.biz/go/mm-menu       302
+/catering  https://shop.nibiashara.biz/go/mm-catering   302
+/order     https://shop.nibiashara.biz/go/mm-order      302
+/happyhour https://shop.nibiashara.biz/go/mm-happyhour  302
+/private   https://shop.nibiashara.biz/go/mm-private    302
