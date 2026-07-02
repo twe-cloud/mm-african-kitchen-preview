@@ -14,7 +14,7 @@ cd "$(dirname "$0")/.."
 
 : "${TWE_PAID_SPEND_MAX_USD:?declare TWE_PAID_SPEND_MAX_USD (0 for this deploy)}"
 
-STAGE="$(mktemp -d /tmp/mm-preview-deploy.XXXXXX)"
+STAGE="$(mktemp -d "${TMPDIR:-/tmp}/mm-preview-deploy.XXXXXX")"
 trap 'rm -rf "$STAGE"' EXIT
 
 git archive HEAD | tar -x -C "$STAGE"

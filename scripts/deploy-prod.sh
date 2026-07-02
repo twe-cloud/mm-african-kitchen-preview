@@ -13,7 +13,7 @@ cd "$(dirname "$0")/.."
 : "${TWE_PAID_SPEND_MAX_USD:?declare TWE_PAID_SPEND_MAX_USD (0 for this deploy)}"
 
 SITE_ID="70d44bc3-21f2-4813-8208-3a342d8d3888"   # mm-african-kitchen-frisco-preview -> mmafricankitchen.com
-STAGE="$(mktemp -d /tmp/mm-prod-deploy.XXXXXX)"
+STAGE="$(mktemp -d "${TMPDIR:-/tmp}/mm-prod-deploy.XXXXXX")"
 trap 'rm -rf "$STAGE"' EXIT
 
 git archive HEAD | tar -x -C "$STAGE"
