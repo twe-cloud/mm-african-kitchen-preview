@@ -1,0 +1,1032 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>M&M Operating Interface Preview</title>
+  <style>
+    :root {
+      --ink: #101411;
+      --body: #35423a;
+      --muted: #708078;
+      --paper: #fffdf7;
+      --page: #f6f8f2;
+      --green: #063b22;
+      --green-2: #0e653f;
+      --gold: #c9932f;
+      --gold-2: #fff0c5;
+      --red: #a64033;
+      --blue: #193b70;
+      --line: rgba(10, 44, 27, .14);
+      --shadow: 0 26px 90px rgba(13, 29, 20, .14);
+      --radius: 26px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      min-height: 100%;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      background: var(--page);
+    }
+
+    body {
+      min-height: 100%;
+      margin: 0;
+      color: var(--body);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+      line-height: 1.5;
+      overflow-x: hidden;
+      background:
+        linear-gradient(90deg, rgba(6, 59, 34, .05) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(6, 59, 34, .045) 1px, transparent 1px),
+        var(--page);
+      background-size: 44px 44px;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    .shell {
+      width: min(var(--max), calc(100vw - 36px));
+      margin: 0 auto;
+      padding: 24px 0 64px;
+    }
+
+    .topbar {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--ink);
+      font-weight: 900;
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      border-radius: 14px;
+      background: #fff;
+      padding: 6px;
+      box-shadow: 0 10px 30px rgba(13, 29, 20, .08);
+    }
+
+    .back-link {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0 16px;
+      background: var(--green);
+      color: #fff8df;
+      font-size: .82rem;
+      font-weight: 860;
+    }
+
+    .hero {
+      min-height: 430px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(320px, .98fr);
+      align-items: center;
+      gap: 34px;
+      padding: 52px 0 42px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-size: .72rem;
+      font-weight: 950;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+
+    h1 {
+      max-width: 780px;
+      color: var(--ink);
+      font-size: clamp(3rem, 7vw, 7.2rem);
+      line-height: .9;
+      font-weight: 950;
+      overflow-wrap: anywhere;
+    }
+
+    h1 span { display: block; }
+
+    .lede {
+      max-width: 660px;
+      margin-top: 24px;
+      color: #2f4037;
+      font-size: clamp(1.08rem, 2vw, 1.36rem);
+      font-weight: 560;
+    }
+
+    .hero-card {
+      position: relative;
+      min-height: 380px;
+      border-radius: 34px;
+      overflow: hidden;
+      color: #fff8df;
+      box-shadow: var(--shadow);
+      background:
+        linear-gradient(120deg, rgba(6, 59, 34, .96), rgba(10, 60, 42, .78), rgba(25, 59, 112, .62)),
+        url("assets/preview-stills/room-sweep-still.jpg") center / cover;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, .12) 25%, transparent 25%) 0 0 / 18px 18px;
+      mix-blend-mode: screen;
+      opacity: .45;
+    }
+
+    .hero-card-inner {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      min-height: 380px;
+      display: grid;
+      align-content: end;
+      gap: 18px;
+      padding: 30px;
+    }
+
+    .hero-card h2 {
+      color: #fff8df;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1;
+      font-weight: 950;
+      overflow-wrap: anywhere;
+    }
+
+    .hero-card p { color: rgba(255, 248, 223, .82); }
+
+    .signal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .signal {
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 18px;
+      padding: 14px;
+      background: rgba(255, 255, 255, .09);
+    }
+
+    .signal span {
+      display: block;
+      color: rgba(255, 248, 223, .7);
+      font-size: .68rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .signal strong {
+      display: block;
+      margin-top: 4px;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .carousel {
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background: rgba(255, 255, 255, .9);
+      box-shadow: 0 18px 70px rgba(13, 29, 20, .08);
+      overflow: hidden;
+    }
+
+    .carousel-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: end;
+      padding: 30px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .carousel-top h2 {
+      color: var(--ink);
+      font-size: clamp(1.7rem, 3vw, 2.8rem);
+      line-height: 1;
+      font-weight: 950;
+    }
+
+    .carousel-top p {
+      max-width: 700px;
+      margin-top: 10px;
+      color: var(--muted);
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .tab {
+      min-height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0 12px;
+      background: #fff;
+      color: var(--body);
+      cursor: pointer;
+      font-size: .78rem;
+      font-weight: 850;
+    }
+
+    .tab[aria-selected="true"] {
+      border-color: var(--green);
+      background: var(--green);
+      color: #fff8df;
+    }
+
+    .stage {
+      min-height: 720px;
+      padding: 30px;
+      background:
+        radial-gradient(circle at top right, rgba(201, 147, 47, .12), transparent 38%),
+        linear-gradient(180deg, #fffdf7, #f5f8f1);
+    }
+
+    .slide { display: none; }
+    .slide.is-active { display: block; }
+
+    .slide-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .92fr) minmax(420px, 1.08fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .slide-copy {
+      position: sticky;
+      top: 92px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .slide-copy h3 {
+      color: var(--ink);
+      font-size: clamp(1.9rem, 4vw, 3.6rem);
+      line-height: .94;
+      font-weight: 950;
+      overflow-wrap: anywhere;
+    }
+
+    .slide-copy p { color: var(--muted); font-size: 1.02rem; }
+
+    .checklist {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .checklist li {
+      display: grid;
+      grid-template-columns: 12px 1fr;
+      gap: 10px;
+      color: var(--body);
+      font-weight: 680;
+    }
+
+    .checklist li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      margin-top: .55em;
+      border-radius: 2px;
+      background: var(--gold);
+    }
+
+    .device {
+      border: 1px solid rgba(6, 59, 34, .18);
+      border-radius: 30px;
+      background: #101411;
+      box-shadow: 0 24px 80px rgba(13, 29, 20, .22);
+      padding: 14px;
+    }
+
+    .device-top {
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 0 10px;
+      color: rgba(255, 248, 223, .72);
+      font-size: .74rem;
+      font-weight: 850;
+    }
+
+    .dots { display: flex; gap: 5px; }
+    .dot { width: 8px; height: 8px; border-radius: 999px; background: rgba(255,255,255,.25); }
+    .dot:first-child { background: var(--gold); }
+
+    .screen {
+      min-height: 560px;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #fffdf7;
+    }
+
+    .app-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px;
+      background: var(--green);
+      color: #fff8df;
+    }
+
+    .app-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 950;
+    }
+
+    .app-brand img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: #fff;
+      padding: 5px;
+    }
+
+    .pill {
+      min-height: 28px;
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 999px;
+      padding: 0 10px;
+      color: #ffe3a0;
+      font-size: .72rem;
+      font-weight: 900;
+    }
+
+    .order-screen {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 270px;
+      min-height: 526px;
+    }
+
+    .menu-pane { padding: 18px; }
+    .menu-pane h4, .cart-pane h4, .lane h4, .kitchen-column h4, .dispatch-pane h4 {
+      margin: 0 0 12px;
+      color: var(--ink);
+      font-size: 1rem;
+    }
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .food-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .food-card img {
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .food-copy { padding: 12px; }
+    .food-copy strong { display: block; color: var(--ink); }
+    .food-copy span { display: block; margin-top: 4px; color: var(--muted); font-size: .82rem; }
+
+    .cart-pane {
+      display: grid;
+      align-content: start;
+      gap: 12px;
+      padding: 18px;
+      border-left: 1px solid var(--line);
+      background: #f1f5ec;
+    }
+
+    .line-item, .metric, .ticket-line, .route-box {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      padding: 12px;
+    }
+
+    .line-item strong, .metric strong, .ticket-line strong, .route-box strong {
+      display: block;
+      color: var(--ink);
+    }
+
+    .line-item span, .metric span, .ticket-line span, .route-box span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .pay-button {
+      min-height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: var(--green);
+      color: #fff8df;
+      font-weight: 950;
+    }
+
+    .board-screen, .kds-screen {
+      min-height: 526px;
+      padding: 18px;
+      background: linear-gradient(180deg, #0f2e1e, #14223b);
+      color: #fff8df;
+    }
+
+    .board-lanes {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .lane, .kitchen-column {
+      min-height: 400px;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .08);
+      padding: 12px;
+    }
+
+    .lane h4, .kitchen-column h4 { color: #fff8df; }
+
+    .order-chip {
+      display: grid;
+      gap: 8px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, .12);
+      padding: 12px;
+      margin-top: 10px;
+    }
+
+    .order-chip strong { color: #fff; }
+    .order-chip span { color: rgba(255, 248, 223, .76); font-size: .82rem; }
+
+    .mini-actions {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+
+    .mini-actions span {
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .14);
+      padding: 6px 8px;
+      color: #fff8df;
+      font-size: .68rem;
+      font-weight: 850;
+    }
+
+    .kds-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .kitchen-ticket {
+      border-radius: 18px;
+      background: #fff8df;
+      color: var(--ink);
+      padding: 14px;
+      margin-top: 12px;
+    }
+
+    .kitchen-ticket strong { display: block; font-size: 1.22rem; }
+    .kitchen-ticket ul { margin: 10px 0 0; padding-left: 18px; color: var(--body); }
+
+    .receipt-screen {
+      min-height: 526px;
+      display: grid;
+      place-items: center;
+      background: #f5f0e7;
+      padding: 26px;
+    }
+
+    .receipt {
+      width: min(310px, 100%);
+      border: 1px dashed #111;
+      background: #fff;
+      color: #111;
+      padding: 18px;
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      box-shadow: 0 18px 44px rgba(0, 0, 0, .13);
+    }
+
+    .receipt h4 { margin: 0 0 8px; font-size: 1.1rem; }
+    .receipt p { color: #222; font-size: .78rem; }
+    .rule { border-top: 1px dashed #111; margin: 12px 0; }
+
+    .dispatch-screen {
+      min-height: 526px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      padding: 18px;
+      background: #f8faf6;
+    }
+
+    .map-card {
+      position: relative;
+      min-height: 430px;
+      border-radius: 22px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 18% 24%, rgba(201, 147, 47, .2), transparent 24%),
+        radial-gradient(circle at 78% 72%, rgba(14, 101, 63, .18), transparent 28%),
+        linear-gradient(135deg, #f6f8ef, #e3efe2);
+      border: 1px solid rgba(6, 59, 34, .12);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .68);
+    }
+
+    .map-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(6, 59, 34, .08) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(6, 59, 34, .07) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, .75), rgba(0, 0, 0, .18));
+    }
+
+    .map-road {
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .72);
+      box-shadow: inset 0 0 0 1px rgba(6, 59, 34, .1);
+      transform-origin: left center;
+    }
+
+    .map-road.one { left: -8%; top: 28%; width: 72%; height: 16px; transform: rotate(-12deg); }
+    .map-road.two { left: 24%; top: 55%; width: 88%; height: 16px; transform: rotate(9deg); }
+    .map-road.three { left: 58%; top: 8%; width: 16px; height: 78%; transform: rotate(6deg); }
+
+    .route-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      filter: drop-shadow(0 14px 20px rgba(6, 59, 34, .18));
+    }
+
+    .route-shadow,
+    .route-active {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .route-shadow {
+      stroke: rgba(255, 255, 255, .9);
+      stroke-width: 18;
+    }
+
+    .route-active {
+      stroke: var(--green);
+      stroke-width: 9;
+      stroke-dasharray: 10 13;
+      animation: routePulse 1.6s linear infinite;
+    }
+
+    .map-point {
+      position: absolute;
+      z-index: 2;
+      display: grid;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .map-point.pickup { left: 10%; top: 18%; }
+    .map-point.dropoff {
+      right: 8%;
+      top: 61%;
+      justify-items: end;
+    }
+
+    .map-pin {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: var(--paper);
+      color: var(--green);
+      font-size: .68rem;
+      font-weight: 950;
+      box-shadow: 0 16px 34px rgba(13, 29, 20, .16);
+    }
+
+    .map-point.dropoff .map-pin {
+      background: var(--gold);
+      color: #241709;
+    }
+
+    .map-label {
+      width: max-content;
+      max-width: 138px;
+      border: 1px solid rgba(6, 59, 34, .12);
+      border-radius: 16px;
+      padding: 8px 10px;
+      background: rgba(255, 253, 247, .88);
+      color: var(--ink);
+      box-shadow: 0 14px 30px rgba(13, 29, 20, .1);
+    }
+
+    .map-label strong,
+    .map-label span {
+      display: block;
+    }
+
+    .map-label strong {
+      font-size: .72rem;
+      line-height: 1.15;
+    }
+
+    .map-label span {
+      color: var(--muted);
+      font-size: .62rem;
+      font-weight: 760;
+    }
+
+    .map-status {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      width: min(176px, calc(100% - 36px));
+      z-index: 2;
+      display: grid;
+      gap: 8px;
+      align-items: start;
+      border: 1px solid rgba(6, 59, 34, .12);
+      border-radius: 20px;
+      padding: 12px;
+      background: rgba(255, 253, 247, .92);
+      box-shadow: 0 18px 44px rgba(13, 29, 20, .12);
+    }
+
+    .map-status strong,
+    .map-status span {
+      display: block;
+    }
+
+    .map-status strong {
+      color: var(--ink);
+      font-size: .76rem;
+      line-height: 1.15;
+    }
+
+    .map-status span {
+      color: var(--muted);
+      font-size: .64rem;
+      font-weight: 750;
+    }
+
+    .map-status .status-chip {
+      width: fit-content;
+      border-radius: 999px;
+      padding: 8px 10px;
+      background: rgba(6, 59, 34, .1);
+      color: var(--green);
+      font-size: .68rem;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    @keyframes routePulse {
+      to { stroke-dashoffset: -46; }
+    }
+
+    .dispatch-pane {
+      display: grid;
+      align-content: start;
+      gap: 12px;
+    }
+
+    .footer {
+      margin-top: 26px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    @media (max-width: 960px) {
+      .hero, .slide-grid, .carousel-top, .order-screen, .dispatch-screen {
+        grid-template-columns: 1fr;
+      }
+
+      .slide-copy { position: static; }
+      .board-lanes, .kds-grid, .signal-grid { grid-template-columns: 1fr; }
+      .screen { min-height: auto; }
+      .map-status { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      .shell { width: calc(100vw - 24px); padding-top: 12px; }
+      .topbar { align-items: flex-start; flex-direction: column; }
+      .hero { padding-top: 28px; }
+      h1 { font-size: clamp(2.45rem, 12vw, 3.35rem); line-height: .94; }
+      .hero > div:first-child,
+      .lede,
+      .hero-card h2,
+      .hero-card p {
+        max-width: 330px;
+      }
+      .lede { font-size: 1rem; }
+      .hero-card h2, .slide-copy h3 { font-size: clamp(1.9rem, 9vw, 2.45rem); }
+      .carousel-top, .stage { padding: 20px; }
+      .controls { justify-content: flex-start; }
+      .food-grid { grid-template-columns: 1fr; }
+      .cart-pane { border-left: 0; border-top: 1px solid var(--line); }
+      .footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="ola-client-welcome-packet-2026-06-03.html">
+        <img src="assets/owner-packet/mm-logo.png" alt="M&M African Kitchen & Bar logo" />
+        <span>M&amp;M Operating Interface Preview</span>
+      </a>
+      <a class="back-link" href="ola-client-welcome-packet-2026-06-03.html#ordering">Back to welcome packet</a>
+    </header>
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Private operating layer</p>
+        <h1><span>Native order</span><span>system.</span><span>Website to kitchen.</span></h1>
+        <p class="lede">
+          These are the non-website interfaces behind the break-free route: customer order capture, staff acceptance, kitchen display, printed tickets, and Uber Direct delivery as a courier layer.
+        </p>
+      </div>
+      <aside class="hero-card">
+        <div class="hero-card-inner">
+          <p class="eyebrow">End-to-end picture</p>
+          <h2>Website-owned orders. Staff-controlled ops.</h2>
+          <p>The look stays close to M&amp;M's public site: green, gold, real food, simple controls, and no generic POS dashboard energy.</p>
+          <div class="signal-grid">
+            <div class="signal"><span>Payment</span><strong>Hosted checkout</strong></div>
+            <div class="signal"><span>Kitchen</span><strong>Tablet + printer</strong></div>
+            <div class="signal"><span>Delivery</span><strong>Uber Direct</strong></div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="carousel" aria-label="Operating interface carousel">
+      <div class="carousel-top">
+        <div>
+          <p class="eyebrow">Interface carousel</p>
+          <h2>What the operating system can look like.</h2>
+          <p>This is a visual preview. The private build already has working local pieces behind it; this page shows how the owner-facing experience can be packaged cleanly.</p>
+        </div>
+        <div class="controls" role="tablist" aria-label="Interface slides">
+          <button class="tab" type="button" role="tab" aria-selected="true" data-slide-target="order">Order</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-slide-target="board">Staff</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-slide-target="kitchen">Kitchen</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-slide-target="ticket">Ticket</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-slide-target="dispatch">Delivery</button>
+        </div>
+      </div>
+
+      <div class="stage">
+        <article class="slide is-active" id="slide-order" data-slide="order">
+          <div class="slide-grid">
+            <div class="slide-copy">
+              <p class="eyebrow">01 / Customer order</p>
+              <h3>Ordering feels like the website, not a third-party portal.</h3>
+              <p>Menu cards, modifiers, pickup/delivery choice, tips, and hosted payment stay in M&amp;M's branded path before any POS or delivery vendor sees the order.</p>
+              <ul class="checklist">
+                <li>Customer relationship starts on the M&amp;M website.</li>
+                <li>Modifiers preserve kitchen instructions.</li>
+                <li>Payment confirmation becomes the source of truth.</li>
+              </ul>
+            </div>
+            <div class="device">
+              <div class="device-top"><span>M&M web order</span><span class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i></span></div>
+              <div class="screen">
+                <div class="app-header">
+                  <div class="app-brand"><img src="assets/owner-packet/mm-logo.png" alt="" /><span>M&amp;M Order</span></div>
+                  <span class="pill">Private lane</span>
+                </div>
+                <div class="order-screen">
+                  <section class="menu-pane">
+                    <h4>Featured plates</h4>
+                    <div class="food-grid">
+                      <article class="food-card"><img src="https://twe-cloud.github.io/mm-african-kitchen-preview/assets/owner-2026-05-22/oxtail-jollof-bowl.jpg" alt="" /><div class="food-copy"><strong>Oxtail + Jollof</strong><span>No onions, extra plantain</span></div></article>
+                      <article class="food-card"><img src="https://twe-cloud.github.io/mm-african-kitchen-preview/assets/owner-2026-05-22/webp/house-snack-bites.webp" alt="" /><div class="food-copy"><strong>Salmon Bites</strong><span>Extra house pepper cream</span></div></article>
+                      <article class="food-card"><img src="https://twe-cloud.github.io/mm-african-kitchen-preview/assets/owner-2026-05-22/swallow-fish-red-bowl.jpg" alt="" /><div class="food-copy"><strong>Egusi + Fufu</strong><span>Add pepper, no chicken</span></div></article>
+                      <article class="food-card"><img src="https://twe-cloud.github.io/mm-african-kitchen-preview/assets/owner-2026-05-22/whole-fish-rice-plate.jpg" alt="" /><div class="food-copy"><strong>Whole Fish</strong><span>Rice, sauce on side</span></div></article>
+                    </div>
+                  </section>
+                  <aside class="cart-pane">
+                    <h4>Cart</h4>
+                    <div class="line-item"><strong>1x Oxtail + Jollof</strong><span>No onions / extra plantain</span></div>
+                    <div class="line-item"><strong>1x Salmon Bites</strong><span>Extra pepper cream</span></div>
+                    <div class="line-item"><strong>Pickup today</strong><span>Guest gets status updates</span></div>
+                    <div class="pay-button">Start checkout - $42.98</div>
+                  </aside>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="slide" id="slide-board" data-slide="board">
+          <div class="slide-grid">
+            <div class="slide-copy">
+              <p class="eyebrow">02 / Staff board</p>
+              <h3>Accept once, then move the order through the room.</h3>
+              <p>The staff board is the bridge between the website and the kitchen. It can operate without TouchBistro while still leaving room for POS adapters later.</p>
+              <ul class="checklist">
+                <li>New paid orders land in a visible queue.</li>
+                <li>Staff accepts, fires to kitchen, marks ready, then completes.</li>
+                <li>Printer and delivery actions stay on the same order card.</li>
+              </ul>
+            </div>
+            <div class="device">
+              <div class="device-top"><span>Staff tablet board</span><span class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i></span></div>
+              <div class="screen board-screen">
+                <div class="board-lanes">
+                  <section class="lane"><h4>New</h4><div class="order-chip"><strong>MM-583104</strong><span>Demo guest - pickup - paid</span><span>Oxtail + Jollof / Salmon Bites</span><div class="mini-actions"><span>Accept</span><span>Print</span></div></div></section>
+                  <section class="lane"><h4>Accepted</h4><div class="order-chip"><strong>MM-583090</strong><span>Delivery - paid</span><span>Egusi Mini-Plate</span><div class="mini-actions"><span>Fire kitchen</span><span>Quote delivery</span></div></div></section>
+                  <section class="lane"><h4>In Kitchen</h4><div class="order-chip"><strong>MM-583072</strong><span>Whole fish + rice</span><span>Kitchen screen active</span><div class="mini-actions"><span>Mark ready</span></div></div></section>
+                  <section class="lane"><h4>Ready</h4><div class="order-chip"><strong>MM-583061</strong><span>Pickup at counter</span><span>Expo handoff</span><div class="mini-actions"><span>Complete</span></div></div></section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="slide" id="slide-kitchen" data-slide="kitchen">
+          <div class="slide-grid">
+            <div class="slide-copy">
+              <p class="eyebrow">03 / Kitchen display</p>
+              <h3>The kitchen sees phases, modifiers, and urgency.</h3>
+              <p>This is the simple KDS path for a tablet or monitor. It does not need to look like a corporate POS. It needs to be readable during service.</p>
+              <ul class="checklist">
+                <li>Accepted, in-kitchen, and ready lanes stay separated.</li>
+                <li>Modifiers are visible on the ticket.</li>
+                <li>Staff can bump tickets without touching the customer site.</li>
+              </ul>
+            </div>
+            <div class="device">
+              <div class="device-top"><span>Kitchen display</span><span class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i></span></div>
+              <div class="screen kds-screen">
+                <div class="kds-grid">
+                  <section class="kitchen-column"><h4>Accepted</h4><article class="kitchen-ticket"><strong>MM-583090</strong><ul><li>1x Egusi Mini-Plate</li><li>No chicken / extra pepper</li></ul></article></section>
+                  <section class="kitchen-column"><h4>In Kitchen</h4><article class="kitchen-ticket"><strong>MM-583072</strong><ul><li>1x Whole Fish</li><li>Rice / sauce on side</li></ul></article><article class="kitchen-ticket"><strong>MM-583066</strong><ul><li>2x Suya Wings</li><li>Extra spice</li></ul></article></section>
+                  <section class="kitchen-column"><h4>Ready</h4><article class="kitchen-ticket"><strong>MM-583061</strong><ul><li>1x Fried Rice</li><li>Counter pickup</li></ul></article></section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="slide" id="slide-ticket" data-slide="ticket">
+          <div class="slide-grid">
+            <div class="slide-copy">
+              <p class="eyebrow">04 / Printed ticket</p>
+              <h3>Fallback hardware keeps the kitchen from waiting on POS access.</h3>
+              <p>A simple print ticket is not glamorous, but it is resilient. It gives the kitchen a physical backup while the tablet board and future integrations mature.</p>
+              <ul class="checklist">
+                <li>Thermal-printer friendly ticket format.</li>
+                <li>Order ID, customer, items, modifiers, and subtotal.</li>
+                <li>Works as a low-cost bridge while POS decisions are open.</li>
+              </ul>
+            </div>
+            <div class="device">
+              <div class="device-top"><span>Ticket printer</span><span class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i></span></div>
+              <div class="screen receipt-screen">
+                <div class="receipt">
+                  <h4>M&amp;M AFRICAN KITCHEN</h4>
+                  <p>MM-583104 - PICKUP</p>
+                  <p>June 3, 2026 - 7:42 PM</p>
+                  <div class="rule"></div>
+                  <p><strong>Demo Guest</strong></p>
+                  <p>1x Oxtail + Jollof<br />NO onions / ADD plantain</p>
+                  <p>1x Salmon Bites<br />ADD house pepper cream</p>
+                  <div class="rule"></div>
+                  <p><strong>Subtotal $42.98</strong></p>
+                  <p>Mode: tablet-printer bridge</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="slide" id="slide-dispatch" data-slide="dispatch">
+          <div class="slide-grid">
+            <div class="slide-copy">
+              <p class="eyebrow">05 / Uber Direct dispatch</p>
+              <h3>Delivery becomes a rail, not the owner of the order.</h3>
+              <p>The website owns the order and payment first. Uber Direct is used only when a delivery quote is approved and the kitchen is ready to hand off.</p>
+              <ul class="checklist">
+                <li>M&amp;M keeps the customer and order record.</li>
+                <li>Delivery fee and support policy must be approved before launch.</li>
+                <li>Courier dispatch can stay separate from POS dependency.</li>
+              </ul>
+            </div>
+            <div class="device">
+              <div class="device-top"><span>Delivery command</span><span class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i></span></div>
+              <div class="screen dispatch-screen">
+                <div class="map-card" aria-label="Uber Direct delivery route preview">
+                  <div class="map-road one"></div>
+                  <div class="map-road two"></div>
+                  <div class="map-road three"></div>
+                  <svg class="route-svg" viewBox="0 0 420 430" aria-hidden="true" focusable="false">
+                    <path class="route-shadow" d="M84 105 C142 126 145 202 198 219 C266 240 258 322 335 338" />
+                    <path class="route-active" d="M84 105 C142 126 145 202 198 219 C266 240 258 322 335 338" />
+                  </svg>
+                  <div class="map-point pickup">
+                    <div class="map-pin">M&amp;M</div>
+                    <div class="map-label"><strong>Pickup ready</strong><span>Kitchen handoff</span></div>
+                  </div>
+                  <div class="map-point dropoff">
+                    <div class="map-pin">Drop</div>
+                  </div>
+                  <div class="map-status">
+                    <div><strong>Uber Direct courier lane</strong><span>Fee and policy approval first.</span></div>
+                    <div class="status-chip">Approval gated</div>
+                  </div>
+                </div>
+                <aside class="dispatch-pane">
+                  <h4>Uber Direct quote</h4>
+                  <div class="route-box"><strong>Pickup</strong><span>M&amp;M African Kitchen &amp; Bar</span></div>
+                  <div class="route-box"><strong>Dropoff</strong><span>Customer address after checkout</span></div>
+                  <div class="route-box"><strong>Quote status</strong><span>Ready after Uber Direct credentials and fee rules are approved</span></div>
+                  <div class="pay-button">Approve dispatch</div>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Prepared by Ni Biashara LLC for M&amp;M African Kitchen &amp; Bar.</span>
+      <span>Private preview - June 3, 2026</span>
+    </footer>
+  </main>
+
+  <script>
+    const tabs = Array.from(document.querySelectorAll("[data-slide-target]"));
+    const slides = Array.from(document.querySelectorAll("[data-slide]"));
+
+    function activate(id) {
+      tabs.forEach((tab) => tab.setAttribute("aria-selected", String(tab.dataset.slideTarget === id)));
+      slides.forEach((slide) => slide.classList.toggle("is-active", slide.dataset.slide === id));
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => activate(tab.dataset.slideTarget));
+    });
+  </script>
+</body>
+</html>

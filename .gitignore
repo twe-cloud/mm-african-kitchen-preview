@@ -12,12 +12,6 @@ assets/clips/night-out-poster.jpg
 ola-*.html
 ola-*.pdf
 prelaunch-access.html
-*avatar*.html
-mm-ordering-interface-*.html
-order-config.js
-order-runtime.js
-assets/assistant/
-assets/chikeh-*.js
 assets/mm-restaurant-reel.mp4
 # NB strategy docs live locally / in content-ops, not in the public site repo.
 nb-mm-*.md
@@ -25,3 +19,4 @@ market-intel.md
 google-page-playbook.md
 telegram-diaspora-playbook.md
 weekly-client-report-standard.md
+.netlify/

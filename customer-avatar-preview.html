@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chi-keh Customer Preview | M&M African Kitchen & Bar</title>
+  <meta name="description" content="Private customer preview for Chi-keh, the M&M African Kitchen & Bar Nigerian female voice assistant." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="assets/brand/mm-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@500;700;900&family=JetBrains+Mono:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root {
+      --chi-bg: #100c08;
+      --chi-panel: rgba(26, 18, 13, 0.92);
+      --chi-line: rgba(239, 195, 106, 0.2);
+      --chi-text: #fff2dc;
+      --chi-muted: #d2bc9b;
+      --chi-gold: #efc36a;
+      --chi-red: #bd5b43;
+      --chi-green: #254036;
+    }
+    body {
+      min-height: 100vh;
+      background:
+        linear-gradient(180deg, rgba(16, 12, 8, 0.7), rgba(16, 12, 8, 0.96)),
+        url("assets/owner-2026-05-22/interior-bowls-room.jpg") center / cover fixed,
+        var(--chi-bg);
+      color: var(--chi-text);
+    }
+    .customer-preview {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 26px 18px 80px;
+    }
+    .preview-hero {
+      min-height: calc(100vh - 130px);
+      display: grid;
+      grid-template-columns: minmax(280px, 0.82fr) minmax(320px, 1fr);
+      gap: clamp(22px, 4vw, 54px);
+      align-items: center;
+    }
+    .host-portrait {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid var(--chi-line);
+      background: #160f0b;
+      box-shadow: 0 34px 90px rgba(0, 0, 0, 0.46);
+    }
+    .host-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .host-status {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .host-status span,
+    .voice-chip {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(8, 6, 5, 0.78);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--chi-text);
+      font-size: 0.84rem;
+      backdrop-filter: blur(10px);
+    }
+    .preview-copy h1 {
+      max-width: 11ch;
+      margin: 0;
+      font-size: clamp(3rem, 8vw, 6.6rem);
+      line-height: 0.9;
+      text-wrap: balance;
+    }
+    .preview-copy p {
+      max-width: 62ch;
+      color: var(--chi-muted);
+      line-height: 1.62;
+      font-size: 1.05rem;
+    }
+    .preview-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .preview-button {
+      appearance: none;
+      border: 0;
+      cursor: pointer;
+      border-radius: 16px;
+      padding: 14px 18px;
+      font: 900 0.95rem/1 "DM Sans", sans-serif;
+      color: #140d08;
+      background: linear-gradient(135deg, var(--chi-gold), var(--chi-red));
+    }
+    .preview-button.secondary,
+    .preview-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      border-radius: 16px;
+      padding: 0 18px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--chi-text);
+      text-decoration: none;
+      font-weight: 900;
+    }
+    .preview-panel {
+      margin-top: 26px;
+      padding: 22px;
+      border-radius: 22px;
+      border: 1px solid var(--chi-line);
+      background: var(--chi-panel);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+    }
+    .dialogue {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .bubble {
+      max-width: 720px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.055);
+      color: var(--chi-text);
+      line-height: 1.5;
+    }
+    .bubble.host {
+      background: rgba(239, 195, 106, 0.11);
+      border-color: rgba(239, 195, 106, 0.22);
+    }
+    .fine {
+      margin-top: 12px;
+      color: var(--chi-muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+    @media (max-width: 860px) {
+      .preview-hero {
+        min-height: 0;
+        grid-template-columns: 1fr;
+        padding-top: 18px;
+      }
+      .host-portrait {
+        max-width: 480px;
+      }
+      .preview-copy h1 {
+        max-width: none;
+        font-size: clamp(2.45rem, 13vw, 4.6rem);
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="M&M African Kitchen & Bar home">
+      <img src="assets/brand/mm-logo.png" alt="" />
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+      <span></span><span></span><span></span>
+      <span class="sr-only">Open menu</span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" data-site-nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Food Menu</a>
+      <a href="drinks.html">Happy Hour + Drinks</a>
+      <a href="catering.html">Catering</a>
+      <a href="entertainment.html">Live / Open Mic</a>
+    </nav>
+
+    <a class="header-call" href="tel:+19453270366">Call</a>
+  </header>
+
+  <main id="main" class="customer-preview">
+    <section class="preview-hero" aria-labelledby="preview-title">
+      <figure class="host-portrait">
+        <img src="assets/assistant/chike-avatar.png" alt="Chi-keh, a Black Nigerian female restaurant host avatar for M&M African Kitchen and Bar" />
+        <figcaption class="host-status">
+          <span>Chi-keh customer preview</span>
+          <span>Black Nigerian female host</span>
+        </figcaption>
+      </figure>
+
+      <section class="preview-copy">
+        <div class="voice-chip">Private customer preview - not production</div>
+        <h1 id="preview-title">Chi-keh for M&M guests.</h1>
+        <p>Hello my dear, you are welcome to M and M African Kitchen and Bar. This reset keeps Chi-keh as a warm Nigerian female front-of-house host for first-time menu help, happy hour questions, catering, and safe pickup-order drafts.</p>
+        <div class="preview-actions" aria-label="Preview actions">
+          <button class="preview-button" type="button" id="playGreeting">Play greeting</button>
+          <button class="preview-button secondary" type="button" id="playOrder">Play order sample</button>
+          <a href="https://mm-kitchen-staging.pages.dev/avatar-agent-lab?accent=mild-heavy">Open live avatar preview</a>
+        </div>
+        <p class="fine">The button uses local browser speech for a static customer-page check. Final voice signoff should use the ElevenLabs voice plus Wappy Nigerian accent pass. The live avatar/audio route is on Cloudflare staging because it needs server functions.</p>
+      </section>
+    </section>
+
+    <section class="preview-panel" aria-labelledby="script-title">
+      <p class="site-kicker">Customer script</p>
+      <h2 id="script-title">The first lines Chi-keh should own.</h2>
+      <div class="dialogue">
+        <div class="bubble host">Hello my dear, you are welcome to M and M African Kitchen and Bar. This is Chi-keh. I can help with jollof, suya, soups and swallow, happy hour, catering, or a pickup order draft. What would you like today?</div>
+        <div class="bubble">It is my first time. What should I order?</div>
+        <div class="bubble host">No wahala. Start with jollof rice, plantain, and your choice of protein. If you want smoky pepper heat, add suya wings. If you want the soup-and-swallow lane, I can explain egusi or amala abula.</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    const samples = {
+      greeting: 'Hello my dear, you are welcome to M and M African Kitchen and Bar. This is Chi-keh. I can help with jollof, suya, soups and swallow, happy hour, catering, or a pickup order draft. What would you like today?',
+      order: 'No wahala. I have jollof rice and suya wings for pickup. For your safety, I cannot take card numbers by phone. I can prepare the order draft and route payment through the approved online or in-person path.'
+    };
+
+    function pickVoice() {
+      const voices = window.speechSynthesis?.getVoices?.() || [];
+      return voices.find((voice) => /en[-_]NG/i.test(voice.lang))
+        || voices.find((voice) => /Nigeria|Nigerian|Ezinne/i.test(voice.name))
+        || voices.find((voice) => /female|woman|Zira|Samantha|Google UK English Female/i.test(voice.name))
+        || voices[0]
+        || null;
+    }
+
+    function speak(text) {
+      if (!window.speechSynthesis) return;
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-NG';
+      utterance.rate = 0.92;
+      utterance.pitch = 0.88;
+      const voice = pickVoice();
+      if (voice) utterance.voice = voice;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    window.speechSynthesis?.addEventListener?.('voiceschanged', pickVoice);
+    document.getElementById('playGreeting')?.addEventListener('click', () => speak(samples.greeting));
+    document.getElementById('playOrder')?.addEventListener('click', () => speak(samples.order));
+  </script>
+</body>
+</html>
