@@ -11,6 +11,7 @@
   <meta property="og:url" content="https://mmafricankitchen.com/" />
   <meta property="og:image" content="https://mmafricankitchen.com/assets/owner-2026-05-22/house-spread-overhead.jpg" />
   <link rel="icon" href="assets/brand/mm-logo.png" />
+  <link rel="preload" as="image" href="assets/owner-2026-05-22/webp/jollof-hero-1920.webp" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@500;700;900&family=JetBrains+Mono:wght@700;800&display=swap" rel="stylesheet" />
@@ -100,7 +101,7 @@
   <main id="main">
     <section id="top" class="hero" aria-labelledby="hero-title">
       <div class="hero-media">
-        <img class="hero-image is-active" src="assets/ig-curated/menu-spread-overhead.webp" alt="Overhead spread of jollof, fried rice, seafood baskets, soups, and plates at M&M African Kitchen & Bar" />
+        <img class="hero-image is-active" src="assets/owner-2026-05-22/webp/jollof-hero-1920.webp" width="1920" height="1536" fetchpriority="high" alt="Jollof rice with grilled chicken and fried plantain at M&M African Kitchen & Bar" />
       </div>
 
       <div class="hero-grid">
@@ -111,7 +112,7 @@
             <span class="gold-word">Suya.</span>
             <span class="red-word">Frisco nights.</span>
           </h1>
-          <p class="hero-line">Bold plates, cocktails, salmon bites, lamb chops, happy hour, and a room built for after-work links, date nights, birthdays, and group dinners.</p>
+          <p class="hero-line">Bold West African plates, cocktails, and a room built for the night.</p>
           <div class="hero-priority-actions" aria-label="Primary ordering actions">
             <a class="action action-hot action-hero-primary" href="menu.html">See Full Menu</a>
             <a class="action action-light action-hero-primary" href="https://www.doordash.com/store/m%26m-african-kitchen-35396532/">Order Online</a>
@@ -119,8 +120,6 @@
           <div class="hero-actions" aria-label="Primary restaurant actions">
             <a class="action action-dark" href="#reserve">Reserve a table</a>
             <a class="action action-line" href="drinks.html#happy-hour">Happy Hour</a>
-            <a class="action action-line" href="catering.html">Catering</a>
-            <a class="action action-line" href="tel:+19453270366">Call</a>
             <a class="action action-line" href="https://www.google.com/maps/search/?api=1&query=12255%20Teel%20Pkwy%20%23410%20Frisco%20TX%2075033">Directions</a>
           </div>
         </section>
@@ -130,7 +129,7 @@
           <div>
             <span>Food menu</span>
             <strong>Menu first. Order faster.</strong>
-            <p>Open the full M&amp;M menu for salmon bites, mini plates, jollof, seafood, soups, cocktails, prices, and easy first-order options.</p>
+            <p>The full M&amp;M menu with prices — plates, seafood, soups, and cocktails.</p>
           </div>
         </a>
 
@@ -143,49 +142,58 @@
     </section>
 
     <section id="happy-hour-promo" class="happy-hour-promo food-hero-card" aria-label="Happy hour and weeknight energy">
-      <img class="food-hero-bg" src="assets/ig-curated/weeknight-cocktail.webp" alt="" aria-hidden="true" />
+      <img class="food-hero-bg" src="assets/ig-curated/weeknight-cocktail.webp" alt="" aria-hidden="true" loading="lazy" />
       <div class="food-hero-copy">
         <p class="site-kicker">Weeknight pull</p>
         <h2>Happy hour runs Tuesday-Friday, 3-7 PM.</h2>
-        <p>Cocktails, salmon bites, wings, date-night plates, and a better reason to pull up after work.</p>
+        <p>Cocktails, bites, and a better reason to pull up after work.</p>
         <div class="food-menu-actions" style="justify-content:start; margin-top:18px">
           <a class="action action-hot" href="drinks.html#happy-hour">See happy hour</a>
           <a class="action action-light" href="menu.html#starters">Start with bites</a>
-          <a class="action action-dark" href="https://www.doordash.com/store/m%26m-african-kitchen-35396532/">Order Online</a>
         </div>
       </div>
     </section>
 
     <section id="food-menu" class="food-menu-band food-hero-card food-hero-card-light" aria-labelledby="food-menu-title">
-      <img class="food-hero-bg" src="assets/owner-2026-05-22/webp/oxtail-jollof-bowl.webp" alt="" aria-hidden="true" />
+      <img class="food-hero-bg" src="assets/owner-2026-05-22/webp/oxtail-jollof-bowl.webp" alt="" aria-hidden="true" loading="lazy" />
       <div class="food-hero-copy">
         <p class="site-kicker">Menus</p>
-        <h2 id="food-menu-title">Food, starters, full plates, and drinks in one easy menu.</h2>
-        <p>Starters, mini plates, seafood, soups, full plates, desserts, and drinks — easy to scan before you order.</p>
+        <h2 id="food-menu-title">The whole menu, easy to scan before you order.</h2>
         <div class="food-menu-actions" style="justify-content:start; margin-top:18px">
           <a class="action action-hot" href="menu.html">View Food Menu</a>
           <a class="action action-light" href="drinks.html">View Drinks Menu</a>
-          <a class="action action-dark" href="https://www.doordash.com/store/m%26m-african-kitchen-35396532/">Order Online</a>
         </div>
       </div>
     </section>
 
     <section class="ticker" aria-label="Dish highlights">
-      <div>
-        <span>Jollof Rice</span>
-        <span>Suya Wings</span>
-        <span>Salmon Bites</span>
-        <span>Shawarma</span>
-        <span>Whole Fish</span>
-        <span>Seafood Platters</span>
-        <span>Happy Hour</span>
-        <span>Catering trays</span>
+      <div class="ticker-track">
+        <div class="ticker-group">
+          <span>Jollof Rice</span>
+          <span>Suya Wings</span>
+          <span>Salmon Bites</span>
+          <span>Shawarma</span>
+          <span>Whole Fish</span>
+          <span>Seafood Platters</span>
+          <span>Happy Hour</span>
+          <span>Catering trays</span>
+        </div>
+        <div class="ticker-group" aria-hidden="true">
+          <span>Jollof Rice</span>
+          <span>Suya Wings</span>
+          <span>Salmon Bites</span>
+          <span>Shawarma</span>
+          <span>Whole Fish</span>
+          <span>Seafood Platters</span>
+          <span>Happy Hour</span>
+          <span>Catering trays</span>
+        </div>
       </div>
     </section>
 
     <section class="proof-wall" aria-label="M&M food and room photos">
       <figure class="proof-card proof-food">
-        <img src="assets/ig-curated/seafood-basket-checker.webp" alt="Seafood basket with fried fish, shrimp, fried rice, and pepper sauce at M&M African Kitchen & Bar" />
+        <img src="assets/ig-curated/seafood-basket-checker.webp" alt="Seafood basket with fried fish, shrimp, fried rice, and pepper sauce at M&M African Kitchen & Bar" loading="lazy" />
         <figcaption><span>From the kitchen</span><strong>Come hungry. The plate handles the rest.</strong></figcaption>
       </figure>
       <figure class="proof-card proof-room">
@@ -195,11 +203,11 @@
         <figcaption><span>The room</span><strong>Dinner first. Then the night opens up.</strong></figcaption>
       </figure>
       <figure class="proof-card proof-store">
-        <img src="assets/ig-curated/storefront-balloons.webp" alt="M&M African Kitchen storefront with balloon columns on Teel Parkway in Frisco" />
+        <img src="assets/ig-curated/storefront-balloons.webp" alt="M&M African Kitchen storefront with balloon columns on Teel Parkway in Frisco" loading="lazy" />
         <figcaption><span>The storefront</span><strong>Teel Parkway. Look for the M&M sign.</strong></figcaption>
       </figure>
       <figure class="proof-card proof-soup">
-        <img src="assets/social-polished/suya-wings-fries-card.webp" alt="Wings, shrimp, fries, and dipping sauce at M&M African Kitchen & Bar" />
+        <img src="assets/social-polished/suya-wings-fries-card.webp" alt="Wings, shrimp, fries, and dipping sauce at M&M African Kitchen & Bar" loading="lazy" />
         <figcaption><span>First-timer move</span><strong>Wings, shrimp, fries, and something cold.</strong></figcaption>
       </figure>
     </section>
@@ -208,12 +216,12 @@
       <div class="plate-lineup-head">
         <p class="site-kicker">Set the table</p>
         <h2 id="plate-lineup-title">Pick a plate. Bring people.</h2>
-        <p>Jollof with plantain, soup and swallow, whole fish, salmon bites, and the kind of table spread that turns one order into a shared meal.</p>
+        <p>One order turns into a shared table.</p>
       </div>
 
       <div class="plate-lineup-grid">
         <figure class="plate-card plate-card-feature plate-card-table">
-          <img src="assets/ig-curated/birthday-table-set.webp" alt="Birthday table set with gold plates along the green booths at M&M African Kitchen & Bar" />
+          <img src="assets/ig-curated/birthday-table-set.webp" alt="Birthday table set with gold plates along the green booths at M&M African Kitchen & Bar" loading="lazy" />
           <figcaption>
             <span>Group nights</span>
             <strong>Set for your party.</strong>
@@ -221,15 +229,15 @@
         </figure>
 
         <figure class="plate-card plate-card-first">
-          <img src="assets/owner-2026-05-22/webp/jollof-chicken-plantain.webp" alt="Jollof rice with chicken and fried plantain" />
+          <img src="assets/owner-2026-05-22/webp/fried-rice-chicken-plantain.webp" alt="Fried rice with chicken and fried plantain" loading="lazy" />
           <figcaption>
             <span>First plate</span>
-            <strong>Jollof + chicken</strong>
+            <strong>Fried rice + chicken</strong>
           </figcaption>
         </figure>
 
         <figure class="plate-card plate-card-swallow">
-          <img src="assets/owner-2026-05-22/webp/swallow-fish-red-bowl.webp" alt="Rich red soup served with swallow at M&M African Kitchen" />
+          <img src="assets/owner-2026-05-22/webp/swallow-fish-red-bowl.webp" alt="Rich red soup served with swallow at M&M African Kitchen" loading="lazy" />
           <figcaption>
             <span>Swallow</span>
             <strong>Rich soup and swallow.</strong>
@@ -237,7 +245,7 @@
         </figure>
 
         <figure class="plate-card plate-card-fish">
-          <img src="assets/owner-2026-05-22/webp/whole-fish-rice-plate.webp" alt="Whole fish served with white rice, cucumber, onion, and plantain" />
+          <img src="assets/owner-2026-05-22/webp/whole-fish-rice-plate.webp" alt="Whole fish served with white rice, cucumber, onion, and plantain" loading="lazy" />
           <figcaption>
             <span>Fish plate</span>
             <strong>Whole fish + rice</strong>
@@ -245,7 +253,7 @@
         </figure>
 
         <figure class="plate-card plate-card-snack">
-          <img src="assets/ig-curated/house-bites-overhead.webp" alt="Crispy house bites with pepper cream dip" />
+          <img src="assets/ig-curated/house-bites-overhead.webp" alt="Crispy house bites with pepper cream dip" loading="lazy" />
           <figcaption>
             <span>Before the main</span>
             <strong>House bites + dip</strong>
@@ -253,7 +261,7 @@
         </figure>
 
         <figure class="plate-card plate-card-inside">
-          <img src="assets/ig-curated/cocktail-flight-bar.webp" alt="Cocktail trio and tequila flight on the bar at M&M African Kitchen" />
+          <img src="assets/ig-curated/cocktail-flight-bar.webp" alt="Cocktail trio and tequila flight on the bar at M&M African Kitchen" loading="lazy" />
           <figcaption>
             <span>Cocktail hour</span>
             <strong>Cocktails worth the stop.</strong>
@@ -263,7 +271,7 @@
     </section>
 
     <section id="reserve" class="reserve-band" aria-labelledby="reserve-title">
-      <img class="reserve-bg" src="assets/curated/home-hero-booth.webp" alt="" aria-hidden="true" />
+      <img class="reserve-bg" src="assets/curated/home-hero-booth.webp" alt="" aria-hidden="true" loading="lazy" />
       <div class="reserve-shell">
         <div class="reserve-copy">
           <p class="site-kicker">Reservations</p>
@@ -271,7 +279,7 @@
             <span class="cream-word">Friday fills up.</span>
             <span class="gold-word">Your table shouldn't.</span>
           </h2>
-          <p class="reserve-lede">Pick a date, a time, and how many are pulling up. We hold the booth — you handle the appetite. Walk-ins are always welcome, but groups of six or more should lock it in.</p>
+          <p class="reserve-lede">Pick a date, a time, and how many are pulling up. We hold the booth — you handle the appetite.</p>
           <ul class="reserve-facts" aria-label="Reservation facts">
             <li><span>Walk-ins</span><strong>Always welcome</strong></li>
             <li><span>Groups 6+</span><strong>Reserve ahead</strong></li>
@@ -346,17 +354,17 @@
 
     <section id="more-ways" class="feature-links" aria-label="More ways to use M&M">
       <a class="feature-card feature-entertainment" href="entertainment.html">
-        <img src="assets/ig-curated/karaoke-singer.webp" alt="Guest singing karaoke at the M&M bar on a Friday night" />
+        <img src="assets/ig-curated/karaoke-singer.webp" alt="Guest singing karaoke at the M&M bar on a Friday night" loading="lazy" />
         <span>Live room</span>
         <strong>Live music + karaoke nights</strong>
       </a>
       <a class="feature-card feature-catering" href="catering.html">
-        <img src="assets/social-polished/fried-rice-fish-basket.webp" alt="Fried rice, fried fish, shrimp, and pepper sauce at M&M African Kitchen & Bar" />
+        <img src="assets/social-polished/fried-rice-fish-basket.webp" alt="Fried rice, fried fish, shrimp, and pepper sauce at M&M African Kitchen & Bar" loading="lazy" />
         <span>Groups</span>
         <strong>Group dinners + catering</strong>
       </a>
       <a class="feature-card feature-artists" href="performers.html">
-        <img src="assets/social-polished/karaoke-room-social.webp" alt="Karaoke night at M&M African Kitchen & Bar" />
+        <img src="assets/social-polished/karaoke-room-social.webp" alt="Karaoke night at M&M African Kitchen & Bar" loading="lazy" />
         <span>Artists</span>
         <strong>DJs + open mic hosts</strong>
       </a>
@@ -378,13 +386,13 @@
         <div class="special-offer-grid" aria-label="Catering options">
           <aside class="special-price-card" aria-label="Soup special pickup dates">
             <span>Soup Special</span>
-            <strong class="special-date-strong">Jun 12/13</strong>
-            <small>Efo Riro, Egusi, Okra, Ogbono, and Ayamase. Pre-order only.</small>
+            <strong class="special-date-strong">Monthly</strong>
+            <small>Efo Riro, Egusi, Okra, Ogbono, and Ayamase. Pre-order only — call for this month's dates.</small>
           </aside>
           <aside class="special-price-card" aria-label="Amala Abula special price and pickup dates">
             <span>Amala Abula</span>
             <strong>$229</strong>
-            <small>Pickup dates: June 26 &amp; June 27</small>
+            <small>Monthly pickup — call for this month's dates</small>
           </aside>
           <article class="special-price-card" aria-label="Catering bundle starting price">
             <span>Catering Bundles</span>
@@ -398,7 +406,7 @@
         <article class="special-panel special-includes">
           <p class="site-kicker">Soup special</p>
           <ul>
-            <li><span>Pickup dates</span><strong>June 12 &amp; June 13</strong></li>
+            <li><span>Pickup dates</span><strong>Monthly — call to confirm</strong></li>
             <li><span>Efo Riro</span><strong>Available</strong></li>
             <li><span>Egusi</span><strong>Available</strong></li>
             <li><span>Okra Soup</span><strong>Available</strong></li>
@@ -427,7 +435,7 @@
             12255 Teel Pkwy, Suite 410<br />
             Frisco, TX 75033
           </address>
-          <p class="follow-line">Follow: Instagram <strong>@mmandmafricankitchen</strong> · Facebook <strong>M&amp;M African Kitchen</strong></p>
+          <p class="follow-line">Follow: Instagram <strong>@m.mafricankitchen</strong> · Facebook <strong>M&amp;M African Kitchen</strong></p>
         </article>
       </div>
     </section>
@@ -440,9 +448,9 @@
           <p>Spend $1, earn 1 point. No app to download, no card to carry. Enter your email to see the full rewards tiers and start earning.</p>
         </div>
         <div class="passport-card" aria-label="M&M Rewards card">
-          <img class="passport-bg" src="assets/brand/passport-stamps.png" alt="" aria-hidden="true" />
+          <img class="passport-bg" src="assets/brand/passport-stamps.webp" alt="" aria-hidden="true" loading="lazy" />
           <div class="passport-content">
-            <img src="assets/brand/mm-rewards-badge.png" alt="" class="rewards-badge" />
+            <img src="assets/brand/mm-rewards-badge.webp" alt="" class="rewards-badge" loading="lazy" />
             <strong>M&amp;M Rewards</strong>
             <small>$1 spent = 1 point earned</small>
             <div class="passport-stripe"></div>
@@ -451,8 +459,7 @@
       </div>
 
       <div class="rewards-gate" data-rewards-gate>
-        <form class="rewards-gate-form" data-rewards-form data-netlify="true" name="mm-rewards-signup" method="POST">
-          <input type="hidden" name="form-name" value="mm-rewards-signup" />
+        <form class="rewards-gate-form" data-rewards-form name="mm-rewards-signup">
           <label for="rewards-email">Enter your email to unlock rewards</label>
           <div class="rewards-gate-row">
             <input id="rewards-email" name="email" type="email" placeholder="you@email.com" required autocomplete="email" />
@@ -537,7 +544,7 @@
         <dl class="visit-list">
           <div><dt>Address</dt><dd>12255 Teel Pkwy #410, Frisco, TX 75033</dd></div>
           <div><dt>Phone</dt><dd>+1 (945) 327-0366</dd></div>
-          <div><dt>Email</dt><dd><a href="mailto:support@m-mafricankitchen.com?subject=%5BGeneral%5D%20Inquiry">support@m-mafricankitchen.com</a></dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:support@mmafricankitchen.com?subject=%5BGeneral%5D%20Inquiry">support@mmafricankitchen.com</a></dd></div>
           <div><dt>Hours</dt><dd>Tuesday-Wednesday: 12 PM - 9 PM<br />Thursday: 12 PM - 10 PM<br />Friday: 12 PM - 12 AM<br />Saturday: 12 PM - 10 PM<br />Sunday: 1 PM - 6 PM<br />Monday: Closed</dd></div>
         </dl>
       </div>
@@ -552,11 +559,11 @@
     <div class="footer-contact">
       <a href="tel:+19453270366">(945) 327-0366</a>
       <span class="footer-dot" aria-hidden="true">•</span>
-      <a href="mailto:support@m-mafricankitchen.com?subject=%5BGeneral%5D%20Inquiry">support@m-mafricankitchen.com</a>
+      <a href="mailto:support@mmafricankitchen.com?subject=%5BGeneral%5D%20Inquiry">support@mmafricankitchen.com</a>
     </div>
     <p class="footer-address-line">12255 Teel Pkwy #410, Frisco, TX 75033</p>
     <div class="footer-social">
-      <a href="https://www.instagram.com/m.mafricankitchen/" rel="noopener">Instagram @mmandmafricankitchen</a>
+      <a href="https://www.instagram.com/m.mafricankitchen/" rel="noopener">Instagram @m.mafricankitchen</a>
     </div>
   </footer>
 

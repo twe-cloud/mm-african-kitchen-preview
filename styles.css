@@ -599,21 +599,37 @@ h3 {
   color: var(--ink);
 }
 
-.ticker div {
+.ticker-track {
   display: flex;
-  flex-wrap: wrap;
-  width: 100%;
+  width: max-content;
+  animation: ticker-slide 32s linear infinite;
+}
+
+.ticker-group {
+  display: flex;
+  flex-wrap: nowrap;
   gap: 28px;
-  padding: 14px 0;
-  justify-content: center;
+  padding: 14px 28px 14px 0;
 }
 
 .ticker span {
   font-family: var(--display);
-  font-size: clamp(34px, 5vw, 72px);
+  font-size: clamp(28px, 4vw, 56px);
   line-height: .82;
   letter-spacing: -.06em;
   text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@keyframes ticker-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-group[aria-hidden="true"] { display: none; }
+  .ticker-track { width: 100%; }
+  .ticker-group { flex-wrap: wrap; justify-content: center; width: 100%; }
 }
 
 .proof-wall {

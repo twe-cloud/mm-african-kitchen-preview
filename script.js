@@ -29,11 +29,25 @@ menuToggle?.addEventListener("click", () => {
   menuToggle.setAttribute("aria-expanded", String(isOpen));
 });
 
+function closeSiteNav() {
+  if (!siteNav?.classList.contains("open")) return;
+  siteNav.classList.remove("open");
+  menuToggle?.setAttribute("aria-expanded", "false");
+}
+
 siteNav?.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    siteNav.classList.remove("open");
-    menuToggle?.setAttribute("aria-expanded", "false");
-  });
+  link.addEventListener("click", closeSiteNav);
+});
+
+/* Tap/click anywhere off the open menu collapses it back to the toggle. */
+document.addEventListener("pointerdown", (event) => {
+  if (!siteNav?.classList.contains("open")) return;
+  if (siteNav.contains(event.target) || menuToggle?.contains(event.target)) return;
+  closeSiteNav();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeSiteNav();
 });
 
 menuFilters.forEach((filterButton) => {
@@ -47,22 +61,50 @@ menuFilters.forEach((filterButton) => {
   });
 });
 
+const inboxEmail = "support@mmafricankitchen.com";
+
+function sendFormByEmail(subject, lines, resultElement, readyMessage) {
+  const body = encodeURIComponent(lines.filter(Boolean).join("\n"));
+  window.location.href = `mailto:${inboxEmail}?subject=${encodeURIComponent(subject)}&body=${body}`;
+  showCallPrompt(resultElement, `${readyMessage} If your email app didn't open,`);
+}
+
 cateringForm?.addEventListener("submit", (event) => {
   event.preventDefault();
   const data = new FormData(cateringForm);
-  const date = data.get("date");
-  const headcount = data.get("headcount");
-  const interest = data.get("interest");
-  showCallPrompt(formResult, `Ready: mention ${headcount} guests, ${interest}, ${date}.`);
+  sendFormByEmail(
+    `[Catering] ${data.get("headcount")} guests — ${data.get("date")}`,
+    [
+      "New catering inquiry from mmafricankitchen.com:",
+      "",
+      `Event date: ${data.get("date")}`,
+      `Guests: ${data.get("headcount")}`,
+      `Interest: ${data.get("interest")}`,
+      data.get("description") ? `Details: ${data.get("description")}` : "",
+    ],
+    formResult,
+    `Catering request ready for ${data.get("headcount")} guests, ${data.get("date")}.`
+  );
 });
 
 performerForm?.addEventListener("submit", (event) => {
   event.preventDefault();
   const data = new FormData(performerForm);
-  const name = data.get("name");
-  const type = data.get("type");
-  const date = data.get("date") || "date flexible";
-  showCallPrompt(performerResult, `Ready, ${name}: ask about a ${type} set for ${date}.`);
+  sendFormByEmail(
+    `[Performers] ${data.get("type")} — ${data.get("name")}`,
+    [
+      "New performer pitch from mmafricankitchen.com:",
+      "",
+      `Act: ${data.get("name")}`,
+      `Type: ${data.get("type")}`,
+      `Date: ${data.get("date") || "flexible"}`,
+      data.get("link") ? `Link: ${data.get("link")}` : "",
+      data.get("notes") ? `Notes: ${data.get("notes")}` : "",
+      data.get("description") ? `Description: ${data.get("description")}` : "",
+    ],
+    performerResult,
+    `Pitch ready, ${data.get("name")}.`
+  );
 });
 
 /* ── Footer brand sting: play once when it scrolls into view ── */
@@ -206,7 +248,7 @@ performerForm?.addEventListener("submit", (event) => {
         "Please reply or call to confirm this reservation.",
       ].join("\n")
     );
-    window.location.href = `mailto:support@m-mafricankitchen.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:support@mmafricankitchen.com?subject=${subject}&body=${body}`;
     note.classList.remove("is-error");
     note.textContent = "";
     const sent = document.createElement("span");
@@ -231,16 +273,19 @@ performerForm?.addEventListener("submit", (event) => {
     e.preventDefault();
     const email = rewardsForm.elements.email.value.trim();
     if (!email) return;
-    const body = new URLSearchParams(new FormData(rewardsForm)).toString();
-    fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body })
-      .then(function () {
-        localStorage.setItem("mm_rewards_email", email);
-        rewardsGate.classList.add("is-enrolled");
-        rewardsContent.hidden = false;
-      })
-      .catch(function () {
-        if (rewardsResult) rewardsResult.textContent = "Something went wrong. Try again or call M&M.";
-      });
+    // Static site: deliver the signup to the M&M inbox via the visitor's mail app,
+    // then unlock the tiers locally.
+    const subject = encodeURIComponent("[Rewards] New M&M Rewards signup");
+    const body = encodeURIComponent(
+      `New M&M Rewards signup from mmafricankitchen.com:\n\nEmail: ${email}\n\nAdd this guest to the rewards list.`
+    );
+    window.location.href = `mailto:${inboxEmail}?subject=${subject}&body=${body}`;
+    localStorage.setItem("mm_rewards_email", email);
+    rewardsGate.classList.add("is-enrolled");
+    rewardsContent.hidden = false;
+    if (rewardsResult) {
+      showCallPrompt(rewardsResult, "You're in! If your email app didn't open, mention rewards at the counter or");
+    }
   });
 })();
 

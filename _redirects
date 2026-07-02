@@ -1,9 +1,7 @@
-# Legacy owner domain -> canonical production domain.
-# Safe before DNS/domain attachment: these rules only matter when the request Host is the legacy domain.
-https://m-mafricankitchen.com/* https://mmafricankitchen.com/:splat 301!
-https://www.m-mafricankitchen.com/* https://mmafricankitchen.com/:splat 301!
-http://m-mafricankitchen.com/* https://mmafricankitchen.com/:splat 301!
-http://www.m-mafricankitchen.com/* https://mmafricankitchen.com/:splat 301!
+# NOTE: legacy-domain (m-mafricankitchen.com) redirects cannot be done here —
+# Cloudflare Pages _redirects only accepts path sources, not absolute URLs.
+# Do it with a Redirect Rule / Bulk Redirect on the legacy zone, or attach the
+# legacy domain to this Pages project as a custom domain.
 
 # Clean vanity short links for social/print. Each 302s through the tracked
 # /go redirect (GA4 client_click attribution) on to the real destination, so
